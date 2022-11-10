@@ -11,7 +11,7 @@
 - Contact No : 0771043439
 
 ## Team Member 3
-- Name : Hashi
+- Name : Dulangi
 - Email : cb010550@students.apiit.lk
 - Contact No : 0761262958
 
