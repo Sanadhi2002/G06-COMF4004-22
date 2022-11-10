@@ -9,3 +9,10 @@
 - Name : Hashi
 - Email : edmandhashi@gmail.com
 - Contact No : 0771043439
+
+## Team Member 3
+- Name : Hashi
+- Email : cb010550@students.apiit.lk
+- Contact No : 0761262958
+
+
