@@ -6,7 +6,7 @@
 - Contact No : 0761250374 
 
 ## Team Member 2
-- Name : Janith 
+- Name : Janith Dakshitha
 - Email : janith7689@gmail.com
 - Contact No : 0765762121
 
