@@ -1,7 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Univ Dash board Page";
 }
-<div class="text-center">
+<div class="align-text-bottom">
     <h1 class="display-4">Welcome janiya</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom border-top box-shadow mb-3">
+    <div class="container-fluid">
+       
+       
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Add/Edit Profile Picture</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Add/Edit University Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Add/Edit faculty details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="UnivDashController1" asp-action="UnivdashBoard">Add/Edit degree details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="UnivDashController1" asp-action="UnivdashBoard">Add new degree </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
