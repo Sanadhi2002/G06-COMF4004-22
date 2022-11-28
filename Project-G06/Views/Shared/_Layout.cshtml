@@ -17,22 +17,49 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+           <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="compare">Compare</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="UnivDashController1" asp-action="UnivdashBoard">UnivdashBoard</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">University Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="aboutUs">About Us</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    <div class="Mynavbar">
+        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-area="" asp-controller="Home" asp-action="compare">Compare</a>
+        <a asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <a asp-area="" asp-controller="Home" asp-action="Index">University Profile</a>
+        <a asp-area="" asp-controller="Home" asp-action="aboutUs">About Us</a>
+        <div class="Mynavbar_dropdown">
+            <button class="Mynavbar_dropbtn">
+                <a asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+                <!--<i class="fa fa-caret-down"></i>-->
+            </button>
+            <div class="Mynavbar_dropdown-content">
+                <a href="#">Login</a>
+
+            </div>
+        </div>
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
