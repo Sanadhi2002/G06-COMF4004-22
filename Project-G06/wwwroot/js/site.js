@@ -8,7 +8,7 @@ addDegree1.addEventListener("click", addnewDegree)
 function addnewDegree() {
     console.log("hi1")
     var Row = document.createElement('div')
-    Row.classList.add('cart-row')
+    Row.classList.add('DegreeName')
     var cdegree = document.getElementsByClassName('DegreeName')[0]
 
     var DegreeAdd = `
@@ -43,6 +43,7 @@ function addnewDegree() {
 
     <label for="DAProg">Academic Progression:</label><br>
     <textarea name="textarea" rows="2" cols="100">Write something here</textarea><br>
+    <input type="submit" value="Submit">
             `
     Row.innerHTML = DegreeAdd
     cdegree.append(Row)
