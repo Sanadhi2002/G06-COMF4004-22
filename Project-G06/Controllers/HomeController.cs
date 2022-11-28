@@ -22,7 +22,19 @@ namespace Project_G06.Controllers
         {
             return View();
         }
-       
+        public IActionResult Register()
+        {
+            return View();
+        }
+        public IActionResult aboutUs()
+        {
+            return View();
+        }
+        public IActionResult Compare()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
