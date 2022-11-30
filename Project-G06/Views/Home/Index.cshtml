@@ -1,9 +1,55 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome new</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register institute</title>
+</head>
+<body>
+<div>
+    <h1>Register your institute</h1>
+    <form>
+        <label>Name  </label>
+        <input type="text" />
 
+        <label>Number of branches  </label>
+        <input type="number" />
+        <!--theres a plus button here and when its clicked a form appears. The form will contain the details of the degree programme. -->
+        <p>Add a degree programme</p>
+
+        <button>ADD </button>
+        <label>Name of the degree</label>
+        <input type="text" />
+
+        <label>Name of the univeristy or academic institute</label>
+        <input type="text" />
+
+        <label>Duration of the degree</label>
+        <input type="number" />
+
+        <label>Number of semesters</label>
+        <input type="number" />
+
+        <label>Cost of the degree</label>
+        <input type="number" />
+
+        <label>Locations the degree is available at</label>
+        <input type="text" />
+
+
+        <button> Register </button>
+
+
+    </form>
+
+
+
+</div>
+  </body>
+</html>
