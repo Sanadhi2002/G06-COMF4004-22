@@ -1,18 +1,18 @@
 ﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 // for details on configuring this project to bundle and minify static web assets.
 
-// Write your JavaScript code.
+ 
 let btnSearch = document.getElementById("searchbtn");
 let con = document.getElementById("container");
-
+let addDegree1 = document.getElementById("DegreeButton");
+addDegree1.addEventListener("click", addnewDegree);
 btnSearch.addEventListener("click", Search);
 
 function Search() {
     con.style.visibility = "visible";
 }
 //UNIV DASH PAGE
-let addDegree1 = document.getElementById("DegreeButton")
-addDegree1.addEventListener("click", addnewDegree)
+
 function addnewDegree() {
     console.log("hi1")
     var Row = document.createElement('div')
