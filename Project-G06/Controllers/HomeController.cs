@@ -38,6 +38,10 @@ namespace Project_G06.Controllers
         {
             return View();
         }
+        public IActionResult LOGINSUPERADMIN()
+        {
+            return View();
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
