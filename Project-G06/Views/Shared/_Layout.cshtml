@@ -55,15 +55,27 @@
         <a asp-area="" asp-controller="Home" asp-action="aboutUs">About Us</a>
         <div class="Mynavbar_dropdown">
             <button class="Mynavbar_dropbtn">
-                <a asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+                <a href="#">Register</a>
                 <!--<i class="fa fa-caret-down"></i>-->
             </button>
             <div class="Mynavbar_dropdown-content">
-                <a href="#">Login</a>
-                <a asp-area="" asp-controller="Home" asp-action="SUPERADMINLOGIN">LOGIN for super admin</a>
-
+                
+                <a asp-area="" asp-controller="Home" asp-action="Register">Register for students</a>
+          
+               
             </div>
         </div>
+        <div class="Mynavbar_dropdown">
+            <button class="Mynavbar_dropbtn">
+                <a href="#">Login</a>
+                <!--<i class="fa fa-caret-down"></i>-->
+            </button>
+            <div class="Mynavbar_dropdown-content">
+           
+                <a asp-area="" asp-controller="Home" asp-action="LOGINSUPERADMIN">LOGIN for super admin</a>
+            </div>
+        </div>
+       
     </div>
     <div class="container">
         <main role="main" class="pb-3">
