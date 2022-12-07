@@ -1,9 +1,13 @@
-﻿namespace Project_G06.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Project_G06.Models
 {
     public class Register
     {
-
-        public string Name { get; set; }
-        public string Email { get; set; }
+        [Key]
+     public  string Name   { get; set; }
+     public string Email { get; set; }
     }
+
+    
 }
