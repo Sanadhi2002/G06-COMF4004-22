@@ -5,9 +5,10 @@ namespace Project_G06.Models
     public class Register
     {
         [Key]
-     public  string Name   { get; set; }
-     public string Email { get; set; }
+        public string Name { get; set; }
+        [Required]
+        public string Email { get; set; }
     }
 
-    
+
 }

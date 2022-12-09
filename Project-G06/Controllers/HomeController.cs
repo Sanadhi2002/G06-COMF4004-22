@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Project_G06.Data;
 using Project_G06.Models;
 using System.Diagnostics;
 
@@ -49,8 +50,7 @@ namespace Project_G06.Controllers
         }
 
 
-
-
+       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
