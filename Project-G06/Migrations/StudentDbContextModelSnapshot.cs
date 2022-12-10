@@ -30,7 +30,7 @@ namespace ProjectG06.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Name");
+                    b.HasKey("Email");
 
                     b.ToTable("Registers");
                 });

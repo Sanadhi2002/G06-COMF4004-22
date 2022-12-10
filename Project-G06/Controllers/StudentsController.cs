@@ -32,6 +32,7 @@ namespace Project_G06.Controllers
 
             }
           studentDbContext.Registers.Add(register);
+        
           studentDbContext.SaveChanges();
             return RedirectToAction("Add");
         }

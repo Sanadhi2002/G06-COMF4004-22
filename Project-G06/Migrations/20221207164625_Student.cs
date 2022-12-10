@@ -19,7 +19,7 @@ namespace ProjectG06.Migrations
                 },
                 constraints: table =>
                 {
-                  table.PrimaryKey("PK_Registers", x => x.Name);
+                  table.PrimaryKey("PK_Registers", x => x.Email);
 
                 });
         }

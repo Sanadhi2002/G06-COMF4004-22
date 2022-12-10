@@ -97,4 +97,11 @@ body {
     Width: 350px;
     border: 1px solid black;
 }
-
+.image {
+    height: 200px;
+      
+}
+#Login {
+    box-shadow: 10px 10px 5px 12px #c1bcbc;
+    width:50%;
+}

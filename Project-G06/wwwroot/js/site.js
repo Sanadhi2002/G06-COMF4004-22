@@ -48,3 +48,4 @@ function addnewDegree() {
     Row.innerHTML = DegreeAdd
     cdegree.append(Row)
 }
+
