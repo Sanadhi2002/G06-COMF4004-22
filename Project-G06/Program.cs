@@ -13,6 +13,8 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("studentConnectio
 builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
+
+builder.Services.AddDbContext<UniversitiesDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("UniversityConnectionString")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
