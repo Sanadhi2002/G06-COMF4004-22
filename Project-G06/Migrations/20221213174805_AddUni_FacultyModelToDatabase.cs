@@ -5,7 +5,7 @@
 namespace ProjectG06.Migrations
 {
     /// <inheritdoc />
-    public partial class AddUniProfileModelToDatabase : Migration
+    public partial class AddUniFacultyModelToDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,13 @@ namespace ProjectG06.Migrations
                 {
                     UniFacultyID = table.Column<int>(name: "Uni_Faculty_ID", type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FacultyName = table.Column<string>(name: "Faculty_Name", type: "nvarchar(max)", nullable: false)
+                    FacultyName1 = table.Column<string>(name: "Faculty_Name_1", type: "nvarchar(max)", nullable: true),
+                    FacultyName2 = table.Column<string>(name: "Faculty_Name_2", type: "nvarchar(max)", nullable: true),
+                    FacultyName3 = table.Column<string>(name: "Faculty_Name_3", type: "nvarchar(max)", nullable: true),
+                    FacultyName4 = table.Column<string>(name: "Faculty_Name_4", type: "nvarchar(max)", nullable: true),
+                    FacultyName5 = table.Column<string>(name: "Faculty_Name_5", type: "nvarchar(max)", nullable: true),
+                    FacultyName6 = table.Column<string>(name: "Faculty_Name_6", type: "nvarchar(max)", nullable: true),
+                    FacultyName7 = table.Column<string>(name: "Faculty_Name_7", type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

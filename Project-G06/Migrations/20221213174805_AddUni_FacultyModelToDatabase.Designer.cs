@@ -12,8 +12,8 @@ using Project_G06.Data;
 namespace ProjectG06.Migrations
 {
     [DbContext(typeof(UniProfileDbContext))]
-    [Migration("20221213135623_AddUniProfileModelToDatabase")]
-    partial class AddUniProfileModelToDatabase
+    [Migration("20221213174805_AddUni_FacultyModelToDatabase")]
+    partial class AddUniFacultyModelToDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,8 +66,25 @@ namespace ProjectG06.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Uni_Faculty_ID"));
 
-                    b.Property<string>("Faculty_Name")
-                        .IsRequired()
+                    b.Property<string>("Faculty_Name_1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Faculty_Name_2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Faculty_Name_3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Faculty_Name_4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Faculty_Name_5")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Faculty_Name_6")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Faculty_Name_7")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Uni_Faculty_ID");
