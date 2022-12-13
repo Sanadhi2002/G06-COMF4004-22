@@ -10,9 +10,6 @@ builder.Services.AddDbContext<WebsiteAdminRegDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("WebsiteAdminConnectionString")));
    
 
-builder.Services.AddDbContext<StudentDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("studentConnectionString")));
-
 builder.Services.AddDbContext<UniProfileDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("UniProfileConnection")
     ));
