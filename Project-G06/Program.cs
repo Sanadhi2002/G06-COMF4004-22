@@ -6,6 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddDbContext<WebsiteAdminRegDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("WebsiteAdminConnectionString")));
+   
+
 builder.Services.AddDbContext<StudentDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("studentConnectionString")));
 

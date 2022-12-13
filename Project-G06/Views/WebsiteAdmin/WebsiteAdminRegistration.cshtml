@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Project_G06.Models.WebsiteAdmin
+
+<h1>WEB ADMIN LOGIN</h1>
+<form method="post" action=" WebsiteAdminRegistration">
+
+    <div class="mb-3">
+    <label for="W_UserName">Username:</label>
+    <input type="text"  class="form-control" asp-for="W_UserName"/>
+    </div>
+
+    <div class="mb-3">
+    <label for="W_Email">Email:</label>
+    <input type="email" class="form-control" asp-for="W_Email"/>
+    </div>
+
+    <div class="mb-3">
+    <label for="W_Password">Password:</label>
+    <input type="text" class="form-control"  asp-for="W_Password"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
