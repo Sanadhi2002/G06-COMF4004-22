@@ -13,8 +13,8 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("WebsiteAdminConn
 builder.Services.AddDbContext<StudentDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("studentConnectionString")));
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("DefaultConnection")
+builder.Services.AddDbContext<UniProfileDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("UniProfileConnection")
     ));
 
 builder.Services.AddDbContext<UniversitiesDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("UniversityConnectionString")));

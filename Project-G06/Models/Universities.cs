@@ -12,7 +12,7 @@ public class Universities
     public char Email { get; set; }
     [Required]
     public char Password { get; set; }
-    [Required]
+    
 
 
-};
+}
