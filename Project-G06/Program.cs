@@ -16,9 +16,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("studentConnectio
 builder.Services.AddDbContext<UniProfileDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("UniProfileConnection")
     ));
-builder.Services.AddDbContext<UniFacultyDbContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("UniFacultyConnection")
-    ));
+
 
 builder.Services.AddDbContext<UniversitiesDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("UniversityConnectionString")));
 var app = builder.Build();

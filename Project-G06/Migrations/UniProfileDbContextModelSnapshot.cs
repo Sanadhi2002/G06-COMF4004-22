@@ -37,7 +37,7 @@ namespace ProjectG06.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Uni_FacultyID")
+                    b.Property<int>("Uni_Faculty_ID")
                         .HasColumnType("int");
 
                     b.Property<string>("Uni_FullName")
@@ -50,7 +50,37 @@ namespace ProjectG06.Migrations
 
                     b.HasKey("Uni_ID");
 
+                    b.HasIndex("Uni_Faculty_ID");
+
                     b.ToTable("UniProfileModels");
+                });
+
+            modelBuilder.Entity("Project_G06.Models.Uni_FacultyModel", b =>
+                {
+                    b.Property<int>("Uni_Faculty_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Uni_Faculty_ID"));
+
+                    b.Property<string>("Faculty_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Uni_Faculty_ID");
+
+                    b.ToTable("UnifacultyModels");
+                });
+
+            modelBuilder.Entity("Project_G06.Models.UniProfileModel", b =>
+                {
+                    b.HasOne("Project_G06.Models.Uni_FacultyModel", "UnifacultyModels")
+                        .WithMany()
+                        .HasForeignKey("Uni_Faculty_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UnifacultyModels");
                 });
 #pragma warning restore 612, 618
         }
