@@ -11,7 +11,7 @@ namespace ProjectG06.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "uniDashModels",
+                name: "UniProfileModels",
                 columns: table => new
                 {
                     UniID = table.Column<int>(name: "Uni_ID", type: "int", nullable: false)
@@ -24,7 +24,7 @@ namespace ProjectG06.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_uniDashModels", x => x.UniID);
+                    table.PrimaryKey("PK_UniProfileModels", x => x.UniID);
                 });
         }
 
@@ -32,7 +32,7 @@ namespace ProjectG06.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "uniDashModels");
+                name: "UniProfileModels");
         }
     }
 }

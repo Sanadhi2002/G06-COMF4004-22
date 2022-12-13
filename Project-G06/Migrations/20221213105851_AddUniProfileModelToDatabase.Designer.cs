@@ -12,7 +12,7 @@ using Project_G06.Data;
 namespace ProjectG06.Migrations
 {
     [DbContext(typeof(UniProfileDbContext))]
-    [Migration("20221213100023_AddUniProfileModelToDatabase")]
+    [Migration("20221213105851_AddUniProfileModelToDatabase")]
     partial class AddUniProfileModelToDatabase
     {
         /// <inheritdoc />
@@ -53,7 +53,7 @@ namespace ProjectG06.Migrations
 
                     b.HasKey("Uni_ID");
 
-                    b.ToTable("uniDashModels");
+                    b.ToTable("UniProfileModels");
                 });
 #pragma warning restore 612, 618
         }

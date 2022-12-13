@@ -50,7 +50,7 @@ namespace ProjectG06.Migrations
 
                     b.HasKey("Uni_ID");
 
-                    b.ToTable("uniDashModels");
+                    b.ToTable("UniProfileModels");
                 });
 #pragma warning restore 612, 618
         }
