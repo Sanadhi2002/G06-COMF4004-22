@@ -1,16 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using Project_G06.Data;
-using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<StudentDbContext>(options => 
+builder.Services.AddDbContext<StudentDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("studentConnectionString")));
 
-builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlServer(
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
