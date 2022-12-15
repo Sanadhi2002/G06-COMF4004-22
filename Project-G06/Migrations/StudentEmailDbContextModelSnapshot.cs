@@ -9,8 +9,8 @@ using Project_G06.Data;
 
 namespace ProjectG06.Migrations
 {
-    [DbContext(typeof(StudentDbContext))]
-    partial class StudentDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(StudentEmailDbContext))]
+    partial class StudentEmailDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -21,18 +21,25 @@ namespace ProjectG06.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Project_G06.Models.Register", b =>
+            modelBuilder.Entity("Project_G06.Models.StudentEmail", b =>
                 {
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("S_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("Email")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("S_Id"));
+
+                    b.Property<string>("S_Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Email");
+                    b.Property<string>("S_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Registers");
+                    b.HasKey("S_Id");
+
+                    b.ToTable("StudentEmails");
                 });
 #pragma warning restore 612, 618
         }

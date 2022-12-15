@@ -10,9 +10,9 @@ using Project_G06.Data;
 
 namespace ProjectG06.Migrations
 {
-    [DbContext(typeof(StudentDbContext))]
-    [Migration("20221207164625_Student")]
-    partial class Student
+    [DbContext(typeof(StudentEmailDbContext))]
+    [Migration("20221213190116_studentEmails")]
+    partial class studentEmails
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,18 +24,25 @@ namespace ProjectG06.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Project_G06.Models.Register", b =>
+            modelBuilder.Entity("Project_G06.Models.StudentEmail", b =>
                 {
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("S_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("Email")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("S_Id"));
+
+                    b.Property<string>("S_Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Name");
+                    b.Property<string>("S_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Registers");
+                    b.HasKey("S_Id");
+
+                    b.ToTable("StudentEmails");
                 });
 #pragma warning restore 612, 618
         }

@@ -5,22 +5,23 @@
 namespace ProjectG06.Migrations
 {
     /// <inheritdoc />
-    public partial class Student : Migration
+    public partial class studentEmails : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Registers",
+                name: "StudentEmails",
                 columns: table => new
                 {
-                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    SId = table.Column<int>(name: "S_Id", type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SName = table.Column<string>(name: "S_Name", type: "nvarchar(max)", nullable: false),
+                    SEmail = table.Column<string>(name: "S_Email", type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                  table.PrimaryKey("PK_Registers", x => x.Email);
-
+                    table.PrimaryKey("PK_StudentEmails", x => x.SId);
                 });
         }
 
@@ -28,7 +29,7 @@ namespace ProjectG06.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Registers");
+                name: "StudentEmails");
         }
     }
 }
