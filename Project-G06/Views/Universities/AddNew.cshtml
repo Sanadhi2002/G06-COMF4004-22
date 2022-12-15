@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1> Register</h1>
+<form action="AddNew">
+    <div>
+        <label>  Name</label>
+        <input type="text" class="form-label" asp-for="Name" />
+    </div>
+
+    <div>
+        <label> Email</label>
+        <input type="email" class="form-label" asp-for="Email" />
+    </div>
+
+
+    <div>
+        <label> Password</label>
+        <input type="text" class="form-label" asp-for="Password" />
+    </div>
+
+    <div>
+        <label> Date</label>
+        <input type="date" class="form-label" asp-for="Date" />
+    </div>
+
+    <div>
+        <button>Submit</button>
+    </div>
+</form>
