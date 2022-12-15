@@ -5,7 +5,7 @@
 namespace ProjectG06.Migrations
 {
     /// <inheritdoc />
-    public partial class AddUniFacultyModelToDatabase : Migration
+    public partial class AddUniProfileModelToDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,7 +38,7 @@ namespace ProjectG06.Migrations
                     UniFullName = table.Column<string>(name: "Uni_FullName", type: "nvarchar(max)", nullable: false),
                     UniShortName = table.Column<string>(name: "Uni_ShortName", type: "nvarchar(max)", nullable: false),
                     UniDetails = table.Column<string>(name: "Uni_Details", type: "nvarchar(max)", nullable: false),
-                    UPicture = table.Column<byte>(name: "U_Picture", type: "tinyint", nullable: true),
+                    UPicture = table.Column<byte[]>(name: "U_Picture", type: "varbinary(max)", nullable: true),
                     UniFacultyID = table.Column<int>(name: "Uni_Faculty_ID", type: "int", nullable: false)
                 },
                 constraints: table =>
