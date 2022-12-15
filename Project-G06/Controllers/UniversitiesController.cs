@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project_G06.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Project_G06.Data;
+
+
 
 namespace Project_G06.Controllers
 {
@@ -19,7 +23,7 @@ namespace Project_G06.Controllers
         }
 
 
-        public IActionResult AddNew(AddUniversityViewModel addUniversityRequest)
+        public IActionResult AddNew(Universities addUniversityRequest)
         {
             var universities = new Universities()
             {
