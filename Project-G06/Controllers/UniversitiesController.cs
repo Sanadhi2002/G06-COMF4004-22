@@ -2,6 +2,8 @@
 using Project_G06.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Project_G06.Data;
+using System.Diagnostics.Tracing;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Project_G06.Controllers
