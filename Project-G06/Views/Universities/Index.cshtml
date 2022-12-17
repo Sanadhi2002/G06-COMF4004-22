@@ -21,7 +21,7 @@
                 <td>@university.Password</td>
                 <td>@university.Date.ToString("dd/mm/yy")</td>
                 <td><a href="University/view/@university.Name">View</a></td>
-
+                <td>                <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Universities"> Delete</button></td>
             </tr>
         }
 

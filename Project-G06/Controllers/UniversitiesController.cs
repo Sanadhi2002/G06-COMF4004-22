@@ -49,5 +49,22 @@ namespace Project_G06.Controllers
             var registereduniversities = await universityDbContext.RegisteredUniversities.ToListAsync();
             return View(registereduniversities);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(UpdateUniversityViewModel model)
+        {
+            var university = await universityDbContext.RegisteredUniversities.FindAsync(model.Name);
+            if (university != null)
+            {
+                universityDbContext.RegisteredUniversities.Remove(university);
+                await universityDbContext.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Index");
+
+        }
     }
 }
