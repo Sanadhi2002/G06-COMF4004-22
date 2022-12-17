@@ -4,13 +4,23 @@
  
 let btnSearch = document.getElementById("searchbtn");
 let con = document.getElementById("container");
+
 let addDegree1 = document.getElementById("DegreeButton");
 addDegree1.addEventListener("click", addnewDegree);
-btnSearch.addEventListener("click", Search);
 
+btnSearch.addEventListener("click", Search);
 function Search() {
-    con.style.visibility = "visible";
+    con.style.visibility ="visible";
+ 
 }
+
+let showPass = document.getElementById("showPass");
+showPass.addEventListener("click", showPassword);
+
+
+
+
+
 //UNIV DASH PAGE
 
 function addnewDegree() {
@@ -48,4 +58,6 @@ function addnewDegree() {
     Row.innerHTML = DegreeAdd
     cdegree.append(Row)
 }
+
+
 

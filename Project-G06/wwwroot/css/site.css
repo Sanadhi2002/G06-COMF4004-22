@@ -91,11 +91,13 @@ body {
     width: 100%;
     gap:20px;
     margin:10px;
+
 }
 
 .con {
     Width: 350px;
     border: 1px solid black;
+   
 }
 .image {
     height: 200px;
