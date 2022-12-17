@@ -45,6 +45,7 @@ namespace Project_G06.Controllers
         public async Task<IActionResult> Index()
         {
             var registereduniversities = await universityDbContext.RegisteredUniversities.ToListAsync();
+            return View(registereduniversities);
         }
     }
 }

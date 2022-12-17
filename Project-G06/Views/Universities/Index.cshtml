@@ -1,0 +1,29 @@
+﻿@model List<Project_G06.Models.Universities>
+@{
+}
+<h1>University list</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var university in Model)
+        {
+            <tr>
+                <td>@university.Name</td>
+                <td>@university.Email</td>
+                <td>@university.Password</td>
+                <td>@university.Date.ToString("dd/mm/yy")</td>
+                <td><a href="University/view/@university.Name">View</a></td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
