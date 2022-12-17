@@ -2,8 +2,7 @@
 using Project_G06.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Project_G06.Data;
-
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Project_G06.Controllers
 {
@@ -22,6 +21,8 @@ namespace Project_G06.Controllers
             return View();
         }
 
+       
+
 
         public IActionResult AddNew(Universities addUniversityRequest)
         {
@@ -37,6 +38,13 @@ namespace Project_G06.Controllers
             universityDbContext.Add(universities);
             universityDbContext.SaveChanges();
             return RedirectToAction("AddNew");
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var registereduniversities = await universityDbContext.RegisteredUniversities.ToListAsync();
         }
     }
 }
