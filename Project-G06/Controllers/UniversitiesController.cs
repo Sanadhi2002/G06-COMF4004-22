@@ -21,9 +21,9 @@ namespace Project_G06.Controllers
             return View();
         }
 
-       
 
 
+        [HttpPost]
         public IActionResult AddNew(Universities universities)
         {
             var university = new Universities()
