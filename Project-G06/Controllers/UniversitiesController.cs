@@ -35,7 +35,7 @@ namespace Project_G06.Controllers
 
             };
 
-            universityDbContext.Add(universities);
+            universityDbContext.RegisteredUniversities.Add(universities);
             universityDbContext.SaveChanges();
             return RedirectToAction("AddNew");
         }
