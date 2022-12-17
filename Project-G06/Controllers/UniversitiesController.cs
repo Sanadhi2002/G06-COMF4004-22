@@ -24,14 +24,14 @@ namespace Project_G06.Controllers
        
 
 
-        public IActionResult AddNew(Universities addUniversityRequest)
+        public IActionResult AddNew(Universities universities)
         {
-            var universities = new Universities()
+            var university = new Universities()
             {
-                Name = addUniversityRequest.Name,
-                Email = addUniversityRequest.Email,
-                Password = addUniversityRequest.Password,
-                Date = addUniversityRequest.Date,
+                Name =universities.Name,
+                Email = universities.Email,
+                Password = universities.Password,
+                Date = universities.Date,
 
             };
 
