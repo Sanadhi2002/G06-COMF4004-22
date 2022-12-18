@@ -26,17 +26,24 @@ namespace Project_G06.Controllers
 
 
         [HttpPost]
-        public IActionResult AddNew(Universities universities)
+        public async Task<IActionResult> AddNew(Universities universities)
         {
             var university = new Universities()
             {
-                Name =universities.Name,
+                Name = universities.Name,
                 Email = universities.Email,
                 Password = universities.Password,
                 Date = universities.Date,
 
             };
+            /*new part starts*/
+            var user = await universityDbContext.RegisteredUniversities.FindAsync(universities.Name);
+            if (user != null)
+            {
+                return BadRequest("Username already exists");
+            }
 
+            /*new part ends*/
             universityDbContext.RegisteredUniversities.Add(universities);
             universityDbContext.SaveChanges();
             return RedirectToAction("AddNew");
@@ -66,5 +73,9 @@ namespace Project_G06.Controllers
             return RedirectToAction("Index");
 
         }
+
+
+
+
     }
 }
