@@ -57,12 +57,13 @@ namespace Project_G06.Controllers
             return View(registereduniversities);
         }
 
-        [HttpGet]
+      /*  [HttpGet]
         public async Task<IActionResult> Returnprofile()
         {
             var universityprofilesuperadmin = await UniProfileDbContext.UniProfileModels.ToListAsync();
             return View(universityprofilesuperadmin);
-        }
+        }*/
+        
 
 
         [HttpPost]
