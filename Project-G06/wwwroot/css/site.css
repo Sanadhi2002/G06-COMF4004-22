@@ -116,3 +116,27 @@ body {
     background: black;
     color:azure;
 }
+
+
+#form1 input[type= text ]{
+
+    padding:10px 20px;
+
+}
+
+#form1 input[type= email] {
+    padding: 12px 20px;
+}
+
+#form1 input[type= date] {
+    padding: 12px 20px;
+}
+
+#form1 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content:center;
+    border: 2px black solid;
+}
+
