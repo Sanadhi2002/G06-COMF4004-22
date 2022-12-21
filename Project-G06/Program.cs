@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Project_G06.Data;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<WebsiteAdminRegDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("WebsiteAdminConnectionString")));
 
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<WebAdminDbContext>();
+
+builder.Services.AddDbContext<WebAdminDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("WebAdminConnectionString")));
 
 builder.Services.AddDbContext<StudentEmailDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("StudentEmailsConnectionString")));
@@ -36,6 +41,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
+
+app.MapRazorPages();
 
 app.UseAuthorization();
 

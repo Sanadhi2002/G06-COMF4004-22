@@ -49,6 +49,7 @@
         </nav>-->
         <div class="Mynavbar">
             <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+           <!-- <a asp-area="" asp-controller="WebAdmins" asp-action="Index">WebAdmin</a>-->
             <a asp-area="" asp-controller="Home" asp-action="compare">Compare</a>
             <a asp-area="" asp-controller="UnivDashController1" asp-action="UnivDashBoard">Uni dash</a>
 
@@ -78,7 +79,7 @@
                     <a asp-area="" asp-controller="Home" asp-action="LOGINSUPERADMIN">LOGIN for super admin</a>
                 </div>
             </div>
-
+            <partial name="_LoginPartial" />
         </div>
     </header>
  
