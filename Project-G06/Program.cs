@@ -24,6 +24,12 @@ builder.Services.AddDbContext<UniProfileDbContext>(options => options.UseSqlServ
     ));
 
 
+builder.Services.AddDbContext<FacultyDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("FacultyConnectionString")
+    ));
+
+
+
 
 
 builder.Services.AddDbContext<UniversityDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection3")));
