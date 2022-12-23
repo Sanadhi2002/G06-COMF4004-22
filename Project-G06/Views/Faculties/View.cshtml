@@ -1,0 +1,13 @@
+﻿@model Project_G06.Models.UpdateFacultyViewModel
+@{
+}
+
+<h1>Edit faculty</h1>
+<form method="post" action="View">
+    <div>
+        <label>Faculty name</label>
+        <input type="text" asp-for="Name" readonly />
+    </div>
+    <button type="submit">Submit</button>
+    <button type="submit" class="btn btn-danger"  asp-action="Delete" asp-controller="Faculties">Delete</button>
+</form>

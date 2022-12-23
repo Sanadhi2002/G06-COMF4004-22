@@ -50,6 +50,8 @@ namespace Project_G06.Controllers
         }
 
 
+
+
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -57,12 +59,7 @@ namespace Project_G06.Controllers
             return View(registereduniversities);
         }
 
-      /*  [HttpGet]
-        public async Task<IActionResult> Returnprofile()
-        {
-            var universityprofilesuperadmin = await UniProfileDbContext.UniProfileModels.ToListAsync();
-            return View(universityprofilesuperadmin);
-        }*/
+      
         
 
 
