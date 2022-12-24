@@ -37,7 +37,7 @@ namespace Project_G06.Controllers
             {
                 Name = universities.Name,
                 Email = universities.Email,
-                Password = universities.Password,
+                Password = Hashed,
                 //     Password = universities.Password,
                 Date = universities.Date,
               //  Password = universities.Password,   
