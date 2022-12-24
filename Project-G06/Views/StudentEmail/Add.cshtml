@@ -21,27 +21,45 @@
 
 
 </form>-->
-<body>
-<form method="post" action="Add">
-<div class="form">
+
+
+<!--<div class="form">
    
-    <div class="input-container ic1">
-       
-        <input type="text" class="form-control" asp-for="S_Name" class="input" />
-        <div class="cut"></div>
-      
-        <label for="S_Name" class="placeholder">Name:</label>
+    <div >
+                <label for="S_Name">Name:</label>
+        <input type="text" class="form-control" asp-for="S_Name"  />
+        
+        
     </div>
-    <div class="input-container ic2">
-    
-        <input type="email" class="form-control" asp-for="S_Email" class="input" />
+    <div >
+                <label for="S_Email">Email:</label>
+        <input type="email" class="form-control" asp-for="S_Email" />
+ 
+    </div>
+    <button type="submit" class="submit">Submit</button>
+</div>
+-->
+<form method="post" action="Add">
+ <div class="form">
+      <div class="title">Welcome</div>
+      <div class="subtitle">Let's Register your email</div>
+      <div class="input-container ic1">
+       
+        <input type="text" class="form-control" asp-for="S_Name" class="input" placeholder=" " />
+
+        <div class="cut"></div>
+       
+        <label for="S_Name" class="placeholder">Name:</label>
+      </div>
+      <div class="input-container ic2">
+      
+        <input type="email" class="form-control" asp-for="S_Email" placeholder=" " class="input" />
         <div class="cut"></div>
        
         <label for="S_Email" class="placeholder">Email:</label>
-    </div>
-  
- 
+      </div>
+    
+      
     <button type="submit" class="submit">Submit</button>
-</div>
+    </div>
 </form>
-</body>
