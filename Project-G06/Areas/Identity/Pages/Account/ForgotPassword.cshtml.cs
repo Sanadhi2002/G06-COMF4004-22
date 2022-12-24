@@ -15,12 +15,21 @@ namespace Project_G06.Areas.Identity.Pages.Account
     public class ForgotPasswordModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
+<<<<<<< HEAD
       
 
         public ForgotPasswordModel(UserManager<IdentityUser> userManager)
         {
             _userManager = userManager;
            
+=======
+      //  private readonly IEmailSender _emailSender;
+
+        public ForgotPasswordModel(UserManager<IdentityUser> userManager) //IEmailSender emailSender)
+        {
+            _userManager = userManager;
+            //_emailSender = emailSender;
+>>>>>>> f086d68202e4870c15265b3e2bdceb8a7948bce4
         }
 
         /// <summary>
@@ -66,8 +75,17 @@ namespace Project_G06.Areas.Identity.Pages.Account
                     values: new { area = "Identity", code },
                     protocol: Request.Scheme);
 
+<<<<<<< HEAD
             
                 return RedirectToPage("./ForgotPasswordConfirmation");
+=======
+             /*   await _emailSender.SendEmailAsync(
+                    Input.Email,
+                    "Reset Password",
+                    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                return RedirectToPage("./ForgotPasswordConfirmation");*/
+>>>>>>> f086d68202e4870c15265b3e2bdceb8a7948bce4
             }
 
             return Page();
