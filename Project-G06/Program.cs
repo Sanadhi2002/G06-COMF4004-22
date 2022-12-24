@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Project_G06.Data;
 using Microsoft.AspNetCore.Identity;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();

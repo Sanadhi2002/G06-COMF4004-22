@@ -27,6 +27,7 @@ namespace Project_G06.Controllers
 
 
 
+
         [HttpPost]
         public async Task<IActionResult> AddNew(Universities universities)
         {
@@ -54,6 +55,7 @@ namespace Project_G06.Controllers
 
             /*new part ends*/
             universityDbContext.RegisteredUniversities.Add(universities);
+            universityDbContext.FacultiesOfRegisteredUniversities.Add(university);
             universityDbContext.SaveChanges();
             return RedirectToAction("AddNew");
         }
@@ -75,8 +77,17 @@ namespace Project_G06.Controllers
             return View(registereduniversities);
         }
 
-      
-        
+
+        //test
+
+        [HttpGet]
+        public async Task<IActionResult> IndexF()
+        {
+            var facultiesList = await universityDbContext.FacultiesOfRegisteredUniversities.ToListAsync();
+            return View(facultiesList);
+        }
+
+
 
 
         [HttpPost]
