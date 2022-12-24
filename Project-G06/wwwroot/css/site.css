@@ -17,7 +17,7 @@ body {
   margin-bottom: 60px;
 }
 
-
+/*
 .Mynavbar {
     overflow: hidden;
     background-color: #333;
@@ -76,7 +76,7 @@ body {
 
 .Mynavbar_dropdown:hover .Mynavbar_dropdown-content {
     display: block;
-}
+}*/
 
 .table {
     border: solid 5px;
@@ -129,4 +129,7 @@ div #form{
     display:block;
     margin:0;
 
+}
+nav ul li a{
+    color:orange;
 }

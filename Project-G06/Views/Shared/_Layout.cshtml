@@ -12,23 +12,23 @@
 <body>
     <header>
     
-        <div class="Mynavbar">
+        <!--<div class="Mynavbar">
             <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-           <!-- <a asp-area="" asp-controller="WebAdmins" asp-action="Index">WebAdmin</a>-->
+            <a asp-area="" asp-controller="WebAdmins" asp-action="Index">WebAdmin</a>
             <a asp-area="" asp-controller="Home" asp-action="compare">Compare</a>
             <a asp-area="" asp-controller="UnivDashController1" asp-action="UnivDashBoard">Uni dash</a>
 
             <a asp-area="" asp-controller="Home" asp-action="UnivProfile">University Profile</a>
             <a asp-area="" asp-controller="Home" asp-action="aboutUs">About Us</a>
-            <a asp-area="" asp-controller="Universities" asp-action="AddNew">Registration for universities</a>
-            <a asp-area="" asp-controller="Universities" asp-action="Index">View Registered Universities</a>
+           <a asp-area="" asp-controller="Universities" asp-action="AddNew">Registration for universities</a>
+             <a asp-area="" asp-controller="Universities" asp-action="Index">View Registered Universities</a>
             <a asp-area="" asp-controller="Faculties" asp-action="AddFaculty">Add Faculties</a>
-            <a asp-area="" asp-controller="Faculties" asp-action="FacultyIndex">View Faculties</a>
+             <a asp-area="" asp-controller="Faculties" asp-action="FacultyIndex">View Faculties</a>
 
             <div class="Mynavbar_dropdown">
                 <button class="Mynavbar_dropbtn">
                     <a href="#">Register</a>
-                    <!--<i class="fa fa-caret-down"></i>-->
+                    <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="Mynavbar_dropdown-content">
                     <a asp-area="" asp-controller="Universities" asp-action="AddNew">Register your university</a>
@@ -39,7 +39,7 @@
             <div class="Mynavbar_dropdown">
                 <button class="Mynavbar_dropbtn">
                     <a href="#">Login</a>
-                    <!--<i class="fa fa-caret-down"></i>-->
+                    <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="Mynavbar_dropdown-content">
 
@@ -47,7 +47,50 @@
                 </div>
             </div>
             <partial name="_LoginPartial" />
-        </div>
+        </div>-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item" >
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link mx-0 " style="color:deeppink">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-area="" asp-controller="Home" asp-action="compare" class="nav-link mx-0" style="color:deeppink">Compare</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-area="" asp-controller="Home" asp-action="UnivProfile" class="nav-link mx-0" style="color:deeppink">University Profile</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link mx-0 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:deeppink">
+                                Register
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li> <a asp-area="" asp-controller="Universities" asp-action="AddNew" class="nav-link mx-0" style="color:deeppink">Register your university</a></li>
+                                <li> <a asp-area="" asp-controller="StudentEmail" asp-action="Add" class="nav-link mx-0" style="color:deeppink">Register your email</a></li>
+                               <!--<li>  <partial name="_LoginPartial" class="nav-link mx-2"></li>-->
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link mx-0 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Login
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>  <a asp-area="" asp-controller="Home" asp-action="LOGINSUPERADMIN" class="nav-link mx-0">LOGIN for super admin</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-area="" asp-controller="Home" asp-action="aboutUs" class="nav-link mx-0">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
  
     <div class="container">
@@ -55,6 +98,7 @@
             @RenderBody()
         </main>
     </div>
+ 
 
     <footer class="border-top footer text-muted">
         <div class="container">
