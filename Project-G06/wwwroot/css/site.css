@@ -7,7 +7,7 @@ header ,header ul li{
 
 }
 
- header ul li:hover{
+ header ul li a:hover{
         opacity:0.8;
     }
 
@@ -200,3 +200,5 @@ button:hover {
     margin: 24px 50px 12px;
     
 }
+
+
