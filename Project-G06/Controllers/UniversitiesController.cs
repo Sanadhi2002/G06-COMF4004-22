@@ -25,12 +25,16 @@ namespace Project_G06.Controllers
             return View();
         }
 
+        //testing validation
 
+        /*
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddNew(Universities universities)
         {
+
             var Hashed = Hashpassword(universities.Password);
 
           
@@ -41,27 +45,81 @@ namespace Project_G06.Controllers
                 Password = Hashed,
                 //     Password = universities.Password,
                 Date = universities.Date,
-              //  Password = universities.Password,   
-    
-               
-
+       
+           
             };
-            /*new part starts*/
+            //new part starts
             var user = await universityDbContext.RegisteredUniversities.FindAsync(universities.Name);
             if (user != null)
             {
                 return BadRequest("Username already exists");
             }
 
-            /*new part ends*/
+            //new part ends
             universityDbContext.RegisteredUniversities.Add(universities);
             universityDbContext.FacultiesOfRegisteredUniversities.Add(university);
             universityDbContext.SaveChanges();
             return RedirectToAction("AddNew");
         }
 
+        */
 
-       public  string Hashpassword(string pasword)
+
+        //testing validation
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddNew(Universities universities)
+        {
+            if (Modelstate.IsValid)
+            {
+
+                universityDbContext.RegisteredUniversities.Add(universities);
+                universityDbContext.SaveChanges();
+                return RedirectToAction("AddNew");
+            }
+
+            return View(universities);
+
+        }
+
+        //testing validation ends
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public string Hashpassword(string pasword)
         {
             SHA256 hash= SHA256.Create();
             var passwordbytes = Encoding.Default.GetBytes(pasword); 

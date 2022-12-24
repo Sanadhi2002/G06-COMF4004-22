@@ -11,22 +11,26 @@
     <div>
         <label>  Name</label>
         <input type="text" class="form-label" asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
     <div>
         <label> Email</label>
         <input type="email" class="form-label" asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
     </div>
 
 
     <div>
         <label> Password</label>
         <input type="text" class="form-label" asp-for="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
     </div>
 
     <div>
         <label> Date</label>
         <input type="date" class="form-label" asp-for="Date" />
+            <span asp-validation-for="Date" class="text-danger"></span>
     </div>
 
     <div>
