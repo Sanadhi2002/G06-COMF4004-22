@@ -31,7 +31,6 @@ builder.Services.AddDbContext<FacultyDbContext>(options => options.UseSqlServer(
 
 
 
-
 builder.Services.AddDbContext<UniversityDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection3")));
 var app = builder.Build();
 
