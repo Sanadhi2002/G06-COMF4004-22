@@ -72,7 +72,7 @@ namespace Project_G06.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddNew(Universities universities)
         {
-            if (Modelstate.IsValid)
+            if (ModelState.IsValid)
             {
 
                 universityDbContext.RegisteredUniversities.Add(universities);
@@ -141,7 +141,7 @@ namespace Project_G06.Controllers
         [HttpGet]
         public async Task<IActionResult> IndexF()
         {
-            var facultiesList = await universityDbContext.FacultiesOfRegisteredUniversities.ToListAsync();
+            var facultiesList = await universityDbContext.RegisteredUniversities.ToListAsync();
             return View(facultiesList);
         }
 

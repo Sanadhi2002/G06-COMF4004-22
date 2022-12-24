@@ -23,43 +23,22 @@
 </form>-->
 
 
-<!--<div class="form">
-   
-    <div >
-                <label for="S_Name">Name:</label>
-        <input type="text" class="form-control" asp-for="S_Name"  />
-        
-        
-    </div>
-    <div >
-                <label for="S_Email">Email:</label>
-        <input type="email" class="form-control" asp-for="S_Email" />
- 
-    </div>
-    <button type="submit" class="submit">Submit</button>
-</div>
--->
-<form method="post" action="Add">
- <div class="form">
-      <div class="title">Welcome</div>
-      <div class="subtitle">Let's Register your email</div>
-      <div class="input-container ic1">
-       
-        <input type="text" class="form-control" asp-for="S_Name" class="input" placeholder=" " />
 
-        <div class="cut"></div>
-       
-        <label for="S_Name" class="placeholder">Name:</label>
+<form method="post" action="Add" >
+   
+      <div class="formcontainer">
+        <h1>Sign Up</h1>
+      <div class="container">
+          
+            <label for="S_Name">Name:</label>
+            <input type="text" class="form-control" asp-for="S_Name" placeholder="Enter your name" />
+
+            <label for="S_Email">Email:</label>
+            <input type="email" class="form-control" asp-for="S_Email" placeholder="Email Address" />
       </div>
-      <div class="input-container ic2">
-      
-        <input type="email" class="form-control" asp-for="S_Email" placeholder=" " class="input" />
-        <div class="cut"></div>
-       
-        <label for="S_Email" class="placeholder">Email:</label>
+      <button type="submit">Sign Up</button>
+   
       </div>
-    
-      
-    <button type="submit" class="submit">Submit</button>
-    </div>
-</form>
+    </form>
+
+
