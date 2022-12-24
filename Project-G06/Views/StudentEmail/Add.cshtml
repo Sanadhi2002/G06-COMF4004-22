@@ -4,8 +4,8 @@
 @{
 }
 @model Project_G06.Models.StudentEmail
-<h1>Register your email here !!!!!!!!!!!!</h1>
-<form method="post" action="Add">
+
+<!--<form >
 
     <div class="mb-3">
         <label for="S_Name">Name:</label>
@@ -19,4 +19,29 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 
+
+</form>-->
+<body>
+<form method="post" action="Add">
+<div class="form">
+   
+    <div class="input-container ic1">
+       
+        <input type="text" class="form-control" asp-for="S_Name" class="input" />
+        <div class="cut"></div>
+      
+        <label for="S_Name" class="placeholder">Name:</label>
+    </div>
+    <div class="input-container ic2">
+    
+        <input type="email" class="form-control" asp-for="S_Email" class="input" />
+        <div class="cut"></div>
+       
+        <label for="S_Email" class="placeholder">Email:</label>
+    </div>
+  
+ 
+    <button type="submit" class="submit">Submit</button>
+</div>
 </form>
+</body>
