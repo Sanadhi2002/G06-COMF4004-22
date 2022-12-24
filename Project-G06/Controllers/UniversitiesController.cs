@@ -5,6 +5,8 @@ using Project_G06.Data;
 using System.Diagnostics.Tracing;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Project_G06.Controllers
 {
@@ -28,12 +30,19 @@ namespace Project_G06.Controllers
         [HttpPost]
         public async Task<IActionResult> AddNew(Universities universities)
         {
+            var Hashed = Hashpassword(universities.Password);
+
+          
             var university = new Universities()
             {
                 Name = universities.Name,
                 Email = universities.Email,
-                Password = universities.Password,
+                Password = Hashed,
+                //     Password = universities.Password,
                 Date = universities.Date,
+              //  Password = universities.Password,   
+    
+               
 
             };
             /*new part starts*/
@@ -50,7 +59,14 @@ namespace Project_G06.Controllers
         }
 
 
+       public  string Hashpassword(string pasword)
+        {
+            SHA256 hash= SHA256.Create();
+            var passwordbytes = Encoding.Default.GetBytes(pasword); 
+            var Hashedpassword =hash.ComputeHash(passwordbytes);
+            return Convert.ToHexString(Hashedpassword);
 
+        }
 
         [HttpGet]
         public async Task<IActionResult> Index()
