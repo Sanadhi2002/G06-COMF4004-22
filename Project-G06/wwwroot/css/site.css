@@ -1,3 +1,4 @@
+
 html {
   font-size: 14px;
 }
@@ -118,15 +119,33 @@ body {
 }
 
 
-#form1{
-    display:inline-block;
-    margin-left:auto;
-    margin-right:auto;
-    text-align:left;
-    width:100%;
-}
-div #form{
+#form1 {
+    margin:auto ;
+   justify-content:center;
     display:block;
-    margin:0;
+    border:black 1px solid;
+    padding:10px;
+    width:500px;
+
 
 }
+
+#form1 input{
+    display:flex;
+    flex-direction:column;
+    height: 50px;
+    width:400px;
+    align-items:center;
+    background-color:lightgrey;
+    border-radius:6px;
+   
+
+}
+    #form1 button {
+        background-color: dodgerblue;
+        height: 50px;
+        width: 400px;
+    }
+
+
+

@@ -61,3 +61,7 @@ function addnewDegree() {
 
 
 
+//university registration page
+
+
+
