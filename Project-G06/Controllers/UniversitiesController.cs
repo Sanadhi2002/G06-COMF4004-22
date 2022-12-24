@@ -96,6 +96,12 @@ namespace Project_G06.Controllers
         }
 
 
+  
+        public IActionResult IndexFaculties()
+        {
+            return View();
+        }
+
 
 
     }
