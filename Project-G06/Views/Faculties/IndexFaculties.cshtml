@@ -1,5 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<Project_G06.Models.Faculties>
 @{
 }
+
+<h1>Faculties</h1>
+
+<table >
+    <thead>
+        <tr>
+            <th>Name of the facukty</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach  (var faculty in Model)
+        {
+            <tr>
+                <td>@faculty.F_Name</td>
+            </tr>
+        }
+  
+    </tbody>
+</table>
