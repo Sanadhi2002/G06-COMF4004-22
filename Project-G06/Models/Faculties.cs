@@ -1,7 +1,15 @@
-﻿namespace Project_G06.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Project_G06.Models
 {
     public class Faculties
     {
-        public string  Name { get; set; }
+        [Key]
+        public Guid GuidId { get; set; }
+
+        
+
+        public string  F_Name { get; set; }
+
     }
 }

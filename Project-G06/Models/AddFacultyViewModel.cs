@@ -2,6 +2,6 @@
 {
     public class AddFacultyViewModel
     {
-        public string Name { get; set; }
+        public string F_Name { get; set; }
     }
 }

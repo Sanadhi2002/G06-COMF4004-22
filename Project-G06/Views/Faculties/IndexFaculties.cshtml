@@ -1,21 +1,22 @@
-﻿@model List< Project_G06.Models.Faculties>
+﻿@model List<Project_G06.Models.Faculties>
 @{
 }
-<h1>faculty list</h1>
-<table class="table">
+
+<h1>Faculties</h1>
+
+<table >
     <thead>
         <tr>
-            <th>Faculty Name</th>
+            <th>Name of the facukty</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var faculties in Model)
+        @foreach  (var faculty in Model)
         {
             <tr>
-                <td>@faculties.Name</td>
-                <td><a href="Faculties/view/@faculties.Name">View</a></td>
+                <td>@faculty.F_Name</td>
             </tr>
         }
-        
-</tbody>
+  
+    </tbody>
 </table>

@@ -1,10 +1,18 @@
 
 html {
-  font-size: 14px;
+    font-size: 14px;
+}
+header ,header ul li{
+    font-size:20px;
+
 }
 
-@media (min-width: 768px) {
-  html {
+ header ul li a:hover{
+        opacity:0.8;
+    }
+
+ @media (min-width: 768px) {
+        html {
     font-size: 16px;
   }
 }
@@ -15,7 +23,11 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    
+    
+    
+    
 }
 
 
@@ -146,6 +158,81 @@ body {
         height: 50px;
         width: 400px;
     }
+
+
+
+form {
+    border: 5px solid #f1f1f1;
+    display: flex;
+    justify-content: center;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 16px 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #c21524;
+    color: white;
+    padding: 14px 0;
+    margin: 10px 0;
+    border: none;
+    cursor: grabbing;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 18px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.formcontainer {
+    text-align: left;
+    margin: 24px 50px 12px;
+    
+}
+
+input[type=text] {
+    width: 320px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    // outline: 0;
+    text-align: center;
+    width: 100%;
+}
+
+    .submit:active {
+        background-color: #06b;
+    }
+
+#StudentEmail{
+    align-items: center;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
 
 
 

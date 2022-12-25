@@ -11,5 +11,8 @@ namespace Project_G06.Data
         }
 
         public DbSet<Universities> RegisteredUniversities { get; set; }
+
     }
+
+    
 }

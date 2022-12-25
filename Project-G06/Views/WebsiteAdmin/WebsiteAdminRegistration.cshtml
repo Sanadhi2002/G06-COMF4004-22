@@ -5,24 +5,40 @@
 }
 @model Project_G06.Models.WebsiteAdmin
 
-<h1>WEB ADMIN REg</h1>
-<form method="post" action=" WebsiteAdminRegistration">
 
-    <div class="mb-3">
+ <!--<form method="post" action=" WebsiteAdminRegistration">
+
+    <div >
     <label for="W_UserName">Username:</label>
-    <input type="text"  class="form-control" asp-for="W_UserName"/>
+    <input type="text"  asp-for="W_UserName" placeholder="Username"/>
     </div>
 
-    <div class="mb-3">
+    <div >
     <label for="W_Email">Email:</label>
-    <input type="email" class="form-control" asp-for="W_Email"/>
+    <input type="email"  asp-for="W_Email" placeholder="Email Address"/>
     </div>
 
-    <div class="mb-3">
+    <div >
     <label for="W_Password">Password:</label>
-    <input type="text" class="form-control"  asp-for="W_Password"/>
+    <input type="text"   asp-for="W_Password" placeholder="Password"/>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 
-</form>
+</form>-->
+
+<form method="post" action=" WebsiteAdminRegistration" >
+     
+      <div class="formcontainer">
+        <h1>Webadmin registration </h1>
+      <div class="container">
+            <label for="W_Email">Email:</label>
+            <input type="email" asp-for="W_Email" placeholder="Email Address" class="form-control"/>
+        
+            <label for="W_Password">Password:</label>
+            <input type="text" asp-for="W_Password" placeholder="Password" class="form-control" />
+      </div>
+      <button type="submit">Register</button>
+   
+      </div>
+    </form>

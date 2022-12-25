@@ -27,7 +27,9 @@ namespace Project_G06.Controllers
 
 
 
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddNew(Universities universities)
         {
             //var Hashed = Hashpassword(universities.Password);
@@ -40,20 +42,19 @@ namespace Project_G06.Controllers
                // Password = Hashed,
                 Password = universities.Password,
                 Date = universities.Date,
-              //  Password = universities.Password,   
-    
-               
-
+       
+           
             };
-            /*new part starts*/
+            //new part starts
             var user = await universityDbContext.RegisteredUniversities.FindAsync(universities.Name);
             if (user != null)
             {
                 return BadRequest("Username already exists");
             }
 
-            /*new part ends*/
+            //new part ends
             universityDbContext.RegisteredUniversities.Add(universities);
+            universityDbContext.FacultiesOfRegisteredUniversities.Add(university);
             universityDbContext.SaveChanges();
             return RedirectToAction("AddNew");
         }
@@ -75,8 +76,17 @@ namespace Project_G06.Controllers
             return View(registereduniversities);
         }
 
-      
-        
+
+        //test
+
+        [HttpGet]
+        public async Task<IActionResult> IndexF()
+        {
+            var facultiesList = await universityDbContext.RegisteredUniversities.ToListAsync();
+            return View(facultiesList);
+        }
+
+
 
 
         [HttpPost]
@@ -95,6 +105,12 @@ namespace Project_G06.Controllers
 
         }
 
+
+  
+        public IActionResult IndexFaculties()
+        {
+            return View();
+        }
 
 
 
