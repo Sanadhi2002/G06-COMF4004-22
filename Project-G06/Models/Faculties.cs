@@ -1,12 +1,15 @@
-﻿
-
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Project_G06.Models
 {
     public class Faculties
     {
         [Key]
-        public string  Name { get; set; }
+        public Guid GuidId { get; set; }
+
+        
+
+        public string  F_Name { get; set; }
+
     }
 }

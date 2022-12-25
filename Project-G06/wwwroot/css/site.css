@@ -206,9 +206,40 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
+<<<<<<< HEAD
     /* When the input field gets focus, change its width to 100% */
     input[type=text]:focus {
         width: 100%;
     }
 
+=======
+.submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    // outline: 0;
+    text-align: center;
+    width: 100%;
+}
+
+    .submit:active {
+        background-color: #06b;
+    }
+
+#StudentEmail{
+    align-items: center;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+>>>>>>> f50701102a802a450f106c83a81817f4e9563f63
 

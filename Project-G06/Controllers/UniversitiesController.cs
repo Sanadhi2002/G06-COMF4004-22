@@ -25,25 +25,22 @@ namespace Project_G06.Controllers
             return View();
         }
 
-        //testing validation
 
-        /*
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddNew(Universities universities)
         {
-
-            var Hashed = Hashpassword(universities.Password);
+            //var Hashed = Hashpassword(universities.Password);
 
           
             var university = new Universities()
             {
                 Name = universities.Name,
                 Email = universities.Email,
-                Password = Hashed,
-                //     Password = universities.Password,
+               // Password = Hashed,
+                Password = universities.Password,
                 Date = universities.Date,
        
            
@@ -62,71 +59,15 @@ namespace Project_G06.Controllers
             return RedirectToAction("AddNew");
         }
 
-        */
-
-
-        //testing validation
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddNew(Universities universities)
-        {
-            if (ModelState.IsValid)
-            {
-
-                universityDbContext.RegisteredUniversities.Add(universities);
-                universityDbContext.SaveChanges();
-                return RedirectToAction("AddNew");
-            }
-
-            return View(universities);
-
-        }
-
-        //testing validation ends
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public string Hashpassword(string pasword)
+        /*
+       public  string Hashpassword(string pasword)
         {
             SHA256 hash= SHA256.Create();
             var passwordbytes = Encoding.Default.GetBytes(pasword); 
             var Hashedpassword =hash.ComputeHash(passwordbytes);
             return Convert.ToHexString(Hashedpassword);
 
-        }
+        }*/
 
         [HttpGet]
         public async Task<IActionResult> Index()
