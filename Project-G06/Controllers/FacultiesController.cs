@@ -35,11 +35,16 @@ namespace Project_G06.Controllers
 
             await facultyDbContext.Faculties.AddAsync(faculty);
             await facultyDbContext.SaveChangesAsync();
-            return RedirectToAction("AddFaculty");
+            return RedirectToAction("IndexFaculty");
 
         }
 
-       
+        [HttpGet]
+        public async Task < IActionResult> IndexFaculties()
+        {
+            var faculties = await facultyDbContext.Faculties.ToListAsync();
+            return View(faculties);  
+        }
     }
 }
         
