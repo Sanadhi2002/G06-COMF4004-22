@@ -25,9 +25,7 @@ namespace Project_G06.Controllers
             return View();
         }
 
-        //testing validation
 
-        /*
 
 
         [HttpPost]
@@ -62,29 +60,10 @@ namespace Project_G06.Controllers
             return RedirectToAction("AddNew");
         }
 
-        */
+       
 
 
-        //testing validation
 
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddNew(Universities universities)
-        {
-            if (ModelState.IsValid)
-            {
-
-                universityDbContext.RegisteredUniversities.Add(universities);
-                universityDbContext.SaveChanges();
-                return RedirectToAction("AddNew");
-            }
-
-            return View(universities);
-
-        }
-
-        //testing validation ends
 
 
 

@@ -27,6 +27,12 @@
             <span asp-validation-for="Password" class="text-danger"></span>
     </div>
 
+        <div>
+            <label> Confirm Password</label>
+            <input type="text" class="form-label" asp-for="ConfirmPassword"  />
+            <span asp-validation-for="ConfirmPassword" class="text-danger" ></span>
+        </div>
+
     <div>
         <label> Date</label>
         <input type="date" class="form-label" asp-for="Date" />
@@ -34,7 +40,14 @@
     </div>
 
     <div>
-        <button>Submit</button>
+        <button asp-action="AddNew" asp-controller="Universities"> Submit</button>
     </div>
 </form>
 </div>
+
+
+
+@section Scripts{
+    @{    <partial name="_ValidationScriptsPartial" />
+}
+}
