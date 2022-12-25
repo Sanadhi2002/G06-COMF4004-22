@@ -70,22 +70,6 @@ namespace Project_G06.Controllers
 
 
 
-            return RedirectToAction("IndexFaculties");
-
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> View (UpdateFacultyViewModel model)
-        {
-            var faculty = await facultyDbContext.Faculties.FindAsync(model.Name);
-            if (faculty != null)
-            {
-                faculty.Name = model.Name;
-                await facultyDbContext.SaveChangesAsync();
-                return RedirectToAction("IndexFaculties");
-            };
-
-            return RedirectToAction("IndexFaculties");
         }
 
 
