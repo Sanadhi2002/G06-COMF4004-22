@@ -30,15 +30,15 @@ namespace Project_G06.Controllers
         [HttpPost]
         public async Task<IActionResult> AddNew(Universities universities)
         {
-            var Hashed = Hashpassword(universities.Password);
+            //var Hashed = Hashpassword(universities.Password);
 
           
             var university = new Universities()
             {
                 Name = universities.Name,
                 Email = universities.Email,
-                Password = Hashed,
-                //     Password = universities.Password,
+               // Password = Hashed,
+                Password = universities.Password,
                 Date = universities.Date,
               //  Password = universities.Password,   
     
@@ -58,7 +58,7 @@ namespace Project_G06.Controllers
             return RedirectToAction("AddNew");
         }
 
-
+        /*
        public  string Hashpassword(string pasword)
         {
             SHA256 hash= SHA256.Create();
@@ -66,7 +66,7 @@ namespace Project_G06.Controllers
             var Hashedpassword =hash.ComputeHash(passwordbytes);
             return Convert.ToHexString(Hashedpassword);
 
-        }
+        }*/
 
         [HttpGet]
         public async Task<IActionResult> Index()
