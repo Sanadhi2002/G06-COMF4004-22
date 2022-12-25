@@ -54,7 +54,7 @@ namespace Project_G06.Controllers
 
             //new part ends
             universityDbContext.RegisteredUniversities.Add(universities);
-            universityDbContext.FacultiesOfRegisteredUniversities.Add(university);
+            
             universityDbContext.SaveChanges();
             return RedirectToAction("AddNew");
         }
