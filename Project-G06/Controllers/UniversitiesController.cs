@@ -52,28 +52,18 @@ namespace Project_G06.Controllers
                 return BadRequest("Username already exists");
             }
 
-            //new part ends
+
             universityDbContext.RegisteredUniversities.Add(universities);
-<<<<<<< HEAD
-            
-=======
-           
->>>>>>> add crud operations
+
             universityDbContext.SaveChanges();
             return RedirectToAction("AddNew");
         }
 
-<<<<<<< HEAD
+
         /*
-       public  string Hashpassword(string pasword)
-=======
-       
-
-
-
 
         public string Hashpassword(string pasword)
->>>>>>> add crud operations
+
         {
             SHA256 hash= SHA256.Create();
             var passwordbytes = Encoding.Default.GetBytes(pasword); 
@@ -148,17 +138,8 @@ namespace Project_G06.Controllers
 
 
 
-
-
-
-
-
-
-
-
-
         [HttpPost]
-        public async Task<IActionResult> Delete(UpdateUniversityViewModel model)
+        public async Task<IActionResult> Delete(UpdateUniversity model)
         {
             var university = await universityDbContext.RegisteredUniversities.FindAsync(model.Name);
             if (university != null)
@@ -169,7 +150,7 @@ namespace Project_G06.Controllers
                 return RedirectToAction("Index");
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("AddNew");
 
         }
 
