@@ -239,15 +239,22 @@ input[type=text] {
     font-size: 18px;
     height: 50px;
     margin-top: 38px;
-    // outline: 0;
+    /*outline: 0;*/
     text-align: center;
     width: 100%;
 }
 
-    .submit:active {
+.submit:active {
         background-color: #06b;
     }
 
+.Container{
+    border:1px solid black;
+    display:flex;
+    flex-direction:column;
+    height:auto;
+    overflow:hidden;
+}
 
 
 
