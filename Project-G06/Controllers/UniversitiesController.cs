@@ -54,13 +54,26 @@ namespace Project_G06.Controllers
 
             //new part ends
             universityDbContext.RegisteredUniversities.Add(universities);
+<<<<<<< HEAD
             
+=======
+           
+>>>>>>> add crud operations
             universityDbContext.SaveChanges();
             return RedirectToAction("AddNew");
         }
 
+<<<<<<< HEAD
         /*
        public  string Hashpassword(string pasword)
+=======
+       
+
+
+
+
+        public string Hashpassword(string pasword)
+>>>>>>> add crud operations
         {
             SHA256 hash= SHA256.Create();
             var passwordbytes = Encoding.Default.GetBytes(pasword); 
@@ -86,6 +99,61 @@ namespace Project_G06.Controllers
             return View(facultiesList);
         }
 
+        [HttpGet]
+        public async Task <IActionResult> View(string name)
+        {
+            var university =await  universityDbContext.RegisteredUniversities.FirstOrDefaultAsync(x => x.Name == name);
+       
+            if (university != null) {
+
+
+            var viewmodel = new UpdateUniversity()
+             {
+               Name = university.Name,
+              Email = university.Email,
+              Password = university.Password,
+              ConfirmPassword = university.ConfirmPassword,
+              Date = university.Date
+    
+            };
+                return await Task.Run(() => View("View" , viewmodel));
+
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> View (UpdateUniversity model)
+        {
+            var university = await universityDbContext.RegisteredUniversities.FindAsync(model.Name);
+            if (university != null)
+            {
+                university.Name = model.Name;
+                university.Email = model.Email;
+                university.Password = model.Password;
+                university.ConfirmPassword = model.ConfirmPassword;
+                university.Date = model.Date;
+
+                await universityDbContext.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+                  
+
+            }
+
+
+            return RedirectToAction("Index");
+        }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -107,10 +175,6 @@ namespace Project_G06.Controllers
 
 
   
-        public IActionResult IndexFaculties()
-        {
-            return View();
-        }
 
 
 
