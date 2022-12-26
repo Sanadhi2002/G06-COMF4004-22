@@ -21,7 +21,7 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-color:#D7CEC7;
+;
     
     
     
@@ -93,7 +93,7 @@ body {
     border: solid 5px;
     border-color: black;
 }
-
+/*
 .container {
     border-collapse: collapse;
     display: flex;
@@ -103,13 +103,9 @@ body {
     gap:20px;
     margin:10px;
 
-}
+}*/
 
-.con {
-    Width: 350px;
-    border: 1px solid black;
-   
-}
+
 .image {
     height: 200px;
       
@@ -123,10 +119,17 @@ body {
     border-radius: 15px;
     color:#ddd;
 }
-#adminlogin {
+#buttons {
     background: black;
-    color:azure;
+    color: azure;
+    margin: 30px 20px;
+    width: 30%;
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 10px;
 }
+    #buttons:hover {
+        border: 2px solid silver;
+    }
 
 
 #form1 {
@@ -160,17 +163,18 @@ body {
 
 
 .forms {
+    align-items: center;
+    justify-content: center;
+    width: 40%;
     border: 5px solid #f1f1f1;
     display: flex;
     overflow: hidden;
-    
     padding: 80px;
-   
     border-radius: 15px;
-     
-   margin-top:80px;
-  
-  
+    background-color: #26282A;
+    color:white;
+    margin-top: 80px;
+    margin-left: 30%;
 }
 
 input[type=text], input[type=password] {
@@ -192,16 +196,8 @@ button {
     width: 30%;
     align-items:center;
 }
-.SignUpBtn {
-    background-color: #c21524;
-    color: white;
-    padding: 14px 0;
-    margin: 10px 20px;
-    border: none;
-    cursor: grabbing;
-    width: 30%;
-    align-items: center;
-}
+
+
 
 h1 {
     text-align: center;
@@ -209,7 +205,10 @@ h1 {
 }
 
 button:hover {
-    opacity: 0.8;
+    background:#D7CEC7;
+    color:#000000;
+    border-radius:5px;
+    box-shadow:0 0 5px #D3D3D3;
 }
 
 .formcontainer {
@@ -248,7 +247,6 @@ input[type=text] {
     .submit:active {
         background-color: #06b;
     }
-
 
 
 
