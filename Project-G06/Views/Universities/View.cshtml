@@ -1,0 +1,46 @@
+﻿@model Project_G06.Models.UpdateUniversity
+
+@{
+
+}
+
+<h1> Edit</h1>
+<div id="form">
+    <form action="View" method="post" id="form1">
+        <div>
+            <label>  Name</label>
+            <input type="text" class="form-label" asp-for="Name"  readonly/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label> Email</label>
+            <input type="email" class="form-label" asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+
+        <div>
+            <label> Password</label>
+            <input type="text" class="form-label" asp-for="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label> Confirm Password</label>
+            <input type="text" class="form-label" asp-for="ConfirmPassword" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label> Date</label>
+            <input type="date" class="form-label" asp-for="Date" />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+
+        <div>
+            <button type="submit" asp-action="AddNew" asp-controller="Universities"> Submit</button>
+            <button asp-action="Delete" asp-controller ="Universities">Delete </button>
+        </div>
+    </form>
+</div>

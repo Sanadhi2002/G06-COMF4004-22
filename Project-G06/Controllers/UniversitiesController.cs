@@ -52,15 +52,18 @@ namespace Project_G06.Controllers
                 return BadRequest("Username already exists");
             }
 
-            //new part ends
+
             universityDbContext.RegisteredUniversities.Add(universities);
-            
+
             universityDbContext.SaveChanges();
             return RedirectToAction("AddNew");
         }
 
+
         /*
-       public  string Hashpassword(string pasword)
+
+        public string Hashpassword(string pasword)
+
         {
             SHA256 hash= SHA256.Create();
             var passwordbytes = Encoding.Default.GetBytes(pasword); 
@@ -86,11 +89,57 @@ namespace Project_G06.Controllers
             return View(facultiesList);
         }
 
+        [HttpGet]
+        public async Task <IActionResult> View(string name)
+        {
+            var university =await  universityDbContext.RegisteredUniversities.FirstOrDefaultAsync(x => x.Name == name);
+       
+            if (university != null) {
+
+
+            var viewmodel = new UpdateUniversity()
+             {
+               Name = university.Name,
+              Email = university.Email,
+              Password = university.Password,
+              ConfirmPassword = university.ConfirmPassword,
+              Date = university.Date
+    
+            };
+                return await Task.Run(() => View("View" , viewmodel));
+
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> View (UpdateUniversity model)
+        {
+            var university = await universityDbContext.RegisteredUniversities.FindAsync(model.Name);
+            if (university != null)
+            {
+                university.Name = model.Name;
+                university.Email = model.Email;
+                university.Password = model.Password;
+                university.ConfirmPassword = model.ConfirmPassword;
+                university.Date = model.Date;
+
+                await universityDbContext.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+                  
+
+            }
+
+
+            return RedirectToAction("Index");
+        }
+
 
 
 
         [HttpPost]
-        public async Task<IActionResult> Delete(UpdateUniversityViewModel model)
+        public async Task<IActionResult> Delete(UpdateUniversity model)
         {
             var university = await universityDbContext.RegisteredUniversities.FindAsync(model.Name);
             if (university != null)
@@ -101,16 +150,12 @@ namespace Project_G06.Controllers
                 return RedirectToAction("Index");
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("AddNew");
 
         }
 
 
   
-        public IActionResult IndexFaculties()
-        {
-            return View();
-        }
 
 
 
