@@ -101,18 +101,6 @@ namespace Project_G06.Controllers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         [HttpPost]
         public async Task<IActionResult> View (UpdateUniversity model)
         {

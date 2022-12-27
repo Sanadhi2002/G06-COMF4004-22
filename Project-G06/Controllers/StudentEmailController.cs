@@ -29,12 +29,24 @@ namespace Project_G06.Controllers
                 S_Name = studentEmail.S_Name,
 
             };
+            if ()
+            {
+                studentEmailDbContext.StudentEmails.Add(studentEmail);
+                studentEmailDbContext.SaveChanges();
+                return RedirectToAction("Add");
 
-            studentEmailDbContext.StudentEmails.Add(studentEmail);
+            }
+            else
+            {
+                return RedirectToAction("Add");
+            }
+          /*  studentEmailDbContext.StudentEmails.Add(studentEmail);
             studentEmailDbContext.SaveChanges();
-            return RedirectToAction("Add");
+            return RedirectToAction("Add");*/
 
 
         }
+
+       
     }
 }
