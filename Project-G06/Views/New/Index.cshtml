@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Category> //category is the name of the model
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>University Index</h1>
+
+
+
+<div>
+    <div>
+        <a asp-controller="New" asp-action="Create" class="btn btn-primary">Register a new University</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+<thead>
+    <tr>
+        <th>University ID</th>
+        <th>University Name</th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+        @foreach (var obj in Model /*model at the top of the page /  /*include the get action*/)
+        {
+            <tr>
+                <td width="50%">
+                    @obj.Id
+                </td>
+                <td width="50%">
+                    @obj.Name
+                </td>
+                <td>
+                    <div>
+                        <a asp-controller="New" asp-action="Edit" asp-route-id="@obj.Id"> Edit</a>
+                        </div>
+
+                    <div>
+                        <a asp-controller="New" asp-action="Delete" asp-route-id="@obj.Id"> Delete</a>
+                     
+                    </div>
+
+                </td>
+            </tr>
+        }
+
+</tbody>
+
+
+
+
+
+
+
+</table>

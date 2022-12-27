@@ -25,6 +25,7 @@ builder.Services.AddDbContext<UniProfileDbContext>(options => options.UseSqlServ
     builder.Configuration.GetConnectionString("UniProfileConnection")
     ));
 
+builder.Services.AddDbContext<CategoryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CategoryConnection")));
 
 
 

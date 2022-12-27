@@ -1,0 +1,25 @@
+﻿@model Category
+<form method="post" asp-action="Edit">
+    <div>
+        <div>
+            <h2> page to Edit in the university details during registration !</h2>
+        </div>
+    </div>
+   
+       
+        <div>
+           <label asp-for="Name">Name</label>
+           <input asp-for="Name">
+           <span asp-validation-for="Name"></span>
+           </div>
+
+           <button type="submit">Update</button>
+           <a asp-controller="New" asp-action="Index">Navigate to list</a>
+
+</form>
+
+@section Scripts{
+    @{
+<partial name="_ValidationScriptsPartial"/>
+}
+}
