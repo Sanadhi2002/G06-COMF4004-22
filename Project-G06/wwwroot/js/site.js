@@ -62,5 +62,15 @@ function addnewDegree() {
 
 
 //university registration page
+function myFunction() {
+    console.log("password check")
+    var x = document.getElementById("PASS");
+    if (x.type === "password ") {
+        x.type = "text";
+    }
+    else {
+        x.type = "password";
+    }
 
+}
 
