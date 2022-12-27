@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Project_G06.Controllers
 {
@@ -150,7 +151,68 @@ namespace Project_G06.Controllers
         }
         */
 
-  
+
+        public IActionResult Edit(string Name)
+        {
+            if (Name == null)
+            {
+                return NotFound();
+            }
+            var universityFromDb = universityDbContext.RegisteredUniversities.Find(Name);
+            //var universityFromDbFirst = universityDbContext.RegisteredUniversities.FirstOrDefault(x => x.Name == Name); 
+           // var universityFromDbSingle = universityDbContext.RegisteredUniversities.SingleOrDefault(x => x.Name == Name);   
+   
+            return View(universityFromDb);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Universities universities)
+        { 
+            if (ModelState.IsValid)
+            {
+                universityDbContext.RegisteredUniversities.Update(universities);
+                universityDbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(universities);
+        }
+
+
+
+
+        public IActionResult Delete(string Name)
+        {
+            if (Name == null)
+            {
+                return NotFound();
+            }
+            var universityFromDb = universityDbContext.RegisteredUniversities.Find(Name);
+            //var universityFromDbFirst = universityDbContext.RegisteredUniversities.FirstOrDefault(x => x.Name == Name); 
+            // var universityFromDbSingle = universityDbContext.RegisteredUniversities.SingleOrDefault(x => x.Name == Name);   
+
+            return View(universityFromDb);
+        }
+
+
+
+
+
+        [HttpPost]
+     //   [ValidateAntiForgeryToken]
+        public IActionResult DeletePost(string Name)
+        {
+            var obj = universityDbContext.RegisteredUniversities.Find(Name);
+            universityDbContext.RegisteredUniversities.Remove(obj);
+            universityDbContext.SaveChanges();
+            return RedirectToAction("Index");   
+
+          
+        }
+
+
+
 
 
 

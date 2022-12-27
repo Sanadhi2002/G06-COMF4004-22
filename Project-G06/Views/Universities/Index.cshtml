@@ -10,6 +10,7 @@
             <th>Password</th>
             <th>Date</th>
             <th> </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -21,9 +22,11 @@
                 <td>@university.Password</td>
                 <td>@university.Date.ToString("dd/mm/yy")</td>
                 <td><a href="University/View/@university.Name">View</a></td>
-                <td><button type="submit" asp-action="View" asp-controller="Universities">View</button></td>
-             
-                <td><button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Universities"> Delete</button></td>
+                <td><a asp-controller="Universities" asp-action="Edit" asp-route-id="@university.Name">Edit</a></td>
+
+                <td><a asp-controller="Universities" asp-action="Delete" asp-route-id="@university.Name">Delete</a></td>
+
+
             </tr>
         }
 

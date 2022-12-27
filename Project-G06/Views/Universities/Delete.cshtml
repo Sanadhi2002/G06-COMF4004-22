@@ -1,5 +1,47 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Universities
+
+<h1> Delete</h1>
+<div id="form">
+    <form method="post" asp-action="DeletePost" id="form1">
+        <input asp-for="Name" hidden />
+        <div>
+            <label>  Name</label>
+            <input type="text" class="form-label" asp-for="Name"  disabled/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label> Email</label>
+            <input type="email" class="form-label" asp-for="Email"  disabled/>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+
+        <div>
+            <label> Password</label>
+            <input type="password" class="form-label" asp-for="Password" id="PASS" />
+            <input disabled type="checkbox" onclick="myfunction()" />Show Password
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+
+
+        <div>
+            <label> Confirm Password</label>
+            <input type="password" class="form-label" asp-for="ConfirmPassword" id="PASS" />
+            <input type="checkbox" onclick="myfunction()" disabled />Show Password
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label> Date</label>
+            <input type="date" class="form-label" asp-for="Date" disabled />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+
+        <div>
+            <button type="submit"> Delete</button>
+        </div>
+    </form>
+</div>
+
