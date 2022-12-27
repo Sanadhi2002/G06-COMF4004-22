@@ -82,12 +82,7 @@ namespace Project_G06.Controllers
 
         //test
 
-        [HttpGet]
-        public async Task<IActionResult> IndexF()
-        {
-            var facultiesList = await universityDbContext.RegisteredUniversities.ToListAsync();
-            return View(facultiesList);
-        }
+       /*
 
         [HttpGet]
         public async Task <IActionResult> View(string name)
@@ -153,7 +148,7 @@ namespace Project_G06.Controllers
             return RedirectToAction("AddNew");
 
         }
-
+        */
 
   
 

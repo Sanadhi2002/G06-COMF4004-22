@@ -23,13 +23,17 @@
 
     <div>
         <label> Password</label>
-        <input type="text" class="form-label" asp-for="Password" />
+        <input type="password" class="form-label" asp-for="Password" id="PASS" />
+        <input type="checkbox"onclick="myfunction()" />Show Password
             <span asp-validation-for="Password" class="text-danger"></span>
     </div>
 
+
+
         <div>
             <label> Confirm Password</label>
-            <input type="text" class="form-label" asp-for="ConfirmPassword"  />
+            <input type="password" class="form-label" asp-for="ConfirmPassword"  id="PASS" />
+            <input type="checkbox" onclick="myfunction()" />Show Password
             <span asp-validation-for="ConfirmPassword" class="text-danger" ></span>
         </div>
 

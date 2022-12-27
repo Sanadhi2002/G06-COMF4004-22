@@ -12,6 +12,10 @@ namespace Project_G06.Data
 
         public DbSet<Universities> RegisteredUniversities { get; set; }
 
+        internal object Find(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     
