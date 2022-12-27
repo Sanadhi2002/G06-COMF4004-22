@@ -29,48 +29,37 @@ namespace Project_G06.Controllers
 
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+   
         public async Task<IActionResult> AddNew(Universities universities)
         {
             //var Hashed = Hashpassword(universities.Password);
 
-          
+
             var university = new Universities()
             {
                 Name = universities.Name,
                 Email = universities.Email,
-               // Password = Hashed,
+                // Password = Hashed,
                 Password = universities.Password,
+                ConfirmPassword = universities.ConfirmPassword,
                 Date = universities.Date,
-       
-           
+
+
             };
             //new part starts
-            var user = await universityDbContext.RegisteredUniversities.FindAsync(universities.Name);
-            if (user != null)
-            {
-                return BadRequest("Username already exists");
-            }
 
 
-            universityDbContext.RegisteredUniversities.Add(universities);
 
-            universityDbContext.SaveChanges();
-            return RedirectToAction("AddNew");
+            await universityDbContext.RegisteredUniversities.AddAsync(university);
+
+            await universityDbContext.SaveChangesAsync();
+            return RedirectToAction("Index");
+
+        
         }
 
 
-        /*
 
-        public string Hashpassword(string pasword)
-
-        {
-            SHA256 hash= SHA256.Create();
-            var passwordbytes = Encoding.Default.GetBytes(pasword); 
-            var Hashedpassword =hash.ComputeHash(passwordbytes);
-            return Convert.ToHexString(Hashedpassword);
-
-        }*/
 
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -80,37 +69,49 @@ namespace Project_G06.Controllers
         }
 
 
-        //test
+  
 
-        [HttpGet]
-        public async Task<IActionResult> IndexF()
-        {
-            var facultiesList = await universityDbContext.RegisteredUniversities.ToListAsync();
-            return View(facultiesList);
-        }
+     
 
-        [HttpGet]
-        public async Task <IActionResult> View(string name)
-        {
-            var university =await  universityDbContext.RegisteredUniversities.FirstOrDefaultAsync(x => x.Name == name);
+
        
-            if (university != null) {
+        [HttpGet]
+        public async Task<IActionResult>View(string name)
+        {
 
-
-            var viewmodel = new UpdateUniversity()
-             {
-               Name = university.Name,
-              Email = university.Email,
-              Password = university.Password,
-              ConfirmPassword = university.ConfirmPassword,
-              Date = university.Date
-    
-            };
-                return await Task.Run(() => View("View" , viewmodel));
-
+            var singleuniversity = await  universityDbContext.RegisteredUniversities.FirstOrDefaultAsync(x => x.Name == name);
+            if (singleuniversity != null)
+            {
+                var viewModel = new UpdateUniversity()
+                {
+                    Name = singleuniversity.Name,
+                    Email = singleuniversity.Email,
+                    // Password = Hashed,
+                    Password = singleuniversity.Password,
+                    ConfirmPassword = singleuniversity.ConfirmPassword,
+                    Date = singleuniversity.Date,
+                };
+                return await View(viewModel);
             }
+         
+         
             return RedirectToAction("Index");
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         [HttpPost]
         public async Task<IActionResult> View (UpdateUniversity model)
@@ -135,9 +136,7 @@ namespace Project_G06.Controllers
             return RedirectToAction("Index");
         }
 
-
-
-
+       
         [HttpPost]
         public async Task<IActionResult> Delete(UpdateUniversity model)
         {
@@ -150,12 +149,14 @@ namespace Project_G06.Controllers
                 return RedirectToAction("Index");
             }
 
-            return RedirectToAction("AddNew");
+            return RedirectToAction("Index");
 
         }
 
+        
+    
 
-  
+
 
 
 

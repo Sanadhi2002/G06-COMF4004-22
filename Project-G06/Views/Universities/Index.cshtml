@@ -10,17 +10,20 @@
             <th>Password</th>
             <th>Date</th>
             <th> </th>
+   
+           
         </tr>
     </thead>
     <tbody>
-        @foreach (var university in Model)
+        @foreach (var universities in Model)
         {
             <tr>
-                <td>@university.Name</td>
-                <td>@university.Email</td>
-                <td>@university.Password</td>
-                <td>@university.Date.ToString("dd/mm/yy")</td>
-                <td><a href="Universities/View/@university.Name">View</a></td>
+                <td>@universities.Name</td>
+                <td>@universities.Email</td>
+                <td>@universities.Password</td>
+                <td>@universities.Date.ToString("dd/mm/yy")</td>
+               
+                <td><button asp-action="View" asp-controller="Universities" type="submit">View</button></td>
                 
      
             </tr>
