@@ -20,7 +20,7 @@ namespace Project_G06.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Add(StudentEmail studentEmail)
+        public async Task<IActionResult>   Add(StudentEmail studentEmail)
         {
             var student = new StudentEmail()
             {
@@ -30,18 +30,14 @@ namespace Project_G06.Controllers
 
             };
             
-                studentEmailDbContext.StudentEmails.Add(studentEmail);
-                studentEmailDbContext.SaveChanges();
+            await    studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
+           await     studentEmailDbContext.SaveChangesAsync();
                 return RedirectToAction("Add");
 
-           
-          /*  studentEmailDbContext.StudentEmails.Add(studentEmail);
-            studentEmailDbContext.SaveChanges();
-            return RedirectToAction("Add");*/
 
 
         }
+      
 
-       
     }
 }

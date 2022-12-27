@@ -255,3 +255,7 @@ input[type=text] {
     height:auto;
     overflow:hidden;
 }
+#logout {
+    border-color: #1861ac;
+    color: white;
+}
