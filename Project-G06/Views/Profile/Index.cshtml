@@ -20,11 +20,12 @@
             <th>University Name</th>
             <th>University Email</th>
             <th></th>
-            <th></th>
+         
         </tr>
     </thead>
-    <tbody>
-        @foreach (var obj  in Model                        /*model at the top of the page /  /*include the get action*/)
+   <tbody>
+        
+    @foreach (var obj  in Model                        /*model at the top of the page /  /*include the get action*/)
         {
             <tr>
                 <td width="50%">
@@ -36,9 +37,7 @@
                 <td width="50%">
                     @obj.S_Email
                 </td>
-                <td width="50%">
-                  asp-route-id="@obj.S_Id"
-                </td>
+               
                 <td>
                     <div>
                         <a asp-controller="New" asp-action="Edit" asp-route-id="@obj.S_Id"> Edit</a>
@@ -57,6 +56,11 @@
                 </td>
             </tr>
         }
+      
+
+
+
+
 
     </tbody>
 
