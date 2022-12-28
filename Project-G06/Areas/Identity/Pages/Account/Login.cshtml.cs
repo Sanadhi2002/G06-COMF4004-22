@@ -116,7 +116,7 @@ namespace Project_G06.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User logged in.");
                    // return LocalRedirect(returnUrl);
-                    return RedirectToAction("Index", "Universities");
+                    return RedirectToAction("Index", "New");
                 }
                 if (result.RequiresTwoFactor)
                 {

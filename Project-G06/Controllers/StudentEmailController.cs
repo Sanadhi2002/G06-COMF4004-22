@@ -19,6 +19,9 @@ namespace Project_G06.Controllers
         {
             return View();
         }
+
+
+        /*
         [HttpPost]
         public IActionResult Add(StudentEmail studentEmail)
         {
@@ -35,6 +38,7 @@ namespace Project_G06.Controllers
                 return RedirectToAction("Add");
 
             }
+       
             else
             {
                 return RedirectToAction("Add");
@@ -48,4 +52,4 @@ namespace Project_G06.Controllers
 
        
     }
-}
+/*}*/
