@@ -8,8 +8,11 @@ namespace Project_G06.Data
         public UniProfileDbContext(DbContextOptions<UniProfileDbContext> options) : base(options)
         {
 
+
+
         }
-        public DbSet<UniProfileModel> UniProfileModels { get; set; } //create UniProfileModel  table name with UniProfileModels
+         public DbSet<UniProfileModel> UniProfileModels { get; set; } //create UniProfileModel  table name with UniProfileModels
         public DbSet<Uni_FacultyModel> UnifacultyModels { get; set; }
+    
     }
 }
