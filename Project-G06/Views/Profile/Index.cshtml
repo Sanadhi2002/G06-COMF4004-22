@@ -20,6 +20,7 @@
             <th>University Name</th>
             <th>University Email</th>
             <th></th>
+          
         </tr>
     </thead>
     <tbody>
@@ -33,8 +34,9 @@
                     @obj.S_Name
                 </td>
                 <td width="50%">
-                    @obj.S_Email
+                    @obj.S_Email 
                 </td>
+             
                 <td>
                     <div>
                         <a asp-controller="New" asp-action="Edit" asp-route-id="@obj.S_Id"> Edit</a>
