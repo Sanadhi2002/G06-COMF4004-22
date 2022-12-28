@@ -15,6 +15,10 @@ namespace Project_G06.Controllers
 
         }
 
+   
+
+
+
         public IActionResult Index()
         {
             IEnumerable<Category> objCategoryList = _categoryDbContext.categories;   
