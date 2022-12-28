@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project_G06.Data;
 using Project_G06.Models;
+using System.Security.Cryptography;
 
 namespace Project_G06.Controllers
 {
@@ -41,12 +42,42 @@ namespace Project_G06.Controllers
         {
             if (ModelState.IsValid)
             {
+                /*new part*/
+                CreateHash(university.Password, out byte[] passwordHash, out byte[] passwordSalt);
+                university.PasswordHash = Convert.ToBase64String(passwordHash);
+                university.PasswordSalt = Convert.ToBase64String(passwordSalt);
+
+
+
+                /*new part ends*/
+
+
                 _categoryDbContext.categories.Add(university);
                 _categoryDbContext.SaveChanges();//date goes to the database
                 return RedirectToAction("Index");
             }
             return View(university);
         }
+
+        /*new part */
+
+        private void CreateHash(string password , out byte[] passwordHash , out byte[] passwordSalt)
+        {
+            using(var hmac = new HMACSHA512())
+            {
+                passwordSalt = hmac.Key;
+                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+            }
+        }
+
+
+
+
+        //new part ends
+
+
+
+
 
 
 
