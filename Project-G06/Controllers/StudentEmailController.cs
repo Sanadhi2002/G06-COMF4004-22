@@ -34,7 +34,6 @@ namespace Project_G06.Controllers
                 studentEmailDbContext.SaveChanges();
                 return RedirectToAction("Add");
 
-           
           /*  studentEmailDbContext.StudentEmails.Add(studentEmail);
             studentEmailDbContext.SaveChanges();
             return RedirectToAction("Add");*/
