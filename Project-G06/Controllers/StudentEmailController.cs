@@ -34,12 +34,10 @@ namespace Project_G06.Controllers
            await     studentEmailDbContext.SaveChangesAsync();
                 return RedirectToAction("Add");
 
-<<<<<<< HEAD
-=======
+           
           /*  studentEmailDbContext.StudentEmails.Add(studentEmail);
             studentEmailDbContext.SaveChanges();
             return RedirectToAction("Add");*/
->>>>>>> 749feb98ae87ce72041e3bec1fa2b3ac09e3a37b
 
 
         }
