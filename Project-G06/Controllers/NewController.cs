@@ -42,7 +42,7 @@ namespace Project_G06.Controllers
         {
             if (ModelState.IsValid)
             {
-                /*new part*/
+                /*new part
                 CreateHash(university.Password, out byte[] passwordHash, out byte[] passwordSalt);
                 university.PasswordHash = Convert.ToBase64String(passwordHash);
                 university.PasswordSalt = Convert.ToBase64String(passwordSalt);
@@ -59,7 +59,7 @@ namespace Project_G06.Controllers
             return View(university);
         }
 
-        /*new part */
+        /*new part 
 
         private void CreateHash(string password , out byte[] passwordHash , out byte[] passwordSalt)
         {
@@ -73,7 +73,7 @@ namespace Project_G06.Controllers
 
 
 
-        //new part ends
+        //new part ends*/
 
 
 

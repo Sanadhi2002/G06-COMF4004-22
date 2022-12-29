@@ -12,5 +12,8 @@ namespace Project_G06.Models
         public string S_Name { get; set; }
 
         public string S_Email { get; set; }
+
+       
+
     }
 }

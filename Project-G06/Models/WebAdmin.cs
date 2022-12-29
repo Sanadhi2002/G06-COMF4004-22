@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using ProjectG06.Migrations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Project_G06.Models
 {
@@ -9,5 +11,7 @@ namespace Project_G06.Models
         public string W_Email { get; set; } 
 
         public string W_Password { get; set;}
+
+       
     }
 }

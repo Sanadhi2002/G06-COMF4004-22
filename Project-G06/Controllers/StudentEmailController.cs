@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.VisualBasic;
 using Project_G06.Data;
 using Project_G06.Models;
 using System.ComponentModel.DataAnnotations;
@@ -21,9 +22,9 @@ namespace Project_G06.Controllers
         }
 
 
-        /*
+        
         [HttpPost]
-        public IActionResult Add(StudentEmail studentEmail)
+        public async Task<IActionResult>  Add(StudentEmail studentEmail)
         {
             var student = new StudentEmail()
             {
@@ -33,23 +34,17 @@ namespace Project_G06.Controllers
 
             };
             
-                studentEmailDbContext.StudentEmails.Add(studentEmail);
-                studentEmailDbContext.SaveChanges();
+              await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
+             await studentEmailDbContext.SaveChangesAsync();
                 return RedirectToAction("Add");
 
             }
-       
-            else
-            {
-                return RedirectToAction("Add");
-            }
-          /*  studentEmailDbContext.StudentEmails.Add(studentEmail);
-            studentEmailDbContext.SaveChanges();
-            return RedirectToAction("Add");*/
+    
 
 
-        }
+
+    }
 
        
     }
-/*}*/
+

@@ -12,6 +12,7 @@ namespace Project_G06.Data
 
         }
         public DbSet<StudentEmail> StudentEmails { get; set; }
+        //public DbSet<Category>categories { get; set; }
        
 
     }
