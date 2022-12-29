@@ -337,10 +337,13 @@ body {
     column-gap: 5px;
     width: 60%;
     margin-left:20%;
-    margin-top:10%;
+    margin-top: 0%;
+    
 }
 
-
+.wrap {
+    margin-top: 10%;
+}
 
 
 
@@ -393,35 +396,24 @@ body {
 }
 */
 
-.Welcome {
+ .wrap h1 {
+    text-align: center;
+    font-size: 54px;
     font-family: 'Oswald', sans-serif;
-    width: 60%;
-    margin: 0 auto;
-    justify-content: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.Welcome h1{
-    font-family: 'Oswald', sans-serif;
-    width: 60%;
-    margin: 0 auto;
-    justify-content: center;
-    top: 50%;
-    left: 80%;
-    transform: translate(-50%, -50%);
+    margin-top:40px;
+    color:#d89595;
+
+  
 }
 
 
 
 
-.paragraph {
-    font-family: 'Oswald', sans-serif;
-    width: 60%;
-    margin: 0 auto;
-    justify-content: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
+
+.wrap p {
+        text-align: center;
+        font-size: 24px;
+        font-family: 'Oswald', sans-serif;
+    }
 
