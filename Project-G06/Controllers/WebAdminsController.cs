@@ -22,10 +22,7 @@ namespace Project_G06.Controllers
         }
 
         // GET: WebAdmins
-        public async Task<IActionResult> Index()
-        {
-              return View(await _context.WebAdmins.ToListAsync());
-        }
+     
 
         // GET: WebAdmins/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -67,6 +64,8 @@ namespace Project_G06.Controllers
             return View(webAdmin);
         }
 
+
+       
         // GET: WebAdmins/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
