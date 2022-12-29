@@ -29,6 +29,7 @@ body {
 }
 
 
+
 .Mynavbar {
     overflow: hidden;
     background-color: #333;
@@ -233,12 +234,12 @@ input[type=text] {
     height:auto;
     overflow:hidden;
 }
-<<<<<<< HEAD
+
 #logout {
     border-color: #1861ac;
     color: white;
 }
-=======
+
 
 
 html {
@@ -330,11 +331,93 @@ body {
         box-shadow: 0 0 5px #03e9f4,
     }
 
- 
+
+.search {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    flex-wrap: nowrap;
+    column-gap: 5px;
+    width: 60%;
+    margin-left:20%;
+    margin-top:10%;
+}
 
 
 
 
 
- 
->>>>>>> 749feb98ae87ce72041e3bec1fa2b3ac09e3a37b
+
+.searchTerm {
+    width: 60%;
+    border: 3px solid #1D1D1D;
+    border-right: none;
+    padding: 5px;
+    height: 70px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #601718;
+    font-size: 14px;
+}
+
+    .searchTerm:focus {
+        color: black;
+        border: 3px solid #1D1D1D;
+    }
+
+.searchButton {
+    width: 50px;
+    height: 68px;
+
+    background: transparent;
+    text-align: center;
+    color: #000000;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+    .searchButton:hover {
+        background: #000000;
+        border-radius: 0 5px 5px 0;
+        color:azure;
+    }
+
+
+
+/*
+.wrap {
+    width: 60%;
+    margin : 0 auto;
+    justify-content:center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+*/
+
+.Welcome {
+    font-family: 'Oswald', sans-serif;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+    .Welcome h1 {
+        font-size: 60px;
+
+    }
+
+.paragraph {
+    font-family: 'Oswald', sans-serif;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
