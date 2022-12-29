@@ -402,11 +402,18 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.Welcome h1{
+    font-family: 'Oswald', sans-serif;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
 
-    .Welcome h1 {
-        font-size: 60px;
 
-    }
+
 
 .paragraph {
     font-family: 'Oswald', sans-serif;
