@@ -9,8 +9,11 @@ namespace Project_G06.Models
         [Key]
         public int S_Id { get; set; }
 
+       
         public string S_Name { get; set; }
 
+        
+        [EmailAddress]
         public string S_Email { get; set; }
 
        

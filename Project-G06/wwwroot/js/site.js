@@ -2,20 +2,20 @@
 // for details on configuring this project to bundle and minify static web assets.
 
  
-let btnSearch = document.getElementById("searchbtn");
-let con = document.getElementById("container");
+let btnSearch = document.getElementById("searchButton");
+
+btnSearch.addEventListener("click", GetCompare);
+
+function GetCompare() {
+
+   
+    window.location.pathname="/Home/Compare"
+}
+
 
 let addDegree1 = document.getElementById("DegreeButton");
 addDegree1.addEventListener("click", addnewDegree);
 
-btnSearch.addEventListener("click", Search);
-function Search() {
-    con.style.visibility ="visible";
- 
-}
-
-let showPass = document.getElementById("showPass");
-showPass.addEventListener("click", showPassword);
 
 
 
