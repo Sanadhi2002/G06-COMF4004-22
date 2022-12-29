@@ -32,16 +32,39 @@ namespace Project_G06.Controllers
                 S_Id = studentEmail.S_Id,
                 S_Name = studentEmail.S_Name,
 
-            };
             
-              await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
-             await studentEmailDbContext.SaveChangesAsync();
-                return RedirectToAction("Add");
 
+        };
+
+            var result = studentEmailDbContext.StudentEmails.FirstOrDefault(result => result.S_Email == student.S_Email);
+            {
+                if(result== null)
+                {
+                    await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
+                    await studentEmailDbContext.SaveChangesAsync();
+                    return RedirectToAction("Add");
+                }
+                else
+                {
+                    if (student.S_Email != null && student.S_Name != null)
+                    {
+                        await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
+                        await studentEmailDbContext.SaveChangesAsync();
+                        return RedirectToAction("Add");
+
+                    }
+                    else
+                    {
+                        return RedirectToAction("Add");
+                    }
+                }
             }
+
+           
+        }
     
 
-
+        
 
     }
 
