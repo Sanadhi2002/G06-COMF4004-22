@@ -13,6 +13,31 @@
            <span asp-validation-for="Name"></span>
            </div>
 
+
+    <div>
+        <label asp-for="OtherName">Long Name</label>
+        <input asp-for="OtherName">
+        <span asp-validation-for="OtherName"></span>
+    </div>
+
+    <div>
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email">
+        <span asp-validation-for="Email"></span>
+    </div>
+
+    <div>
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password">
+        <span asp-validation-for="Password"></span>
+    </div>
+
+    <div>
+        <label asp-for="ConfirmPassword">Confirm Password</label>
+        <input asp-for="ConfirmPassword">
+        <span asp-validation-for="ConfirmPassword"></span>
+    </div>
+
            <button type="submit">Register</button>
            <a asp-controller="New" asp-action="Index">Navigate to list</a>
 
