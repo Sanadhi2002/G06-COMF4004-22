@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project_G06.Data;
 using Project_G06.Models;
 using System.Security.Cryptography;
@@ -38,7 +39,7 @@ namespace Project_G06.Controllers
         //post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Category university)
+        public async Task<IActionResult> Create(Category university)
         {
             if (ModelState.IsValid)
             {
@@ -48,9 +49,13 @@ namespace Project_G06.Controllers
                 university.PasswordSalt = Convert.ToBase64String(passwordSalt);
 
 
-
-                /*new part ends*/
-
+                var checkuniversity = await  _categoryDbContext.categories.FirstOrDefaultAsync(c => c.Name == university.Name);
+                if (checkuniversity != null)
+                {
+                    Console.WriteLine("user registered");
+                }
+         
+                //new/*new part ends*/
 
                 _categoryDbContext.categories.Add(university);
                 _categoryDbContext.SaveChanges();//date goes to the database

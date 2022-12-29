@@ -21,8 +21,19 @@ namespace Project_G06.Controllers
             return View();
         }
 
-
+       
+       
         
+
+    
+
+
+
+
+
+
+
+
         [HttpPost]
         public async Task<IActionResult>  Add(StudentEmail studentEmail)
         {
