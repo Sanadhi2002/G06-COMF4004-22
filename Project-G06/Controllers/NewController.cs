@@ -11,18 +11,29 @@ namespace Project_G06.Controllers
     [Authorize(Roles = "Admin")]
     public class NewController : Controller
     {
-
+        /*
         private readonly CategoryDbContext _categoryDbContext;
 
         public NewController(CategoryDbContext categoryDbContext)
         {
             _categoryDbContext = categoryDbContext; 
 
-        }
-
-   
+        }*/
 
 
+
+        private readonly WebAdminDbContext  _webAdminDbContext;
+     public NewController(WebAdminDbContext webAdminDbContext)
+     {
+
+            _webAdminDbContext = webAdminDbContext; 
+     }
+
+
+
+
+
+        /*
 
         public IActionResult Index()
         {
@@ -32,6 +43,14 @@ namespace Project_G06.Controllers
 
 
 
+        */
+
+
+        public IActionResult Index()
+        {
+            IEnumerable<UniProfileModel> objCategoryList = _webAdminDbContext.UniProfileModel;
+            return View(objCategoryList);
+        }
 
 
 
@@ -104,6 +123,9 @@ namespace Project_G06.Controllers
 
         //get
 
+        //correct 
+
+        /*
         public IActionResult Edit(int? id )
         {
             if (id== null || id == 0)
@@ -174,7 +196,9 @@ namespace Project_G06.Controllers
 
 
 
+        */
 
+        //correct ends
 
 
 
