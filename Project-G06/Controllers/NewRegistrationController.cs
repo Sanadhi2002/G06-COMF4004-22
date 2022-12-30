@@ -155,7 +155,7 @@ namespace Project_G06.Controllers
 
         private bool CategoryExists(int id)
         {
-          return _context.categories.Any(e => e.Id == id);
+          return _context.categories.Any(e => e.U_ID == id);
         }
     }
 }
