@@ -6,6 +6,8 @@ namespace Project_G06.Models
 {
     public class DegreeModel
     {
+
+
         [Key]
         public int Degree_ID { get; set; }
         public string Degre_Name { get; set; }
@@ -17,7 +19,7 @@ namespace Project_G06.Models
         public string Career_Opurtunity { get; set; }
         public string Academic_proggression { get; set; }
         public string Admission_Requirments { get; set; }
-        
+
 
         [ForeignKey("UniProfileModel")]
         public string UserId { get; set; }
