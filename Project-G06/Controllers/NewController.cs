@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_G06.Data;
 using Project_G06.Models;
+using System.Data;
 using System.Security.Cryptography;
 
 namespace Project_G06.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class NewController : Controller
     {
 

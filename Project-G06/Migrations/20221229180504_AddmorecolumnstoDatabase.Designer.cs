@@ -8,11 +8,11 @@ using Project_G06.Data;
 
 #nullable disable
 
-namespace ProjectG06.Migrations
+namespace ProjectG06.Migrations.CategoryDb
 {
-    [DbContext(typeof(WebAdminDbContext))]
-    [Migration("20221221122247_webdmin")]
-    partial class webdmin
+    [DbContext(typeof(CategoryDbContext))]
+    [Migration("20221229180504_AddmorecolumnstoDatabase")]
+    partial class AddmorecolumnstoDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,25 +24,37 @@ namespace ProjectG06.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Project_G06.Models.WebAdmin", b =>
+            modelBuilder.Entity("Project_G06.Models.Category", b =>
                 {
-                    b.Property<int>("W_ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("W_ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("W_Email")
+                    b.Property<string>("ConfirmPassword")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("W_Password")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("W_ID");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("WebAdmins");
+                    b.Property<string>("OtherName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("categories");
                 });
 #pragma warning restore 612, 618
         }

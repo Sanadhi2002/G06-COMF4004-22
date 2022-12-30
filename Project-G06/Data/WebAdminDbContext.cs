@@ -11,7 +11,7 @@ namespace Project_G06.Data
         }
         public DbSet<WebAdmin> WebAdmins { get; set; }
 
-        public DbSet<WebAdmin> AspNetUsers { get; set; }
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
 
     }
 

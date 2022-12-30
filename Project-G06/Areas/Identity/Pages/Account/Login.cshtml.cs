@@ -115,8 +115,8 @@ namespace Project_G06.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                   // return LocalRedirect(returnUrl);
-                    return RedirectToAction("Index", "New");
+                   return LocalRedirect(returnUrl);
+                    //return RedirectToAction("Index", "New");
                 }
                 if (result.RequiresTwoFactor)
                 {
