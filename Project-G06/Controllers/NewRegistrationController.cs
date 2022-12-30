@@ -34,7 +34,7 @@ namespace Project_G06.Controllers
             }
 
             var category = await _context.categories
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.U_ID == id);
             if (category == null)
             {
                 return NotFound();
@@ -102,7 +102,7 @@ namespace Project_G06.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CategoryExists(category.Id))
+                    if (!CategoryExists(category.U_ID))
                     {
                         return NotFound();
                     }
