@@ -56,7 +56,12 @@ namespace Project_G06.Controllers
                 }
          
                 //new/*new part ends*/
-
+              
+                 if(_categoryDbContext.categories.Any(x => x.Name == university.Name))
+                    {
+                    Console.WriteLine("User exists");
+                    }
+               
                 _categoryDbContext.categories.Add(university);
                 _categoryDbContext.SaveChanges();//date goes to the database
                 return RedirectToAction("UnivDashBoard", "UnivDash");

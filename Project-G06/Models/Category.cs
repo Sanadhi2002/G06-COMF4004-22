@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Project_G06.Models
 {
@@ -9,6 +10,7 @@ namespace Project_G06.Models
         public int Id { get; set; }
 
         [Required]
+        
         public string Name { get; set; }
 
         [Required]
