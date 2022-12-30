@@ -88,7 +88,7 @@ namespace Project_G06.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,OtherName,Email,Password,ConfirmPassword")] Category category)
         {
-            if (id != category.Id)
+            if (id != category.U_ID)
             {
                 return NotFound();
             }
@@ -125,7 +125,7 @@ namespace Project_G06.Controllers
             }
 
             var category = await _context.categories
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.U_ID == id);
             if (category == null)
             {
                 return NotFound();
