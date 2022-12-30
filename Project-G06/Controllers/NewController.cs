@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace Project_G06.Controllers
 {
-   
+    [Authorize(Roles = "Admin")]
     public class NewController : Controller
     {
 
@@ -40,6 +40,7 @@ namespace Project_G06.Controllers
             return View();
         }
         //post
+        /*
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Category university)
@@ -59,6 +60,7 @@ namespace Project_G06.Controllers
                 }
          
                 //new/*new part ends*/
+        /*
               
                  if(_categoryDbContext.categories.Any(x => x.Name == university.Name))
                     {
@@ -70,7 +72,7 @@ namespace Project_G06.Controllers
                 return RedirectToAction("UnivDashBoard", "UnivDash");
             }
             return View(university);
-        }
+        }*/
 
         /*new part 
 
