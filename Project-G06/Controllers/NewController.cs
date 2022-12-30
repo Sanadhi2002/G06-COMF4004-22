@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace Project_G06.Controllers
 {
-    [Authorize(Roles = "Admin")]
+   // [Authorize(Roles = "Admin")]
     public class NewController : Controller
     {
         /*

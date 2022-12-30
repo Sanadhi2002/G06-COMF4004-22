@@ -29,7 +29,6 @@ builder.Services.AddDbContext<CategoryDbContext>(options => options.UseSqlServer
 
 
 
-builder.Services.AddDbContext<UniversityDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection3")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
