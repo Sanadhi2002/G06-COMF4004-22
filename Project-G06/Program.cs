@@ -20,15 +20,13 @@ builder.Services.AddDbContext<StudentEmailDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("StudentEmailsConnectionString")));
 
 
-builder.Services.AddDbContext<UniProfileDbContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("UniProfileConnection")
-    ));
+
 
 builder.Services.AddDbContext<CategoryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CategoryConnection")));
 
 
 
-builder.Services.AddDbContext<FacultyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection4")));
+
 
 
 builder.Services.AddDbContext<UniversityDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection3")));

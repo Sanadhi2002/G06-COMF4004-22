@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project_G06.Models
 {
@@ -6,14 +7,12 @@ namespace Project_G06.Models
     {
         [Key]
         public int Uni_Faculty_ID { get; set; }
-        public string? Faculty_Name_1 { get; set; }
-        public string? Faculty_Name_2 { get; set; }
-        public string? Faculty_Name_3 { get; set; }
-        public string? Faculty_Name_4 { get; set; }
-        public string? Faculty_Name_5 { get; set; }
-        public string? Faculty_Name_6 { get; set; }
-        public string? Faculty_Name_7{ get; set; }
-        
+        public string? Faculty_Name { get; set; }
+
+        [ForeignKey("UniProfileModel")]
+        public string UserId { get; set; }
+        public UniProfileModel UniProfileModel { get; set; }
+
 
     }
 }

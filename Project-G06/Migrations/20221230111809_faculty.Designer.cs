@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project_G06.Data;
 
 #nullable disable
 
-namespace ProjectG06.Migrations
+namespace ProjectG06.Migrations.WebAdminDb
 {
     [DbContext(typeof(WebAdminDbContext))]
-    partial class WebAdminDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221230111809_faculty")]
+    partial class faculty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -232,50 +235,6 @@ namespace ProjectG06.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Project_G06.Models.AdmissionModel", b =>
-                {
-                    b.Property<int>("Admission_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Admission_Id"));
-
-                    b.Property<string>("Admissions")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Degree_ID")
-                        .HasColumnType("int");
-
-                    b.HasKey("Admission_Id");
-
-                    b.HasIndex("Degree_ID");
-
-                    b.ToTable("AdmissionModel");
-                });
-
-            modelBuilder.Entity("Project_G06.Models.DegreeContentModel", b =>
-                {
-                    b.Property<int>("DegreeContent_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DegreeContent_Id"));
-
-                    b.Property<string>("DegreeContents")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Degree_ID")
-                        .HasColumnType("int");
-
-                    b.HasKey("DegreeContent_Id");
-
-                    b.HasIndex("Degree_ID");
-
-                    b.ToTable("DegreeContentModel");
-                });
-
             modelBuilder.Entity("Project_G06.Models.DegreeModel", b =>
                 {
                     b.Property<int>("Degree_ID")
@@ -309,6 +268,10 @@ namespace ProjectG06.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Degree_Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Degree_content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -460,28 +423,6 @@ namespace ProjectG06.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Project_G06.Models.AdmissionModel", b =>
-                {
-                    b.HasOne("Project_G06.Models.DegreeModel", "DegreeModel")
-                        .WithMany()
-                        .HasForeignKey("Degree_ID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DegreeModel");
-                });
-
-            modelBuilder.Entity("Project_G06.Models.DegreeContentModel", b =>
-                {
-                    b.HasOne("Project_G06.Models.DegreeModel", "DegreeModel")
-                        .WithMany()
-                        .HasForeignKey("Degree_ID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DegreeModel");
                 });
 
             modelBuilder.Entity("Project_G06.Models.DegreeModel", b =>

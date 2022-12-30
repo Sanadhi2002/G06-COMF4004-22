@@ -8,6 +8,7 @@ namespace Project_G06.Models
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+        public virtual UniProfileModel UniProfileModel { get; set; }
 
     }
 }
