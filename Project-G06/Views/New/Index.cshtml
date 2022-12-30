@@ -20,12 +20,12 @@
 <thead>
     <tr>
         <th>University ID</th>
-        <th>University Name</th>
-                <th>Other Name</th>
+        <th>University  Userame</th>
+          
 
                 <th>Email</th>
                         <th>Password</th>
-                                <th>Confirm password</th>
+                         
 
 
 
@@ -37,36 +37,31 @@
         {
                 <tr>
                     <td width="50%">
-                    @obj.Id
+                    @obj.U_Password
                     </td>
                     <td width="50%">
-                    @obj.Name
+                    @obj.U_UserName
                     </td>
                         <td width="50%">
-                    @obj.OtherName
+                    @obj.U_Email
                     </td>
                     <td width="50%">
-                    @obj.Email
+                    @obj.U_Password
                     </td>
-                    <td width="50%">
-                    @obj.Password
-                    </td>
-                    <td width="50%">
-                    @obj.ConfirmPassword
-                    </td>
+                
                     <td>
                         <div>
-                            <a asp-controller="New" asp-action="Edit" asp-route-id="@obj.Id"> Edit</a>
+                            <a asp-controller="New" asp-action="Edit" asp-route-id="@obj.U_ID"> Edit</a>
                             </div>
 
                         <div>
-                            <a asp-controller="New" asp-action="Delete" asp-route-id="@obj.Id"> Delete</a>
+                            <a asp-controller="New" asp-action="Delete" asp-route-id="@obj.U_ID"> Delete</a>
 
                         </div>
 
 
                              <div>
-                                <a asp-controller="Profile" asp-action="Index" asp-route-id="@obj.Id"> details</a>
+                                <a asp-controller="Profile" asp-action="Index" asp-route-id="@obj.U_ID"> details</a>
 
                         </div>
 
