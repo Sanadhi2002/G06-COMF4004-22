@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Project_G06.Models;
 
 namespace Project_G06.Data
 {
-    public class CategoryDbContext : DbContext
+    public class CategoryDbContext : IdentityDbContext
     {
 
 
