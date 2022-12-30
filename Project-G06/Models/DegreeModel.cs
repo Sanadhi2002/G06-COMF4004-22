@@ -17,7 +17,7 @@ namespace Project_G06.Models
         public string Career_Opurtunity { get; set; }
         public string Academic_proggression { get; set; }
         public string Admission_Requirments { get; set; }
-        public string Degree_content { get; set; }
+        
 
         [ForeignKey("UniProfileModel")]
         public string UserId { get; set; }
