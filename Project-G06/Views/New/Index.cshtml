@@ -1,4 +1,8 @@
-﻿@model IEnumerable<Category> //category is the name of the model
+﻿
+ @model IEnumerable<UniProfileModel> //category is the name of the model
+
+
+
 
 @{
     ViewData["Title"] = "Index";
@@ -19,12 +23,12 @@
 <table class="table table-bordered table-striped" style="width:100%">
 <thead>
     <tr>
-        <th>University ID</th>
-        <th>University Name</th>
-                <th>Other Name</th>
+        <th>User id</th>
+        <th>Uni short </th>
+                <th>long Name</th>
               
-                <th>Email</th>
-                        <th>Password</th>
+                <th>details </th>
+                        <th>Profile</th>
                                 <th>Confirm password</th>
 
 
@@ -37,38 +41,24 @@
         {
             <tr>
                 <td width="50%">
-                    @obj.Id
+                    @obj.UserId
                 </td>
                 <td width="50%">
-                    @obj.Name
+                    @obj.UniShortname
                 </td>
                     <td width="50%">
-                    @obj.OtherName
+                    @obj.UniFullname
                 </td>
                 <td width="50%">
-                    @obj.Email
+                    @obj.UniDetails
                 </td>
-                <td width="50%">
-                    @obj.Password
-                </td>
-                <td width="50%">
-                    @obj.ConfirmPassword
-                </td>
+           
                 <td>
                     <div>
-                        <a asp-controller="New" asp-action="Edit" asp-route-id="@obj.Id"> Edit</a>
+                        <a asp-controller="New" asp-action="Edit" asp-route-id="@obj.UserId"> Edit</a>
                         </div>
 
-                    <div>
-                        <a asp-controller="New" asp-action="Delete" asp-route-id="@obj.Id"> Delete</a>
-                     
-                    </div>
-
-
-                         <div>
-                            <a asp-controller="Profile" asp-action="Index" asp-route-id="@obj.Id"> details</a>
-
-                    </div>
+                
 
 
                 </td>

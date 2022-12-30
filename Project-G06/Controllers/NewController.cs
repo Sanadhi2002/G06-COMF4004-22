@@ -30,6 +30,12 @@ namespace Project_G06.Controllers
             return View(objCategoryList);
         }
 
+
+
+
+
+
+
         //took values already in the dtabase. the values are sent from the databse throguh the categorydbcontexy
         //the degrree details are in the uniprofiledbcontext 
         //Get
