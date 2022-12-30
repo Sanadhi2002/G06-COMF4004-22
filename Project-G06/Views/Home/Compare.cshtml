@@ -1,4 +1,4 @@
-﻿
+﻿@model Project_G06.Models.DegreeModel
 
 <h4>Compare !</h4>
 
@@ -6,32 +6,28 @@
 <div class="Con">
     <input type="text" placeholder="university.." />
   <p>
-        University:
+            University:   
         <br />
-        degree name:
+            degree name:@Html.DisplayNameFor(model=>model.Degre_Name)
         <br />
-        Degree type:
+            Degree type:@Html.DisplayNameFor(model=>model.Degree_Type)
          <br />
-        Degree Description:
+            Degree Description:@Html.DisplayNameFor(model=>model.Degree_description)
          <br />
-        Degree Content:
-            <br />
-
-        Degree Duration:
+         
+            Degree Duration:@Html.DisplayNameFor(model=>model.Degree_duration)
          <br />
-        Course fee:
+            Course fee:@Html.DisplayNameFor(model=>model.CourseFee)
         <br />
-        Academic progress:
-         <br />
-        Admission Reguirements:
+           
+            Admission Reguirements:@Html.DisplayNameFor(model=>model.Admission_Requirments)
+       
         <br />
-        contact:
+            Degree Progression:@Html.DisplayNameFor(model=>model.Academic_proggression)
         <br />
-        Email:
+            Career opppurtunities:@Html.DisplayNameFor(model=>model.Career_Opurtunity)
         <br />
-        Career opppurtunities:
-        <br />
-        Affliated universities:
+            Affliated universities:@Html.DisplayNameFor(model=>model.Affiliated_uni)
         <br />
 
 
