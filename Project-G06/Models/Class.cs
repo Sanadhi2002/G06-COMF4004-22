@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using WebApplication2.Areas.Identity.Data;
+
 
 
 namespace Project_G06.Models

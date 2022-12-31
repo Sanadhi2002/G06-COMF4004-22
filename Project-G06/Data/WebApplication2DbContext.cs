@@ -32,7 +32,7 @@ namespace Project_G06.Data
         }
         //public DbSet<Class> Class { get; set; }
 
-        public DbSet<WebApplication2.Models.Class> Class { get; set; }
+        public DbSet<Project_G06.Models.Class> Class { get; set; }
         public DbSet<degree> degree { get; set; }
     }
 }

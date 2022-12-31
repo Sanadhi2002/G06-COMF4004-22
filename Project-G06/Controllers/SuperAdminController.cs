@@ -3,11 +3,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Project_G06.Data;
 using Project_G06.Models;
-using ProjectG06.Migrations.WebAdminDb;
-using System.Data;
-using System.Security.Claims;
 
-namespace Project_G06.Controllers
+
+
+namespace  Project_G06.Controllers
 {
     [Authorize(Roles = "Administrator")]
     public class SuperAdminController : Controller
@@ -27,8 +26,7 @@ namespace Project_G06.Controllers
         public IActionResult Index()
         {
             List<Class> Classes;//create a list of type uniprofilemodel and set that list to _context.Uniprofiles.Tolist
-         //   Classes = _webApplication2DbContext.Class.ToList();
-         Classes = _webApplication2DbContext.Class.ToList();
+          Classes = _webApplication2DbContext.Class.ToList();
             return View(Classes);//then pass the list to the view to display on the screen 
         }
         public IActionResult Degree(string Id)
