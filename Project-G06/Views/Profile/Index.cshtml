@@ -11,8 +11,28 @@
     </div>
 </div>
 
+<p>
+    @using(Html.BeginForm("Index" ,"Profile" , FormMethod.Get)){
 
+        @Html.RadioButton("SearchBy" , "S_Name" , true) <text>Name</text>
+        
+    @Html.RadioButton("SearchBy" , "S_Id") <text>ID </text> 
+    <br />
+    @Html.TextBox("search")<input type="submit" value="Search" />
+    }
 
+</p>
+
+ @if(Model.Count() == 0)
+        {
+        <tr Colspan="4">
+            <td >
+                No items matching search
+            </td>
+        </tr>
+        }
+        else
+        {
 <table class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
@@ -24,6 +44,8 @@
         </tr>
     </thead>
     <tbody>
+       
+        
         @foreach (var obj in Model /*model at the top of the page /  /*include the get action*/)
         {
             <tr>
@@ -36,37 +58,16 @@
                 <td width="50%">
                     @obj.S_Email 
                 </td>
-                <td width="50%" asp-route-id="@obj.S_Id">
-                  
-                </td>
-
-                <td width="50%">
-                    @obj.S_Email
-                </td>
              
 
 
-
-                <td>
-                    <div>
-                        <a asp-controller="New" asp-action="Edit" asp-route-id="@obj.S_Id"> Edit</a>
-                    </div>
-
-                    <div>
-                        <a asp-controller="New" asp-action="Delete" asp-route-id="@obj.S_Id"> Delete</a>
-
-                    </div>
-
-                    <div>
-                        <a asp-controller="Profile" asp-action="Index" asp-route-id="@obj.S_Id"> Delete</a>
-
-                    </div>
-
-                </td>
+          
             </tr>
         }
-
+        
+      
     </tbody>
 
 
 </table>
+}

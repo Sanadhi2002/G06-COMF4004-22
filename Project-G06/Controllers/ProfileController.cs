@@ -15,10 +15,18 @@ namespace Project_G06.Controllers
         }
 
 
-        public IActionResult Index()
+        public IActionResult Index(string SearchBy , string search)
         {
-            IEnumerable<StudentEmail> objCategoryList = studentEmailDbContext.StudentEmails;
-            return View(objCategoryList);
+            if (SearchBy == "Name")
+            {
+                IEnumerable<StudentEmail> objCategoryList = studentEmailDbContext.StudentEmails.Where(x => x.S_Name == search || search == null);
+                return View(objCategoryList);
+            }
+            else
+            {
+                IEnumerable<StudentEmail> objCategoryList = studentEmailDbContext.StudentEmails.Where(x => x.S_Name.StartsWith(search) ||search == null );
+                return View(objCategoryList);
+            }
         }
     }
 }

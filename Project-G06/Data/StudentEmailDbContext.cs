@@ -9,7 +9,7 @@ namespace Project_G06.Data
 
         public StudentEmailDbContext(DbContextOptions<StudentEmailDbContext> options) : base(options)
         {
-
+                
         }
         public DbSet<StudentEmail> StudentEmails { get; set; }
         //public DbSet<Category>categories { get; set; }
