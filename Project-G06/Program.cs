@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Project_G06.Data;
 using Microsoft.AspNetCore.Identity;
-
+using Project_G06.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +10,6 @@ builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 
 
-builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
-    .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<WebAdminDbContext>();
 
 builder.Services.AddDbContext<WebAdminDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("WebAdminConnectionString")));
 
@@ -21,6 +18,16 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("StudentEmailsCon
 builder.Services.AddDbContext<WebAdminDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CompareConnectionString")));
 
 
+
+builder.Services.AddDbContext<WebApplication2DbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebApplication2DbContextConnection")));
+
+//builder.Services.AddDefaultIdentity<WebApplication2User>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<WebApplication2DbContext>();
+
+//dulangi
+builder.Services.AddDefaultIdentity<WebApplication2User>().AddDefaultTokenProviders().AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<WebApplication2DbContext>();
 
 
 //builder.Services.AddDbContext<CategoryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CategoryConnection")));
