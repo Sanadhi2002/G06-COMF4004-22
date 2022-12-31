@@ -18,6 +18,7 @@ builder.Services.AddDbContext<WebAdminDbContext>(options => options.UseSqlServer
 
 builder.Services.AddDbContext<StudentEmailDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("StudentEmailsConnectionString")));
+builder.Services.AddDbContext<WebAdminDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CompareConnectionString")));
 
 
 

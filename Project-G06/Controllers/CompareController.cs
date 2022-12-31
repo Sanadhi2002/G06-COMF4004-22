@@ -15,7 +15,7 @@ namespace Project_G06.Controllers
         public IActionResult Index()
         {
             IEnumerable<DegreeModel> degreeList = _context.DegreeModel; 
-
+            //var  degreeList = _context.DegreeModel.ToList();
             return View(degreeList);
         }
     }
