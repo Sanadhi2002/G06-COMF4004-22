@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Project_G06.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
-namespace Project_G06.Areas.Identity.Data;
-
-// Add profile data for application users by adding properties to the WebApplication2User class
-public class WebApplication2User : IdentityUser
+namespace Project_G06.Data
 {
-    public virtual Class Class { get; set; }
 }
-
+    public class WebApplication2User : IdentityUser
+{
+        public virtual Class Class { get; set; }
+    }
+}
+}

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Class>
+@{
+    ViewData["title"] = "Index";
+}
+<h1>All users</h1>
+<p>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+
+            <th>@Html.DisplayNameFor(model =>model.UniFullname)</th>
+            @*<th>@Html.DisplayNameFor(model =>model.ProfilPic_URL)</th>*@
+
+            <th>@Html.DisplayNameFor(model =>model.Uniname)</th>
+            <th>@Html.DisplayNameFor(model =>model.UploadedProfilePic)</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserId</td>
+                <td>@item.UniFullname</td>
+                <td>@item.Uniname</td>
+                <td><img src="~/profilepics/@item.ProfilPic_URL" style="width:75px;height:75px;" /></td>
+
+
+
+
+
+
+
+
+
+
+                <td>
+                    <div class="btn-group">
+                        <a asp-action="Degree" asp-route-id="@item.UserId" class="btn btn-sm btn-primary ml-1">Degree</a>
+                        @*                        <a asp-action="Edit" asp-route-id="@item.UserId" class="btn btn-sm btn-info">Edit</a>*@
+                        <a asp-action="Details" asp-route-id="@item.UserId" class="btn btn-sm btn-primary ml-1">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.UserId" class="btn btn-sm btn-danger ml-1">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
