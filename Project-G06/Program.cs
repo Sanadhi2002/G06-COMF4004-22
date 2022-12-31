@@ -22,7 +22,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("StudentEmailsCon
 
 
 
-builder.Services.AddDbContext<CategoryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CategoryConnection")));
+//builder.Services.AddDbContext<CategoryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CategoryConnection")));
 
 
 
