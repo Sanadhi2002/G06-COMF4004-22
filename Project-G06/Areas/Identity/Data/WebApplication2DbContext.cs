@@ -3,10 +3,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 using System.Reflection.Emit;
-using Project_G06.Areas.Identity.Data;
 using Project_G06.Models;
 
-namespace Project_G06.Data;
+namespace Project_G06.Areas.Identity.Data;
 
 public class WebApplication2DbContext : IdentityDbContext<WebApplication2User>
 {
@@ -35,6 +34,6 @@ public class WebApplication2DbContext : IdentityDbContext<WebApplication2User>
     }
     //public DbSet<Class> Class { get; set; }
 
-    public DbSet<Project_G06.Models.Class> Class { get; set; }
-   public DbSet<degree> degree { get; set; }
+    public DbSet<Class> Class { get; set; }
+    public DbSet<degree> degree { get; set; }
 }
