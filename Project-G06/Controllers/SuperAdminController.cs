@@ -11,6 +11,7 @@ namespace Project_G06.Controllers
     [Authorize(Roles ="Administrator")]
     public class SuperAdminController : Controller
     {
+
         private readonly WebApplication2DbContext _webApplication2DbContext;
         private readonly UserManager<WebApplication2User> _userManager;
         private readonly SignInManager<WebApplication2User> _signInManager;
