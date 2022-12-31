@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Project_G06.Data;
 using Microsoft.AspNetCore.Identity;
-using Project_G06.Areas.Identity.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
