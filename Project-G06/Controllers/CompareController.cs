@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project_G06.Data;
+using Project_G06.Models;
 
 namespace Project_G06.Controllers
 {
@@ -13,7 +14,9 @@ namespace Project_G06.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<DegreeModel> degreeList = _context.DegreeModel; 
+
+            return View(degreeList);
         }
     }
 }
