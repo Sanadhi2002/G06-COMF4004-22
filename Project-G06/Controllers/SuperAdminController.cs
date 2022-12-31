@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Project_G06.Areas.Identity.Data;
+using Project_G06.Areas.Identity;
+using Project_G06.Data;
 using Project_G06.Models;
 
 namespace Project_G06.Controllers

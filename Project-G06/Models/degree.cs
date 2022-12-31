@@ -1,10 +1,8 @@
-<<<<<<< HEAD
+
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-=======
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
->>>>>>> 6940dc56baee2492cc030d4f72fa69340d3bcae2
+
+﻿
 
 namespace Project_G06.Models
 {
