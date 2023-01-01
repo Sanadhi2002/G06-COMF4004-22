@@ -146,6 +146,17 @@ namespace Project_G06.Controllers
 
 
         }
+        //POST action method
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DegreeCreate(DegreeModel obj)
+        {
+
+            _webApplication2DbContext.DegreeModel.Add(obj);
+            _webApplication2DbContext.SaveChanges();
+
+            return View(obj);
+        }
         public IActionResult Index()
         {
             return View();
