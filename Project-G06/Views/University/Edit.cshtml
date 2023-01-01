@@ -1,4 +1,4 @@
-﻿@model WebApplication2.Models.UniProfileModel
+﻿@model UniProfileModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -14,9 +14,9 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="UserId" />
             <div class="form-group">
-                <label asp-for="Uniname" class="control-label"></label>
-                <input asp-for="Uniname" class="form-control" />
-                <span asp-validation-for="Uniname" class="text-danger"></span>
+                <label asp-for="UniShortname" class="control-label"></label>
+                <input asp-for="UniShortname" class="form-control" />
+                <span asp-validation-for="UniShortname" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="UniFullname" class="control-label"></label>
