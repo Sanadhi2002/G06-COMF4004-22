@@ -72,6 +72,46 @@ namespace Project_G06.Controllers
             //}
             //return View(obj);
         }
+        public IActionResult Create()
+        {
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            //ViewBag.userid = HttpContext.Session.GetString("Id");
+            ViewBag.userid = UserId;
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(UniProfileModel obj)
+        {
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            //ViewBag.userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (UserId == null /*|| UserId == 0*/)
+            {
+                return NotFound();
+            }
+            var UniProfileModelFromDb = _webApplication2DbContext.UniProfileModel.Find(UserId);
+            if (UniProfileModelFromDb == null)
+            {
+
+                string uniqueFileName = UploadedFile(obj);
+                obj.ProfilPic_URL = uniqueFileName;
+                _webApplication2DbContext.Attach(obj);//attach the model to the Dbcontext and the change of the state of the model to entitystate.added.
+                _webApplication2DbContext.Entry(obj).State = EntityState.Added;
+                _webApplication2DbContext.SaveChanges();//then call the context.SaveChanges() method to add the record to the database
+                return RedirectToAction("Details");//then call the index action to list the image record 
+
+
+
+
+                //_webApplication2DbContext.Class.Add(obj);
+                //_webApplication2DbContext.SaveChanges();
+                //return RedirectToAction("Details");
+            }
+            return View(UniProfileModelFromDb);
+        }
+
         public IActionResult Index()
         {
             return View();
