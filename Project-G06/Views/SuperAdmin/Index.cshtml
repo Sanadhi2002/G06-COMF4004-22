@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Class>
+﻿@model IEnumerable<UniProfileModel>
 @{
     ViewData["title"] = "Index";
 }
@@ -14,7 +14,7 @@
             <th>@Html.DisplayNameFor(model =>model.UniFullname)</th>
             @*<th>@Html.DisplayNameFor(model =>model.ProfilPic_URL)</th>*@
 
-            <th>@Html.DisplayNameFor(model =>model.Uniname)</th>
+            <th>@Html.DisplayNameFor(model =>model.UserId)</th>
             <th>@Html.DisplayNameFor(model =>model.UploadedProfilePic)</th>
 
             <th></th>
@@ -26,7 +26,7 @@
             <tr>
                 <td>@item.UserId</td>
                 <td>@item.UniFullname</td>
-                <td>@item.Uniname</td>
+                <td>@item.UploadedProfilePic</td>
                 <td><img src="~/profilepics/@item.ProfilPic_URL" style="width:75px;height:75px;" /></td>
 
 

@@ -5,7 +5,7 @@ using ProjectG06.Migrations.WebAdminDb;
 
 
 using Project_G06.Models;
-using degree = Project_G06.Models.degree;
+
 
 namespace Project_G06.Data
 {
@@ -38,7 +38,7 @@ namespace Project_G06.Data
         }
         //public DbSet<Class> Class { get; set; }
 
-        public DbSet<Class> Class { get; set; }
-        public DbSet<degree> degree { get; set; }
+        public DbSet<UniProfileModel> UniProfileModel { get; set; }
+        public DbSet<DegreeModel> DegreeModel { get; set; }
     }
 }
