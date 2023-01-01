@@ -129,6 +129,13 @@ namespace Project_G06.Controllers
 
 
         }
+        public IActionResult Degree(string Id)
+        {
+            IEnumerable<DegreeModel> DegreeList = _webApplication2DbContext.DegreeModel.Where(c => c.UserId == Id).ToList()/*.FirstOrDefault()*/;
+            return View(DegreeList);
+
+
+        }
         public IActionResult Index()
         {
             return View();
