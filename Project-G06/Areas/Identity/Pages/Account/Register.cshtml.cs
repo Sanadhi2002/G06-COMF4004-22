@@ -105,7 +105,7 @@ namespace Project_G06.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
 
             [Required]
-           public string? Role { get; set; }
+            public string? Role { get; set; }
             [ValidateNever]
             public IEnumerable<SelectListItem> RoleList { get; set; }
         }
@@ -115,12 +115,13 @@ namespace Project_G06.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-            Input = new InputModel() {
+            Input = new InputModel()
+            {
 
                 RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
                 {
-                 
-                    Value= i,
+
+                    Value = i,
                     Text = i
 
                 })
@@ -145,7 +146,7 @@ namespace Project_G06.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+                    await _userManager.AddToRoleAsync(user, Input.Role);
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
