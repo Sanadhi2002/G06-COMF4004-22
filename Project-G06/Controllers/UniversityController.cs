@@ -111,7 +111,24 @@ namespace Project_G06.Controllers
             }
             return View(UniProfileModelFromDb);
         }
+        private string UploadedFile(UniProfileModel obj) //function for save the uploaded binary stream of the uniprofilemodel in th images folder inside the wwwroot folder. afer that method will return the unique file name of the  image to the function
+        {
+            string uniqueFileName = null;
+            if (obj.UploadedProfilePic != null)//check the usser has uploaded a file or not
+            {
+                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "profilepics");//if the user uploaded the file then we get the root path of the hosting directory this will return the path of the wwwroot folder. aftre that we add the image to the webrrot path since we want to store the file in the images folder
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + obj.UploadedProfilePic.FileName;//gigvinga a nuique file name to save the file so we use Guid.NewGuid method to get a new guid(globally unique identifier)
+                string filepath = Path.Combine(uploadsFolder, uniqueFileName);//use the path.combine method to combine the file name with the uploaded folder name
+                using (var fileStream = new FileStream(filepath, FileMode.Create))//save the uploaded file to the images folder using copyto method of the iform file interface
+                {
+                    obj.UploadedProfilePic.CopyTo(fileStream);
+                }
+            }
+            return uniqueFileName;
 
+
+
+        }
         public IActionResult Index()
         {
             return View();
