@@ -136,6 +136,16 @@ namespace Project_G06.Controllers
 
 
         }
+        public IActionResult DegreeCreate()
+        {
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            //ViewBag.userid = HttpContext.Session.GetString("Id");
+            ViewBag.userid = UserId;
+            return View();
+
+
+        }
         public IActionResult Index()
         {
             return View();
