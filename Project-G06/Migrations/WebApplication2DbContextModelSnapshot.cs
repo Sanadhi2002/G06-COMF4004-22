@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Project_G06.Areas.Identity;
 using Project_G06.Data;
 
 #nullable disable
@@ -160,7 +159,84 @@ namespace ProjectG06.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Project_G06.Areas.Identity.Data.WebApplication2User", b =>
+            modelBuilder.Entity("Project_G06.Models.DegreeModel", b =>
+                {
+                    b.Property<int>("Degree_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Degree_ID"));
+
+                    b.Property<string>("Academic_proggression")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Admission_Requirments")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Affiliated_uni")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Career_Opurtunity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CourseFee")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Degre_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Degree_Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Degree_description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Degree_duration")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Degree_ID");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("DegreeModel");
+                });
+
+            modelBuilder.Entity("Project_G06.Models.UniProfileModel", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProfilPic_URL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UniDetails")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UniFullname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UniShortname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("UniProfileModel");
+                });
+
+            modelBuilder.Entity("WebApplication2User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -225,25 +301,6 @@ namespace ProjectG06.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("Project_G06.Models.Class", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ProfilPic_URL")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UniFullname")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Uniname")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("Class");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -255,7 +312,7 @@ namespace ProjectG06.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Project_G06.Areas.Identity.Data.WebApplication2User", null)
+                    b.HasOne("WebApplication2User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -264,7 +321,7 @@ namespace ProjectG06.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Project_G06.Areas.Identity.Data.WebApplication2User", null)
+                    b.HasOne("WebApplication2User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -279,7 +336,7 @@ namespace ProjectG06.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Project_G06.Areas.Identity.Data.WebApplication2User", null)
+                    b.HasOne("WebApplication2User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -288,27 +345,38 @@ namespace ProjectG06.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Project_G06.Areas.Identity.Data.WebApplication2User", null)
+                    b.HasOne("WebApplication2User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Project_G06.Models.Class", b =>
+            modelBuilder.Entity("Project_G06.Models.DegreeModel", b =>
                 {
-                    b.HasOne("Project_G06.Areas.Identity.Data.WebApplication2User", "WebApplication2User")
-                        .WithOne("Class")
-                        .HasForeignKey("Project_G06.Models.Class", "UserId")
+                    b.HasOne("Project_G06.Models.UniProfileModel", "UniProfileModel")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UniProfileModel");
+                });
+
+            modelBuilder.Entity("Project_G06.Models.UniProfileModel", b =>
+                {
+                    b.HasOne("WebApplication2User", "WebApplication2User")
+                        .WithOne("UniProfileModel")
+                        .HasForeignKey("Project_G06.Models.UniProfileModel", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("WebApplication2User");
                 });
 
-            modelBuilder.Entity("Project_G06.Areas.Identity.Data.WebApplication2User", b =>
+            modelBuilder.Entity("WebApplication2User", b =>
                 {
-                    b.Navigation("Class")
+                    b.Navigation("UniProfileModel")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618
