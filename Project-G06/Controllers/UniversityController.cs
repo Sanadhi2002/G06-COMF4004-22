@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project_G06.Data;
+using Project_G06.Models;
 using System.Security.Claims;
 
 namespace Project_G06.Controllers
@@ -34,6 +36,41 @@ namespace Project_G06.Controllers
                 return View();
             }
             return View(UniProfileModel);
+        }
+        public IActionResult Edit()
+        {
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (UserId == null /*|| UserId == 0*/)
+            {
+                return NotFound();
+            }
+            var UniProfileModelFromDb = _webApplication2DbContext.UniProfileModel.Find(UserId);
+            if (UniProfileModelFromDb == null)
+            {
+                return RedirectToAction("Create");
+            }
+            return View(UniProfileModelFromDb);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(UniProfileModel obj)
+        {
+            if (obj.UploadedProfilePic != null)
+            {
+                string uniqueFileName = UploadedFile(obj);
+                obj.ProfilPic_URL = uniqueFileName;
+            }
+            _webApplication2DbContext.Attach(obj);
+            _webApplication2DbContext.Entry(obj).State = EntityState.Modified;
+            _webApplication2DbContext.SaveChanges();
+            return RedirectToAction("Details");
+            //if (ModelState.IsValid)
+            //{
+            //_webApplication2DbContext.Class.Update(obj);
+            //    _webApplication2DbContext.SaveChanges();
+            //    return RedirectToAction("Details");
+            //}
+            //return View(obj);
         }
         public IActionResult Index()
         {
