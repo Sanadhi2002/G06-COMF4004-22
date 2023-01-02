@@ -3,6 +3,7 @@
 
 @inject SignInManager<WebApplication2User> SignInManager
 @inject UserManager<WebApplication2User> UserManager
+@*@inject RoleManager<WebApplication2User> roleManager*@
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,17 +126,29 @@
                       <li class="nav-item">
                             <a asp-area="" asp-controller="Profile" asp-action="Index" class="nav-link mx-0">Degree list test for search </a>
                         </li>
-                        <li class="nav-item">
-                            <a asp-area="" asp-controller="AppRoles" asp-action="Index" class="nav-link mx-0">Roles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index">Super Admin DashBoard</a>
-                        </li>
+                     
                
                     </ul>
                     <ul class="navbar-nav">
                         @if (SignInManager.IsSignedIn(User))
                         {
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <li class="nav-item">
+                                    <a asp-area="" asp-controller="AppRoles" asp-action="Index" class="nav-link mx-0">Roles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index">Super Admin DashBoard</a>
+                                </li>
+                            }
+                            @if (User.IsInRole("University Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a asp-area="" asp-controller="University" asp-action="Details" class="nav-link mx-0">Profile</a>
+                                </li>
+                            }
+
+                            
                             <li class="nav-item">
                                 <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
                             </li>
@@ -147,6 +160,7 @@
                         }
                         else
                         {
+                          
                             <li class="nav-item">
                                 <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
                             </li>
@@ -176,7 +190,7 @@
 
     <footer class="footer bg-black text-white fixed-bottom">
         <div class="container">
-            &copy; 2022 - Project_G06 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - Project_G06 - Best-Vs-Best<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
