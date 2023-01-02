@@ -1,0 +1,64 @@
+﻿@model UniProfileModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Class</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data" onsubmit="return ValidateForm()">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserId" />
+            <div class="form-group">
+                <label asp-for="UniShortname" class="control-label"></label>
+                <input asp-for="UniShortname" class="form-control" />
+                <span asp-validation-for="UniShortname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UniFullname" class="control-label"></label>
+                <input asp-for="UniFullname" class="form-control" />
+                <span asp-validation-for="UniFullname" class="text-danger"></span>
+            </div>
+
+
+            <div class="col-4 row">
+                <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" />
+                <div class="form-group col-12 justify-content-around align-middle mb-0 pb-0">
+                    <img id="PreviewPhoto" src="~/profilepics/@Model.ProfilPic_URL" alt="Logo Image" width=" 200" height="200"
+                         style="border:1px;margin-top:10px;" />
+                </div>
+                <div class="form-group col-2 pt-0 mt-0">
+                </div>
+                <div class="form-group col-10 pt-0 mt-0">
+
+
+                    <div class="custom-file">
+                        <input asp-for="UploadedProfilePic" class="custom-file-input" id="UploadedProfilePic"
+                               onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])" />
+
+                        <label class="custom-file-label" for="UploadedProfilePic" id="UploadedProfilePicCaption">Browse</label> @*for disply picture*@
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

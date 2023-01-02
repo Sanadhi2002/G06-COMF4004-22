@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project_G06.Data;
 using Project_G06.Models;
 using System.Diagnostics;
@@ -16,7 +17,7 @@ namespace Project_G06.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View();   
         }
 
         public IActionResult Privacy()
@@ -57,5 +58,14 @@ namespace Project_G06.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+
+
+
+
+
+
+
     }
 }

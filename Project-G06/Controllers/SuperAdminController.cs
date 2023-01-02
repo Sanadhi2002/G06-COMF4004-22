@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -10,6 +11,23 @@ namespace Project_G06.Controllers
 {
     public class SuperAdminController : Controller
     {
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Project_G06.Areas.Identity;
+using Project_G06.Data;
+using Project_G06.Models;
+
+namespace Project_G06.Controllers
+{
+
+    [Authorize(Roles = "Admin")]
+    public class SuperAdminController : Controller
+    {
+
+>>>>>>> b7d6ba65a5b00732853bcca8f995fb93438546b5
         private readonly WebApplication2DbContext _webApplication2DbContext;
         private readonly UserManager<WebApplication2User> _userManager;
         private readonly SignInManager<WebApplication2User> _signInManager;
@@ -24,6 +42,7 @@ namespace Project_G06.Controllers
         }
         public IActionResult Index()
         {
+<<<<<<< HEAD
             List<Class> Classes;//create a list of type uniprofilemodel and set that list to _context.Uniprofiles.Tolist
             Classes = _webApplication2DbContext.Class.ToList();
             return View(Classes);//then pass the list to the view to display on the screen 
@@ -37,3 +56,16 @@ namespace Project_G06.Controllers
 
 
 }
+=======
+            List<UniProfileModel> UniProfileModel;//create a list of type uniprofilemodel and set that list to _context.Uniprofiles.Tolist
+            UniProfileModel = _webApplication2DbContext.UniProfileModel.ToList();
+            return View(UniProfileModel);//then pass the list to the view to display on the screen 
+        }
+        public IActionResult Degree(string Id)
+        {
+            IEnumerable<DegreeModel> DegreeList = _webApplication2DbContext.DegreeModel.Where(c => c.UserId == Id).ToList();
+            return View(DegreeList);
+        }
+    }
+}
+>>>>>>> b7d6ba65a5b00732853bcca8f995fb93438546b5
