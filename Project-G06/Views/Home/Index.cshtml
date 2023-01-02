@@ -1,49 +1,80 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model IEnumerable<StudentEmail> //category is the name of the model
 
 
-<div class="wrap">
-    <h1> Welcome </h1>
-    <div class="search">
+<h1>Individual uiversity profile</h1>
 
-  <input type="text" class="searchTerm" placeholder="What is the degree you are looking for?">
-        <button type="submit" class="searchButton" id="searchButton">
-            <i class="fa fa-search"></i>
-            GO
-        </button>
-   </div>
 
-        <p> Easily select the degree you want from a range of universities on one single platform !!</p>
-    <p>
 
-        <a asp-area="" asp-controller="StudentEmail" asp-action="Add" class="link">Sign Up to recieve notifications</a>
-    </p>
-   
- <div class="container1">
-        <div class="con-item">
-            <img src="~/images/icons8-search-50.png" class="logo-image" />
-            <p>10+ institutions </p>
-        </div>
-        <div class="con-item">
-            <img src="~/images/icons8-search-50.png" class="logo-image" />
-            <br />
-            <p>
-                100+ courses
-            </p>
-        </div>
+<div>
+    <div>
+        <a asp-controller="New" asp-action="Create" class="btn btn-primary">Register a new University</a>
+    </div>
+</div>
 
-        <div class="con-item">
-            <img src="~/images/icons8-search-50.png" class="logo-image" />
-            <br />
-            <p>
+<p>
+    @using (Html.BeginForm("Index", "Profile", FormMethod.Get))
+    {
+
+        @Html.RadioButton("SearchBy" , "S_Name" , true) <text>Name</text>
+
+        @Html.RadioButton("SearchBy" , "S_Id") <text>ID </text>
+        <br />
+        @Html.TextBox("search")
+
+        <input type="submit" value="Search" class="searchButton" id="searchButton" />
+    }
+
 </p>
-        </div>
 
-    </div>
-    </div>
+@if (Model.Count() == 0)
+{
+    <tr Colspan="4">
+        <td>
+            No items matching search
+        </td>
+    </tr>
+}
+else
+{
+    @foreach (var item in Model)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>University ID</th>
+                    <th>University Name</th>
+                    <th>University Email</th>
+                    <th></th>
 
-<!---<a asp-area="" asp-controller="StudentEmail" asp-action="Add" class="nav-link " >Sign Up with your email</a>-->
+                </tr>
+            </thead>
+            <tbody>
 
+
+                @foreach (var obj in Model /*model at the top of the page /  /*include the get action*/)
+                {
+                    <tr>
+                        <td width="50%" asp-route-id="@obj.S_Id">
+                            @obj.S_Id
+                        </td>
+                        <td width="50%" asp-route-id="@obj.S_Id">
+                            @obj.S_Name
+                        </td>
+                        <td width="50%">
+                            @obj.S_Email
+                        </td>
+
+
+
+
+                    </tr>
+                }
+
+
+            </tbody>
+
+
+        </table>
+    }
+
+}

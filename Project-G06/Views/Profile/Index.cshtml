@@ -18,7 +18,9 @@
         
     @Html.RadioButton("SearchBy" , "S_Id") <text>ID </text> 
     <br />
-    @Html.TextBox("search")<input type="submit" value="Search" />
+        @Html.TextBox("search")
+
+        <input type="submit" value="Search" class="searchButton" id="searchButton" />
     }
 
 </p>
@@ -33,6 +35,7 @@
         }
         else
         {
+            @foreach ( var item in Model){
 <table class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
@@ -71,3 +74,5 @@
 
 </table>
 }
+
+        }
