@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+
+@inject SignInManager<WebApplication2User> SignInManager
+@inject UserManager<WebApplication2User> UserManager
+@*@inject RoleManager<WebApplication2User> roleManager*@
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -28,93 +35,161 @@
 </head>
 <body>
     <header>
-    
-    
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-5">
-            <div class="container-fluid">
-                <img src="~/images/LOGO.jpeg" alt="logo" class="logo-image" />
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class=" collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ms-auto ">
-                        <li class="nav-item" >
-                            <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link mx-0 " >Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-area="" asp-controller="Home" asp-action="compare" class="nav-link mx-0">Compare</a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-area="" asp-controller="Home" asp-action="UnivProfile" class="nav-link mx-0" >University Profile</a>
-                        </li>
-                        <li class="nav-item dropdown">
+        <!-- <div class="Mynavbar">
+              <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+              <a asp-area="" asp-controller="WebAdmins" asp-action="Index">WebAdmin</a>
+              <a asp-area="" asp-controller="Home" asp-action="compare">Compare</a>
+              <a asp-area="" asp-controller="UnivDashController1" asp-action="UnivDashBoard">Uni dash</a>
+              <a asp-area="" asp-controller="Home" asp-action="UnivProfile">University Profile</a>
+              <a asp-area="" asp-controller="Home" asp-action="aboutUs">About Us</a>
+             <a asp-area="" asp-controller="Universities" asp-action="AddNew">Registration for universities</a>
+               <a asp-area="" asp-controller="Universities" asp-action="Index">View Registered Universities</a>
+              <a asp-area="" asp-controller="Faculties" asp-action="AddFaculty">Add Faculties</a>
+               <a asp-area="" asp-controller="Faculties" asp-action="FacultyIndex">View Faculties</a>
+              <div class="Mynavbar_dropdown">
+                  <button class="Mynavbar_dropbtn">
+                      <a href="#">Register</a>
+                      <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="Mynavbar_dropdown-content">
+                      <a asp-area="" asp-controller="Universities" asp-action="AddNew">Register your university</a>
+                      <a asp-area="" asp-controller="StudentEmail" asp-action="Add">Register your email</a>
+                      <a asp-area="" asp-controller="WebsiteAdmin" asp-action="WebsiteAdminRegistration">WebAdmin Registration</a>
+                  </div>
+              </div>
+              <div class="Mynavbar_dropdown">
+                  <button class="Mynavbar_dropbtn">
+                      <a href="#">Login</a>
+                      <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="Mynavbar_dropdown-content">
+                      <a asp-area="" asp-controller="Home" asp-action="LOGINSUPERADMIN">LOGIN for super admin</a>
+                  </div>
+              </div>
+              <partial name="_LoginPartial" />
+            </div>-->
+        
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand">
+                        <div class="logo-image">
+                            <img src="~/images/LOGO.jpeg" class="img-fluid">
+                        </div>
+                    </a>
+                    <!--<a class="navbar-brand" >Navbar</a>-->
+                  
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ms-auto ">
+                            <li class="nav-item">
+                                <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link mx-0 ">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-area="" asp-controller="Home" asp-action="compare" class="nav-link mx-0">Compare</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-area="" asp-controller="Home" asp-action="UnivProfile" class="nav-link mx-0">University Profile</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                          
                             <a class="nav-link mx-0 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                                Register
+                            Register
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#1B1212">
-                            <!-- <li> <a asp-area="" asp-controller="Universities" asp-action="AddNew" class="nav-link mx-0" >Register your university</a></li>-->
-
-
-                               
-                              <!---<li><a asp-area="" asp-controller="New" asp-action="Index" class="nav-link mx-0">view list of universities </a></li>-->
-                      
-
-                               
-                                <!--<li>  <partial name="_LoginPartial" class="nav-link mx-0"  /></li>-->
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link mx-0 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                                Login
-                            </a>
-                   
-                         <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#1B1212">
-                                <li>  <a asp-area="" asp-controller="Home" asp-action="LOGINSUPERADMIN" class="nav-link mx-0" >Web Admin</a></li>
+                          <!--  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#1B1212">
+                                    <!-- <li> <a asp-area="" asp-controller="Universities" asp-action="AddNew" class="nav-link mx-0" >Register your university</a></li>-->
+                                <!---<li><a asp-area="" asp-controller="New" asp-action="Index" class="nav-link mx-0">view list of universities </a></li>-->
+                                <!--<li>  <partial name="_LoginPartial" class="nav-link mx-0"  /></li>
                             </ul>-->
-                        </li>
-                        <li class="nav-item">
-                            <a asp-area="" asp-controller="Home" asp-action="aboutUs" class="nav-link mx-0">About Us</a>
-                        </li>
+                             
+                                
 
-                      <li class="nav-item">
-                            <a asp-area="" asp-controller="Profile" asp-action="Index" class="nav-link mx-0">Degree list test for search </a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-area="" asp-controller="AppRoles" asp-action="Index" class="nav-link mx-0">Roles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index">Super Admin DashBoard</a>
-                        </li>
-                        <li class="nav-item">
-                            <<partial name="_LoginPartial" />
-                        </li>
-                    </ul>
+                                <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#1B1212">
+                                       <li>  <a asp-area="" asp-controller="Home" asp-action="LOGINSUPERADMIN" class="nav-link mx-0" >Web Admin</a></li>
+                                   </ul>-->
+                               
+                                <li class="nav-item">
+                                    <a asp-area="" asp-controller="Home" asp-action="aboutUs" class="nav-link mx-0">About Us</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a asp-area="" asp-controller="Profile" asp-action="Index" class="nav-link mx-0">Degree list test for search </a>
+                                </li>
+
+
+                            </ul>
+                            <ul class="navbar-nav">
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        <li class="nav-item">
+                                            <a asp-area="" asp-controller="AppRoles" asp-action="Index" class="nav-link mx-0">Roles</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index">Super Admin DashBoard</a>
+                                        </li>
+                                    }
+                                    @if (User.IsInRole("University Admin"))
+                                    {
+                                        <li class="nav-item">
+                                            <a asp-area="" asp-controller="University" asp-action="Details" class="nav-link mx-0">Profile</a>
+                                        </li>
+                                    }
+
+
+                                    <li class="nav-item">
+                                        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                            <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                        </form>
+                                    </li>
+                                }
+                                else
+                                {
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                    </li>
+                                }
+                                <li class="nav-item">
+                                    <a asp-area="" asp-controller="AppRoles" asp-action="Index" class="nav-link mx-0">Roles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index">Super Admin DashBoard</a>
+                                </li>
+
+                            </ul>
+                    </div>
+
                 </div>
-              
-            </div>
-    <!--- <partial name="_LoginPartial" />-->
-        </nav>
-        
+                <!--- <partial name="_LoginPartial" />-->
+            </nav>
 
 
-        
-    
+
     </header>
- 
-   <div class="container">
+
+    <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-    
 
-    <footer class="footer">
-        <div>
-            &copy; 2022 - Project_G06 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+
+    <footer class="footer bg-black text-white fixed-bottom">
+        <div class="container">
+            &copy; 2022 - Project_G06 - Best-Vs-Best<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+          
+                </div>
+            </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
