@@ -4,7 +4,7 @@
 @inject SignInManager<WebApplication2User> SignInManager
 @inject UserManager<WebApplication2User> UserManager
 
-<ul class="navbar-nav">
+<ul>
 @if (SignInManager.IsSignedIn(User))
 {
     <li >
