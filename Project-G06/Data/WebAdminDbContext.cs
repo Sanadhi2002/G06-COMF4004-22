@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿
 using Microsoft.EntityFrameworkCore;
 using Project_G06.Models;
 
 namespace Project_G06.Data
 {
-    public class WebAdminDbContext : IdentityDbContext
+    public class WebAdminDbContext :DbContext
     {
         public WebAdminDbContext(DbContextOptions <WebAdminDbContext>options) : base(options)
         {
