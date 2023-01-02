@@ -17,7 +17,7 @@ namespace Project_G06.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index" , "profile");   
         }
 
         public IActionResult Privacy()
