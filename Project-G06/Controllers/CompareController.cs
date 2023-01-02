@@ -17,5 +17,7 @@ namespace Project_G06.Controllers
             IEnumerable<DegreeModel> degreeList = _context.DegreeModel; 
             return View(degreeList);
         }
+
+    
     }
 }
