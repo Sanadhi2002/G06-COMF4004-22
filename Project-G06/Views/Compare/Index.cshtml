@@ -2,7 +2,8 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+  @foreach (var obj in Model)
+        {
 <h1>Index degrees for search page</h1>
 <table>
     <thead>
@@ -19,8 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var obj in Model)
-        {
+       
             <tr>
                 <td>@obj.Degre_Name</td>
                 <td>@obj.Degree_Type</td>
@@ -33,6 +33,7 @@
                 <td>@obj.Admission_Requirments</td>
 
             </tr>
-        }
+        
     </tbody>
 </table>
+}
