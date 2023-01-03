@@ -15,7 +15,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Project_G06.Areas.Identity;
-using Project_G06.Data;
 
 namespace Project_G06.Areas.Identity.Pages.Account
 {
