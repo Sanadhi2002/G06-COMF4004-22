@@ -25,63 +25,19 @@
 }
 else
 {
-    @foreach (var item in Model)
-    {
-                <table class="table table-bordered table-striped" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>Degree_Name</th>
-                            <th>Type</th>
-                            <th>Affiliated University</th>
-                            <th>Duration</th>
-                    <th>Course Fee</th>
-                    <th>Degree description</th>
-                    <th>Academic Progression</th>
-                    <th>Career Oppurtunities</th>
-                                    <th>Admission requirements</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+   
+        <div class="row">
+            @foreach (var obj in Model){
+            <div class="column" style="background-color:#aaa;">
+                <h2>@obj.S_Name</h2>
+                <p>@obj.S_Id</p>
+            </div>
+           
 
 
-                @foreach (var obj in Model /*model at the top of the page /  /*include the get action*/)
-                {
-                                <tr>
-                                    <td width="50%" asp-route-id="@obj.S_Name">
-                            @obj.S_Id
-                                    </td>
-                                    <td width="50%">
-                            @obj.S_Email
-                                    </td>
-                                    <td width="50%">
-                            @obj.S_Name
-                                    </td>
-                        <td width="50%">
-                            @obj.S_Name
-                        </td>
-                        <td width="50%">
-                            @obj.S_Name
-                        </td>
-                        <td width="50%">
-                            @obj.S_Name
-                        </td>
-                        <td width="50%">
-                            @obj.S_Name
-                        </td>
-                            <td width="50%">
-                            @obj.S_Name
-                                    </td>
-                        <td width="50%">
-                            @obj.S_Name
-                        </td>
-                                </tr>
-                }
 
-
-                    </tbody>
-
-
-                </table>
-    }
-
+                      
+}
+        </div>
+    
 }

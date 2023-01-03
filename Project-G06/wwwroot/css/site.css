@@ -434,3 +434,19 @@ input[type=text] {
 }
 
 
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    column-gap:1px;
+    row-gap:10px;
+    border: 1px solid black;
+    box-shadow:black 10px 10px 10px 10px inset;
+
+}
+
+    .column div {
+        column-gap: 1px;
+        row-gap: 10px;
+    }
