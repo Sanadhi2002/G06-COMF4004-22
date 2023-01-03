@@ -1,41 +1,28 @@
-<<<<<<< HEAD
+
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Reflection.Emit;
-=======
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-
-
-
 using Project_G06.Models;
->>>>>>> b7d6ba65a5b00732853bcca8f995fb93438546b5
+
 
 
 namespace Project_G06.Data
 {
-<<<<<<< HEAD
-    public class WebApplication2DbContext:IdentityDbContext
+
+    public class WebApplication2DbContext : IdentityDbContext<WebApplication2User>
     {
         public WebApplication2DbContext(DbContextOptions<WebApplication2DbContext> options)
       : base(options)
 
         {
         }
-=======
-    public class WebApplication2DbContext : IdentityDbContext<WebApplication2User>
-    {
-        public WebApplication2DbContext(DbContextOptions<WebApplication2DbContext> options)
-        : base(options)
 
-        {
-        }
+  
 
 
->>>>>>> b7d6ba65a5b00732853bcca8f995fb93438546b5
         //public DbSet<Class> Class { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -56,14 +43,13 @@ namespace Project_G06.Data
         }
         //public DbSet<Class> Class { get; set; }
 
-<<<<<<< HEAD
+
         public DbSet<Project_G06.Models.Class> Class { get; set; }
         public DbSet<Project_G06.Models.degree> degree { get; set; }
-    }
-}
-=======
+
         public DbSet<UniProfileModel> UniProfileModel { get; set; }
         public DbSet<DegreeModel> DegreeModel { get; set; }
     }
 }
->>>>>>> b7d6ba65a5b00732853bcca8f995fb93438546b5
+
+       
