@@ -7,6 +7,7 @@
 
 <div class="wrap">
     <h1> Welcome </h1>
+    <!----
     <div class="search">
 
   <input type="text" class="searchTerm" placeholder="What is the degree you are looking for?">
@@ -14,22 +15,36 @@
             <i class="fa fa-search"></i>
             GO
         </button>
-   </div>
+   </div>-->
 
         <p> Easily select the degree you want from a range of universities on one single platform !!</p>
+    <p>
 
+        <a asp-area="" asp-controller="StudentEmail" asp-action="Add" class="link">Sign Up to recieve notifications</a>
+    </p>
 
-</div>
-<p>
+ <div class="container1">
+        <div class="con-item">
+            <img src="~/images/icons8-search-50.png" class="logo-image" />
+            <p>10+ institutions </p>
+        </div>
+        <div class="con-item">
+            <img src="~/images/icons8-search-50.png" class="logo-image" />
+            <br />
+            <p>
+                100+ courses
+            </p>
+        </div>
 
-    <a asp-area="" asp-controller="StudentEmail" asp-action="Add" class="nav-link ">Sign Up </a>
+        <div class="con-item">
+            <img src="~/images/icons8-search-50.png" class="logo-image" />
+            <br />
+            <p>
 </p>
+        </div>
 
-<p>
-    Administrator login
-    <partial name="_LoginPartial" />
-</p>
-    
+    </div>
+    </div>
 
 <!---<a asp-area="" asp-controller="StudentEmail" asp-action="Add" class="nav-link " >Sign Up with your email</a>-->
 

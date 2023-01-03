@@ -11,7 +11,7 @@ namespace Project_G06.Data
         }
         public DbSet<WebAdmin> WebAdmins { get; set; }
 
-        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+      
 
         public DbSet<UniProfileModel> UniProfileModel { get; set; }
         public DbSet<DegreeModel> DegreeModel { get; set; }

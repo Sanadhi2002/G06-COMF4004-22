@@ -1,0 +1,91 @@
+﻿@model DegreeModel
+<div class="col-11 mx-auto pt-0">
+    <div class="card">
+        <div class="card-header bg-primary text-uppercase text-white text-center">
+            <h5>Create image</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="DegreeCreate" enctype="multipart/form-data" onsubmit="return ValidateForm()">
+                <div class="btn-group">
+
+                    <div class=" col-8 row">
+
+                        <div class="col-8">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Degre_Name" class="controll-lable"></label>
+                                <input asp-for="Degre_Name" class="form-control" />
+                                <span asp-validation-for="Degre_Name" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class=" col-8">
+
+                        <div class="form-group">
+                            <label asp-for="UserId" class="controll-lable"></label>
+                            <input asp-for="UserId" value="@(ViewBag.userid)" class="form-control" readonly />
+                            @*<input @Html.DisplayFor(model => model.Uni_ID) class="form-control" />*@
+
+                            <span asp-validation-for="UserId" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    @*<div class=" col-8">
+
+                    <div class="form-group">
+                    <label asp-for="Uni_FacultyID" class="controll-lable"></label>
+                    <input asp-for="Uni_FacultyID" class="form-control" />
+                    <span asp-validation-for="Uni_FacultyID" class="text-danger"></span>
+                    </div>
+                    </div>
+                    <div class=" col-8">
+
+                    <div class="form-group">
+                    <label asp-for="ImageExtension" class="controll-lable"></label>
+                    <input asp-for="ImageExtension" class="form-control" id="ImageExtension" />
+
+                    </div>
+                    </div>*@
+
+                </div>
+                @*                    <div class="col-4 row">
+                <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" value="Error" />
+                <div class="form-group col-12 justify-content-around align-middle mb-0 pb-0">
+                <img id="PreviewPhoto" src="~/profilepics/@Model.ProfilPic_URL" alt="Logo Image" width=" 200" height="200"
+                style="border:1px;margin-top:10px;" />
+                </div>
+                <div class="form-group col-2 pt-0 mt-0">
+                </div>
+                <div class="form-group col-10 pt-0 mt-0">
+
+
+                <div class="custom-file">
+                <input asp-for="UploadedProfilePic" class="custom-file-input" id="UploadedProfilePic"
+                onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])" />
+
+                <label class="custom-file-label" for="UploadedProfilePic" id=" UploadedProfilePicCaption">Browse</label>
+                </div>
+                </div>
+
+                </div>*@
+
+
+                <div class="col-12 btn-group">
+                    <div class="col-6 form-group text-right p-2">
+                        <a asp-action="Index" class="btn btn-secondary btn-black">Back</a>
+
+                    </div>
+                    <div class="col-6 form-group text-left p-2">
+                        <input type="submit" value="DegreeCreate" class="btn btn-primary btn-block" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>

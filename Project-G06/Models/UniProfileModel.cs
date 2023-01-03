@@ -5,7 +5,7 @@ namespace Project_G06.Models
 {
     public class UniProfileModel
     {
-        [Key, ForeignKey("ApplicationUser")]
+        [Key, ForeignKey("WebApplication2User")]
         public string UserId { get; set; }
         public string? UniShortname { get; set; }
         public string? UniFullname { get; set; }
@@ -14,6 +14,6 @@ namespace Project_G06.Models
         [NotMapped]
         public IFormFile UploadedProfilePic { get; set; }
         //public string UserId { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public virtual WebApplication2User WebApplication2User { get; set; }
     }
 }

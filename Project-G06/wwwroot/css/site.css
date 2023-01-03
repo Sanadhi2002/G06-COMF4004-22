@@ -1,7 +1,5 @@
 
-html {
-    font-size: 14px;
-}
+
 header ,header ul li{
     font-size:20px;
 
@@ -15,14 +13,17 @@ header ,header ul li{
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    font-size: 14px;
 }
 
 body {
     margin-bottom: 60px;
-  
-    
+   
+    padding: 0;
+    font-family: sans-serif;
 }
 
 
@@ -131,13 +132,6 @@ body {
 
 
 
-
-
-   
-
-
-
-
 .forms {
     align-items: center;
     justify-content: center;
@@ -161,7 +155,7 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-
+/*
 button {
     background-color: #c21524;
     color: white;
@@ -172,21 +166,31 @@ button {
     width: 30%;
     align-items:center;
 }
-
+*/
 
 
 h1 {
     text-align: center;
     font-size: 18px;
 }
-
+/*
 button:hover {
     background:#D7CEC7;
     color:#000000;
     border-radius:5px;
     box-shadow:0 0 5px #D3D3D3;
 }
-
+*/
+.link{
+    color:red;
+   text-decoration:none;
+   
+}
+.link:hover{
+    color:darkred;
+    text-decoration:underline;
+    text-align:center;
+}
 .formcontainer {
     text-align: left;
     margin: 24px 50px 12px;
@@ -232,22 +236,6 @@ input[type=text] {
     overflow:hidden;
 }
 
-#logout {
-    border-color: #1861ac;
-    color: white;
-}
-
-
-
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
 
 .login-box {
     position: absolute;
@@ -343,6 +331,8 @@ body {
 
 .wrap {
     margin-top: 10%;
+
+
 }
 
 
@@ -407,13 +397,34 @@ body {
 }
 
 
-
-
-
-
 .wrap p {
         text-align: center;
         font-size: 24px;
         font-family: 'Oswald', sans-serif;
     }
+
+.container1 {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    flex-direction: row; /*
+    flex-wrap: wrap; */
+ 
+}
+
+.con-item {
+    width: auto;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    /*  border:3px solid rgb(18, 17, 17) ;*/
+    background-color: #FFFFFF;
+    padding: 30px;
+   
+    height: auto;
+    flex-basis: 2px;
+    box-shadow: -1px 1px 5px 5px white;
+}
+
 
