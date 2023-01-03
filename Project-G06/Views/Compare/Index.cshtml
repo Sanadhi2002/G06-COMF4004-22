@@ -1,1 +1,72 @@
-﻿
+﻿@model IEnumerable<StudentEmail>
+    //category is the name of the model
+
+
+    
+
+    <p>
+        @using (Html.BeginForm("Index", "Compare", FormMethod.Get))
+    {
+
+        @Html.RadioButton("SearchBy" , "S_Name" , true)  <text>Name</text>
+
+        @Html.RadioButton("SearchBy" , "S_Id")  <text>ID </text>
+        <br />
+        @Html.TextBox("search")
+
+        <input type="submit" value="Search" />
+    }
+
+    </p>
+
+    @if (Model.Count() == 0)
+{
+   <p>
+        
+            No items matching search
+     </p>   
+    
+}
+else
+{
+    
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>University ID</th>
+                <th>University Name</th>
+                <th>University Email</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @foreach (var obj in Model /*model at the top of the page /  /*include the get action*/)
+                {
+            <tr>
+                <td width="50%">
+                    @obj.S_Name
+                </td>
+                <td width="50%" >
+                    @obj.S_Id
+                </td>
+                <td width="50%">
+                    @obj.S_Email
+                </td>
+
+
+
+
+            </tr>
+                }
+
+
+        </tbody>
+
+
+    </table>
+    }
+
+}
