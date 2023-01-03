@@ -9,7 +9,7 @@ namespace Project_G06.Controllers
        
 
         private readonly StudentEmailDbContext studentEmailDbContext;
-        public CompareController(StudentEmailDbContext studentEmailDbContext)
+        public StudentEmailController(StudentEmailDbContext studentEmailDbContext)
         {
             this.studentEmailDbContext = studentEmailDbContext;
         }

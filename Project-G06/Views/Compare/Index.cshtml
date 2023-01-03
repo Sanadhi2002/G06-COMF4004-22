@@ -1,4 +1,4 @@
-﻿@model IEnumerable<StudentEmail>
+﻿@model IEnumerable<DegreeModel>
     //category is the name of the model
 
 
@@ -29,7 +29,8 @@
 }
 else
 {
-    
+    @foreach (var item in Model)
+    {
     <table class="table table-bordered table-striped" style="width:100%">
         <thead>
             <tr>
