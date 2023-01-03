@@ -1,73 +1,96 @@
-﻿@model IEnumerable<DegreeModel>
-    //category is the name of the model
+﻿@model IEnumerable<DegreeModel> //category is the name of the model
 
 
-    
+<h1>Individual uiversity profile</h1>
 
-    <p>
-        @using (Html.BeginForm("Index", "Compare", FormMethod.Get))
+
+
+<div>
+    <div>
+        <a asp-controller="New" asp-action="Create" class="btn btn-primary">Register a new University</a>
+    </div>
+</div>
+
+<p>
+    @using (Html.BeginForm("Index", "Profile", FormMethod.Get))
     {
 
-        @Html.RadioButton("SearchBy" , "S_Name" , true)  <text>Name</text>
+        @Html.RadioButton("SearchBy" , "Degre_Name" , true) <text>Name</text>
 
-        @Html.RadioButton("SearchBy" , "S_Id")  <text>ID </text>
-        <br />
+        @Html.RadioButton("SearchBy" , "Degree_Type") <text>Type </text>
+            <br />
         @Html.TextBox("search")
 
-        <input type="submit" value="Search" />
+            <input type="submit" value="Search" class="searchButton" id="searchButton" />
     }
 
-    </p>
+</p>
 
-    @if (Model.Count() == 0)
+@if (Model.Count() == 0)
 {
-   <p>
-        
-            No items matching search
-     </p>   
-    
+
+    <p> No items matching search</p>
+
 }
 else
 {
     @foreach (var item in Model)
     {
-    <table class="table table-bordered table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>University ID</th>
-                <th>University Name</th>
-                <th>University Email</th>
-                <th></th>
+                <table class="table table-bordered table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Degree_Name</th>
+                            <th>Type</th>
+                            <th>Affiliated University</th>
+                            <th>Duration</th>
+                    <th>Course Fee</th>
+                    <th>Degree description</th>
+                    <th>Academic Progression</th>
+                    <th>Career Oppurtunities</th>
+                                    <th>Admission requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-            </tr>
-        </thead>
-        <tbody>
 
-
-            @foreach (var obj in Model /*model at the top of the page /  /*include the get action*/)
+                @foreach (var obj in Model /*model at the top of the page /  /*include the get action*/)
                 {
-            <tr>
-                <td width="50%">
-                    @obj.S_Name
-                </td>
-                <td width="50%" >
-                    @obj.S_Id
-                </td>
-                <td width="50%">
-                    @obj.S_Email
-                </td>
-
-
-
-
-            </tr>
+                                <tr>
+                                    <td width="50%" asp-route-id="@obj.Degre_Name">
+                            @obj.Degre_Name
+                                    </td>
+                                    <td width="50%">
+                            @obj.Degree_Type
+                                    </td>
+                                    <td width="50%">
+                            @obj.Affiliated_uni
+                                    </td>
+                        <td width="50%">
+                            @obj.Degree_duration
+                        </td>
+                        <td width="50%">
+                            @obj.CourseFee
+                        </td>
+                        <td width="50%">
+                            @obj.Degree_description
+                        </td>
+                        <td width="50%">
+                            @obj.Academic_proggression
+                        </td>
+                            <td width="50%">
+                            @obj.Career_Opurtunity
+                                    </td>
+                        <td width="50%">
+                            @obj.Admission_Requirments
+                        </td>
+                                </tr>
                 }
 
 
-        </tbody>
+                    </tbody>
 
 
-    </table>
+                </table>
     }
 
 }

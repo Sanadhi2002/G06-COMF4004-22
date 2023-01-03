@@ -6,24 +6,19 @@ namespace Project_G06.Controllers
     public class CompareController : Controller
     {
 
-       
+        private readonly WebAdminDbContext _context;
 
-        private readonly StudentEmailDbContext studentEmailDbContext;
-        public StudentEmailController(StudentEmailDbContext studentEmailDbContext)
+        public CompareController(WebAdminDbContext context)
         {
-            this.studentEmailDbContext = studentEmailDbContext;
+            _context = context;
         }
 
         public IActionResult Index(string searchBy , string search)
         {
-            if (searchBy == "S_Name")
-            {
-                return View(studentEmailDbContext.StudentEmails.Where(x => x.S_Name.StartsWith ( search) || search == null).ToList());
-            }
+            if (searchBy == "Degre_Name")
+                return View(_context.DegreeModel.Where(x => x.Degre_Name == search || search == null).ToList());
             else
-            {
-                return View(studentEmailDbContext.StudentEmails.Where(x => x.S_Email.StartsWith(search) || search == null).ToList()) ;
-            }
+                return View(_context.DegreeModel.Where(x => x.Degree_Type == search || search == null).ToList());
         }
     }
 }
