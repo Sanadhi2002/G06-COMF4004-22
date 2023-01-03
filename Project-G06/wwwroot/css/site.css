@@ -119,33 +119,40 @@ body {
     color:#ddd;
 }
 #buttons {
-    background: black;
-    color: azure;
+    background: #39e75f;
+    color: white;
     margin: 30px 20px;
     width: 30%;
-    border: 2px solid rgb(255, 0, 0);
-    border-radius: 10px;
+    border-radius: 100px;
 }
-    #buttons:hover {
+ #buttons:hover {
         border: 2px solid silver;
     }
 
-
-
-.forms {
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-    border: 5px solid #f1f1f1;
-    display: flex;
-    overflow: hidden;
-    padding: 80px;
-    border-radius: 15px;
-    background-color: #26282A;
-    color:white;
-    margin-top: 80px;
-    margin-left: 30%;
+#registerSubmit, #login-submit {
+    background: #39e75f;
+    color: white;
+    margin: 30px 20px;
+    width: 30%;
+    border-radius: 100px;
 }
+    #registerSubmit:hover, #login-submit:hover {
+        border: 2px solid silver;
+    }
+.forms {
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        border: 5px solid #f1f1f1;
+        display: flex;
+        overflow: hidden;
+        padding: 80px;
+        border-radius: 15px;
+        background-color: #26282A;
+        color: white;
+        margin-top: 80px;
+        margin-left: 30%;
+    }
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -421,10 +428,9 @@ input[type=text] {
     /*  border:3px solid rgb(18, 17, 17) ;*/
     background-color: #FFFFFF;
     padding: 30px;
-   
     height: auto;
     flex-basis: 2px;
-    box-shadow: -1px 1px 5px 5px white;
+   box-shadow: 0 6px 6px rgba(0,0,0,0.2);
 }
 
 
