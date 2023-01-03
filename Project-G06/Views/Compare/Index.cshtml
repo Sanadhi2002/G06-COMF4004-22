@@ -1,23 +1,14 @@
-﻿@model IEnumerable<DegreeModel> //category is the name of the model
+﻿@model IEnumerable<StudentEmail> //category is the name of the model
 
 
-<h1>Individual uiversity profile</h1>
-
-
-
-<div>
-    <div>
-        <a asp-controller="New" asp-action="Create" class="btn btn-primary">Register a new University</a>
-    </div>
-</div>
 
 <p>
-    @using (Html.BeginForm("Index", "Profile", FormMethod.Get))
+    @using (Html.BeginForm("Index", "Compare", FormMethod.Get))
     {
 
-        @Html.RadioButton("SearchBy" , "Degre_Name" , true) <text>Name</text>
+        @Html.RadioButton("SearchBy" , "S_Name" , true) <text>Name</text>
 
-        @Html.RadioButton("SearchBy" , "Degree_Type") <text>Type </text>
+        @Html.RadioButton("SearchBy" , "S_Email") <text>Email </text>
             <br />
         @Html.TextBox("search")
 
@@ -56,32 +47,32 @@ else
                 @foreach (var obj in Model /*model at the top of the page /  /*include the get action*/)
                 {
                                 <tr>
-                                    <td width="50%" asp-route-id="@obj.Degre_Name">
-                            @obj.Degre_Name
+                                    <td width="50%" asp-route-id="@obj.S_Name">
+                            @obj.S_Id
                                     </td>
                                     <td width="50%">
-                            @obj.Degree_Type
+                            @obj.S_Email
                                     </td>
                                     <td width="50%">
-                            @obj.Affiliated_uni
+                            @obj.S_Name
                                     </td>
                         <td width="50%">
-                            @obj.Degree_duration
+                            @obj.S_Name
                         </td>
                         <td width="50%">
-                            @obj.CourseFee
+                            @obj.S_Name
                         </td>
                         <td width="50%">
-                            @obj.Degree_description
+                            @obj.S_Name
                         </td>
                         <td width="50%">
-                            @obj.Academic_proggression
+                            @obj.S_Name
                         </td>
                             <td width="50%">
-                            @obj.Career_Opurtunity
+                            @obj.S_Name
                                     </td>
                         <td width="50%">
-                            @obj.Admission_Requirments
+                            @obj.S_Name
                         </td>
                                 </tr>
                 }
