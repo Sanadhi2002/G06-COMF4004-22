@@ -323,7 +323,7 @@ input[type=text] {
         box-shadow: 0 0 5px #03e9f4,
     }
 
-
+/*
 .search {
     display: flex;
     flex-direction: row;
@@ -346,7 +346,7 @@ input[type=text] {
 
 
 .searchTerm {
-    width: 60%;
+    width: 30%;
     border: 3px solid #1D1D1D;
     border-right: none;
     padding: 5px;
@@ -437,7 +437,7 @@ input[type=text] {
 .column {
     float: left;
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
     background-color:white;
     height:300px;
@@ -458,14 +458,29 @@ input[type=text] {
 
   
 }
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
-.column h2{
-    text-align:center;
-    font-size:21px;
-    color:orangered;
+
+.column h2 {
+    text-align: left;
+    font-size: 25px;
+    color: #a70000;
+    font-family:'Times New Roman';
+    text-decoration:underline;
+    text-transform:uppercase;
+    
 }
 
 .column p {
-    text-align :left;
+    text-align: left;
+    font-family: 'Times New Roman';
+}
 
+
+.compare header {
+    background-image: url(../images/books-2596809.jpg);
+    height:500px;
+    padding:0px;
+    width:100%;
+    margin:0;
 }
