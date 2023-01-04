@@ -1,23 +1,20 @@
-﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
-
-
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Project_G06.Models;
+using System.Reflection.Emit;
 
 
 namespace Project_G06.Data
 {
-    public class WebApplication2DbContext : IdentityDbContext<WebApplication2User>
+    public class WebApplication2DbContext : IdentityDbContext
     {
         public WebApplication2DbContext(DbContextOptions<WebApplication2DbContext> options)
-        : base(options)
+      : base(options)
 
         {
         }
-
-
         //public DbSet<Class> Class { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

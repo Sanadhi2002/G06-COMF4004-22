@@ -42,9 +42,10 @@ a{
 }
 
 .nav-link:hover {
-    border-color: #1861ac;
+  /* border-color: #1861ac;
     color: white;
-    background-color: #76323F;
+    background-color: #76323F;*/
+  color:silver;
 }
 .border-top {
     border-top: 1px solid #e5e5e5;
@@ -65,8 +66,9 @@ button.accept-policy {
 .footer {
     text-align:center;
    /* position: absolute;*/
-    bottom: 0px;
-    height: 35px;
+   position:relative;
+   
+    
     background-color: #666;
     color: #eee;
     /* white-space: nowrap;

@@ -1,7 +1,5 @@
 
-html {
-    font-size: 14px;
-}
+
 header ,header ul li{
     font-size:20px;
 
@@ -15,14 +13,18 @@ header ,header ul li{
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    font-size: 14px;
 }
 
 body {
-    margin-bottom: 60px;
-  
-    
+   /* margin-bottom: 60px;*/
+    background: #FFFFFF;
+    padding: 0;
+    font-family: sans-serif;
+    margin:0;
 }
 
 
@@ -109,49 +111,49 @@ body {
       
 }
 #login {
-  /*  overflow: hidden;
-    margin: auto;*/
-   /* margin: 20px 0 0 450px;*/
-  /*  padding: 80px;*/
-  /*  background: #8458a3;*/
-    /*border-radius: 15px;*/
-    /*color:#ddd;*/
+    overflow: hidden;
+    margin: auto;
+    margin: 20px 0 0 450px;
+    padding: 80px;
+    background: #8458a3;
+    border-radius: 15px;
+    color:#ddd;
 }
 #buttons {
-    background: black;
-    color: azure;
+    background: #39e75f;
+    color: white;
     margin: 30px 20px;
     width: 30%;
-    border: 2px solid rgb(255, 0, 0);
-    border-radius: 10px;
+    border-radius: 100px;
 }
-    #buttons:hover {
+ #buttons:hover {
         border: 2px solid silver;
     }
 
-
-
-
-
-   
-
-
-
-
-.forms {
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-    border: 5px solid #f1f1f1;
-    display: flex;
-    overflow: hidden;
-    padding: 80px;
-    border-radius: 15px;
-    background-color: #26282A;
-    color:white;
-    margin-top: 80px;
-    margin-left: 30%;
+#registerSubmit, #login-submit {
+    background: #39e75f;
+    color: white;
+    margin: 30px 20px;
+    width: 30%;
+    border-radius: 100px;
 }
+    #registerSubmit:hover, #login-submit:hover {
+        border: 2px solid silver;
+    }
+.forms {
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        border: 5px solid #f1f1f1;
+        display: flex;
+        overflow: hidden;
+        padding: 80px;
+        border-radius: 15px;
+        background-color: #26282A;
+        color: white;
+        margin-top: 80px;
+        margin-left: 30%;
+    }
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -161,7 +163,7 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-
+/*
 button {
     background-color: #c21524;
     color: white;
@@ -172,21 +174,31 @@ button {
     width: 30%;
     align-items:center;
 }
-
+*/
 
 
 h1 {
     text-align: center;
     font-size: 18px;
 }
-
+/*
 button:hover {
     background:#D7CEC7;
     color:#000000;
     border-radius:5px;
     box-shadow:0 0 5px #D3D3D3;
 }
-
+*/
+.link{
+    color:red;
+   text-decoration:none;
+   
+}
+.link:hover{
+    color:darkred;
+    text-decoration:underline;
+    text-align:center;
+}
 .formcontainer {
     text-align: left;
     margin: 24px 50px 12px;
@@ -232,22 +244,6 @@ input[type=text] {
     overflow:hidden;
 }
 
-#logout {
-    border-color: #1861ac;
-    color: white;
-}
-
-
-
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
 
 .login-box {
     position: absolute;
@@ -328,7 +324,7 @@ body {
         box-shadow: 0 0 5px #03e9f4,
     }
 
-
+/*
 .search {
     display: flex;
     flex-direction: row;
@@ -343,13 +339,15 @@ body {
 
 .wrap {
     margin-top: 10%;
+
+
 }
 
 
 
 
 .searchTerm {
-    width: 60%;
+    width: 30%;
     border: 3px solid #1D1D1D;
     border-right: none;
     padding: 5px;
@@ -407,13 +405,88 @@ body {
 }
 
 
-
-
-
-
 .wrap p {
         text-align: center;
         font-size: 24px;
         font-family: 'Oswald', sans-serif;
     }
 
+.container1 {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    flex-direction: row; /*
+    flex-wrap: wrap; */
+ 
+}
+
+.con-item {
+    width: auto;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    /*  border:3px solid rgb(18, 17, 17) ;*/
+    background-color: #FFFFFF;
+    padding: 30px;
+    height: auto;
+    flex-basis: 2px;
+   box-shadow: 0 6px 6px rgba(0,0,0,0.2);
+}
+
+
+.column {
+    float: left;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: white;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+
+
+.row {
+    display: flex;
+    flex-direction:column;
+    row-gap: 20px;
+    column-gap:2px;
+    justify-content:space-around;
+   
+
+  
+}
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+
+.column h2 {
+    text-align: left;
+    font-size: 25px;
+    color: #000000;
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.column p {
+    text-align: left;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+
+.column:hover{
+    border: 1px solid black;
+}
+
+.Compare-header {
+    padding:0;
+    margin: 0 ;
+    background-color:cadetblue;
+    width : 100%;
+   padding:0;
+   margin:auto;
+
+}

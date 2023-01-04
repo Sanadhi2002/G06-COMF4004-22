@@ -6,6 +6,9 @@ namespace Project_G06.Data
 {
     public class StudentEmailDbContext : DbContext
     {
+        public StudentEmailDbContext()
+        {
+        }
 
         public StudentEmailDbContext(DbContextOptions<StudentEmailDbContext> options) : base(options)
         {

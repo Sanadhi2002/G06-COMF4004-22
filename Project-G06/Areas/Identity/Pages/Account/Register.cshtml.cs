@@ -40,7 +40,7 @@ namespace Project_G06.Areas.Identity.Pages.Account
             SignInManager<WebApplication2User> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-            RoleManager<IdentityRole>roleManager)
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _userStore = userStore;
