@@ -14,7 +14,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="UniShortname" class="controll-lable"></label>
-                                <input asp-for="UniShortname" class="form-control" / readonly>
+                                <input asp-for="UniShortname" class="form-control" / >
                                 <span asp-validation-for="UniShortname" class="text-danger"></span>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                             @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
                             <div class="form-group">
                                 <label asp-for="UniFullname" class="controll-lable"></label>
-                                <input asp-for="UniFullname" class="form-control" readonly />
+                                <input asp-for="UniFullname" class="form-control"  />
                                 <span asp-validation-for="UniFullname" class="text-danger"></span>
                             </div>
 
@@ -53,7 +53,7 @@
 
                             <div class="custom-file">
                                 <input asp-for="UploadedProfilePic" class="custom-file-input" id="UploadedProfilePic"
-                                       onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])" readonly />
+                                       onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])"  readonly/>
 
                                 <label class="custom-file-label" for="UploadedProfilePic" id=" UploadedProfilePicCaption">Browse</label> @*for disply picture*@
                             </div>
@@ -71,6 +71,7 @@
                         <input type="submit" @* value="Create"*@ class="btn btn-primary btn-block" />
                     </div>
                 </div>
+                <button asp-controller="SuperAdmin" asp-action="Edit" class="btn btn-danger"> Update</button>
 
             </form>
         </div>

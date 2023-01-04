@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Project_G06.Areas.Identity;
 using Project_G06.Data;
@@ -38,7 +39,7 @@ namespace Project_G06.Controllers
         }
 
        
-
+        //get 
         public IActionResult Edit(string Userid)
         {
             if (Userid == null )
@@ -53,9 +54,57 @@ namespace Project_G06.Controllers
 
             return View(item);
         }
-      
+
+        [HttpPost]
+        public IActionResult Edit(  UniProfileModel item)
+        {
+            if (ModelState.IsValid)
+            {
+                _webApplication2DbContext.UniProfileModel.Update(item);
+                _webApplication2DbContext.SaveChanges();
+                return RedirectToAction("Index");
+
+                
+            }
+
+            return View(item);
+        }
 
 
+        public IActionResult Delete(string Userid)
+        {
+            if (Userid == null)
+            {
+                return NotFound();
+            }
+
+            var item = _webApplication2DbContext.UniProfileModel.Find(Userid);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+            return View(item);
+
+        }
+
+        [HttpPost , ActionName("Delete")]
+
+        public IActionResult DeletePOST (string Userid)
+        {
+            var item = _webApplication2DbContext.UniProfileModel.Find(Userid);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _webApplication2DbContext.UniProfileModel.Remove(item);
+            _webApplication2DbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        
 
     }
 }
