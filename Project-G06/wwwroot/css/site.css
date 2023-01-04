@@ -440,9 +440,10 @@ input[type=text] {
     padding: 10px;
     box-sizing: border-box;
     background-color:white;
+    height:300px;
   
    
-    border: 1px solid black;
+    
     
 }
 
@@ -456,4 +457,15 @@ input[type=text] {
    
 
   
+}
+
+.column h2{
+    text-align:center;
+    font-size:21px;
+    color:orangered;
+}
+
+.column p {
+    text-align :left;
+
 }
