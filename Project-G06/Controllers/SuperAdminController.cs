@@ -36,5 +36,26 @@ namespace Project_G06.Controllers
             IEnumerable<DegreeModel> DegreeList = _webApplication2DbContext.DegreeModel.Where(c => c.UserId == Id).ToList();
             return View(DegreeList);
         }
+
+       
+
+        public IActionResult Edit(string Userid)
+        {
+            if (Userid == null )
+            {
+                return NotFound();
+            }
+            var item = _webApplication2DbContext.UniProfileModel.Find(Userid);
+            if(item == null)
+            {
+                return NotFound();
+            }
+
+            return View(item);
+        }
+      
+
+
+
     }
 }
