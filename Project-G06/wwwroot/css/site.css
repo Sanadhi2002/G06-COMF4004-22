@@ -436,17 +436,24 @@ input[type=text] {
 
 .column {
     float: left;
-    width: 50%;
+    width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    column-gap:1px;
-    row-gap:10px;
-    border: 1px solid black;
+    background-color:white;
+  
    
-
+    border: 1px solid black;
+    
 }
 
-    .column div {
-        column-gap: 1px;
-        row-gap: 10px;
-    }
+
+.row {
+    display: flex;
+    flex-direction:column;
+    row-gap: 15px;
+    column-gap:2px;
+    justify-content:space-around;
+   
+
+  
+}
