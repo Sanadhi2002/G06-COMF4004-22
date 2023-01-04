@@ -122,23 +122,25 @@ body {
 #buttons {
     background: #39e75f;
     color: white;
-    margin: 30px 20px;
+    
     width: 30%;
     border-radius: 100px;
+    border: 2px solid silver;
 }
  #buttons:hover {
-        border: 2px solid silver;
-    }
+        border: 2px solid black;
+  }
 
 #registerSubmit, #login-submit {
     background: #39e75f;
     color: white;
-    margin: 30px 20px;
+   
     width: 30%;
     border-radius: 100px;
+    border: 2px solid silver;
 }
     #registerSubmit:hover, #login-submit:hover {
-        border: 2px solid silver;
+       border: 2px solid black;
     }
 .forms {
         align-items: center;
@@ -399,7 +401,7 @@ input[type=text] {
     font-size: 54px;
     font-family: 'Oswald', sans-serif;
     margin-top:40px;
-    color:#d89595;
+    color:#710c04;
 
   
 }
@@ -434,6 +436,9 @@ input[type=text] {
    box-shadow: 0 6px 6px rgba(0,0,0,0.2);
 }
 
+ .con-item p {
+        color: #710c04;
+    }
 
 .column {
     float: left;

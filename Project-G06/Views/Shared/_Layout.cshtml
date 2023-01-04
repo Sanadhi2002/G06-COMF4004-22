@@ -87,13 +87,14 @@
                             <li class="nav-item">
                                 <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link mx-0 ">Home</a>
                             </li>
-                            
-                            <li class="nav-item">
-                                <a asp-area="" asp-controller="Home" asp-action="UnivProfile" class="nav-link mx-0">University Profile</a>
-                            </li>
-                            <li class="nav-item dropdown">
+
+
+                        <li class="nav-item">
+                            <a asp-area="" asp-controller="Compare" asp-action="Index" class="nav-link mx-0">Compare </a>
+                        </li>
+                        <!--      <li class="nav-item dropdown">
                           
-                          <!--  <a class="nav-link mx-0 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                          <a class="nav-link mx-0 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                             Register
                             </a>-->
                           <!--  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#1B1212">
@@ -110,11 +111,10 @@
                                
 
 
-                                <li class="nav-item">
-                                    <a asp-area="" asp-controller="Compare" asp-action="Index" class="nav-link mx-0">Degree list test for search </a>
-                                </li>
 
-
+                        <li class="nav-item">
+                            <a asp-area="" asp-controller="Home" asp-action="UnivProfile" class="nav-link mx-0">University Profile</a>
+                        </li>
                             </ul>
                             <ul class="navbar-nav">
                                 @if (SignInManager.IsSignedIn(User))
@@ -151,11 +151,11 @@
                                     <li class="nav-item">
                                         <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
                                     </li>
-                                  <!-- <li class="nav-item">
-                                     <a class="nav-link" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
-                                    </li>-->
+                                 <li class="nav-item">
+                                     <a class="nav-link"  asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                    </li>
                                 }
-                            <!--    <li class="nav-item">
+                        <!-- id="login"   <li class="nav-item">
                                     <a asp-area="" asp-controller="AppRoles" asp-action="Index" class="nav-link mx-0">Roles</a>
                                 </li>-->
                                 <li class="nav-item">
