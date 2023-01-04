@@ -15,5 +15,6 @@ namespace Project_G06.Models
         public IFormFile UploadedProfilePic { get; set; }
         //public string UserId { get; set; }
         public virtual WebApplication2User WebApplication2User { get; set; }
+        public virtual Uni_FacultyModel UniFacultyModel { get; set; }
     }
 }

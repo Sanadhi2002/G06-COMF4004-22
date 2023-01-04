@@ -18,14 +18,75 @@
                                 <span asp-validation-for="Degre_Name" class="text-danger"></span>
                             </div>
                         </div>
-
-
-
+                        <div class="col-8">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Degree_Type" class="controll-lable"></label>
+                                <input asp-for="Degree_Type" class="form-control" />
+                                <span asp-validation-for="Degree_Type" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Affiliated_uni" class="controll-lable"></label>
+                                <input asp-for="Affiliated_uni" class="form-control" />
+                                <span asp-validation-for="Affiliated_uni" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Degree_duration" class="controll-lable"></label>
+                                <input asp-for="Degree_duration" class="form-control" />
+                                <span asp-validation-for="Degree_duration" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Degree_description" class="controll-lable"></label>
+                                <input asp-for="Degree_description" class="form-control" />
+                                <span asp-validation-for="Degree_description" class="text-danger"></span>
+                            </div>
+                        </div> 
+                        <div class="col-8">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="CourseFee" class="controll-lable"></label>
+                                <input asp-for="CourseFee" class="form-control" />
+                                <span asp-validation-for="CourseFee" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Career_Opurtunity" class="controll-lable"></label>
+                                <input asp-for="Career_Opurtunity" class="form-control" />
+                                <span asp-validation-for="Career_Opurtunity" class="text-danger"></span>
+                            </div>
+                        </div>
+                         <div class="col-8">
+                           <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Academic_proggression" class="controll-lable"></label>
+                                <input asp-for="Academic_proggression" class="form-control" />
+                                <span asp-validation-for="Academic_proggression" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Admission_Requirments" class="controll-lable"></label>
+                                <input asp-for="Admission_Requirments" class="form-control" />
+                                <span asp-validation-for="Admission_Requirments" class="text-danger"></span>
+                            </div>
+                        </div>
                     </div>
                     <div class=" col-8">
 
                         <div class="form-group">
-                            <label asp-for="UserId" class="controll-lable"></label>
+                            <label asp-for="UserId" class="controll-lable" hidden></label>
                             <input asp-for="UserId" value="@(ViewBag.userid)" class="form-control" readonly />
                             @*<input @Html.DisplayFor(model => model.Uni_ID) class="form-control" />*@
 
@@ -75,11 +136,11 @@
 
                 <div class="col-12 btn-group">
                     <div class="col-6 form-group text-right p-2">
-                        <a asp-action="Index" class="btn btn-secondary btn-black">Back</a>
-
+                       @* <a asp-action="Degree" asp-route-id="@Model?.UserId" class="btn btn-secondary btn-black">Back</a>*@
+                        <a class="btn btn-primary" asp-action="degree" asp-route-id="@(ViewBag.userid)">Back</a>
                     </div>
                     <div class="col-6 form-group text-left p-2">
-                        <input type="submit" value="DegreeCreate" class="btn btn-primary btn-block" />
+                        <input type="submit" value="Degree Create" class="btn btn-primary btn-block" />
                     </div>
                 </div>
 

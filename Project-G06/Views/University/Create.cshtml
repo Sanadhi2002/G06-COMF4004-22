@@ -9,16 +9,6 @@
                 <div class="btn-group">
 
                     <div class=" col-8 row">
-
-                        <div class="col-8">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <div class="form-group">
-                                <label asp-for="UniShortname" class="controll-lable"></label>
-                                <input asp-for="UniShortname" class="form-control" />
-                                <span asp-validation-for="UniShortname" class="text-danger"></span>
-                            </div>
-                        </div>
-
                         <div class=" col-8">
                             @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
                             <div class="form-group">
@@ -28,9 +18,35 @@
                             </div>
 
                         </div>
+                        <div class="col-8">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="UniShortname" class="controll-lable"></label>
+                                <input asp-for="UniShortname" class="form-control" />
+                                <span asp-validation-for="UniShortname" class="text-danger"></span>
+                            </div>
+                        </div>
                         <div class=" col-8">
                             @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
                             <div class="form-group">
+                                <label asp-for="UniDetails" class="controll-lable"></label>
+                                <input asp-for="UniDetails" class="form-control" />
+                                <span asp-validation-for="UniDetails" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        @*<div class=" col-8">
+                           
+                            <div class="form-group">
+                                <label asp-for="UniFacultyModel.Faculty_Name" class="controll-lable"></label>
+                                <input asp-for="UniDetails" class="form-control" />
+                                <span asp-validation-for="UniDetails" class="text-danger"></span>
+                            </div>
+
+                        </div>*@
+                        <div class=" col-8" hidden>
+                            @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                            <div class="form-group" >
                                 <label asp-for="UserId" class="controll-lable"></label>
                                 <input asp-for="UserId" value="@(ViewBag.userid)" class="form-control" readonly />
 

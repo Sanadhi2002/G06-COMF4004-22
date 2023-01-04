@@ -151,11 +151,13 @@ namespace Project_G06.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DegreeCreate(DegreeModel obj)
         {
-
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             _webApplication2DbContext.DegreeModel.Add(obj);
             _webApplication2DbContext.SaveChanges();
 
-            return View(obj);
+            //return View(obj);
+            return RedirectToAction("Degree", new {Id=UserId});
+
         }
         public IActionResult Index()
         {

@@ -11,7 +11,7 @@ using Project_G06.Models;
 
 namespace Project_G06.Controllers
 {
-    [Authorize(Roles ="sales")]
+    //[Authorize(Roles ="sales")]
     public class WebAdminsController : Controller
     {
         private readonly WebAdminDbContext _context;
