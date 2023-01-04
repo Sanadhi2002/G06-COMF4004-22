@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<StudentEmail> //category is the name of the model
 
-<header class="compare">
+<header>
 
 <p>
     @using (Html.BeginForm("Index", "Compare", FormMethod.Get))
@@ -25,6 +25,7 @@
 {
 
     <p> No items matching search</p>
+
 
 }
 else
