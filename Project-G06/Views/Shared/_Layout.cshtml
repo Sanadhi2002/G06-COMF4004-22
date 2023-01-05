@@ -127,12 +127,22 @@
                                         <li class="nav-item">
                                             <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index">Super Admin DashBoard</a>
                                         </li>
+                                <li>
+                                    <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                        <button id="logout" type="submit">Logout</button>
+                                    </form>
+                                </li>
                                     }
                                     @if (User.IsInRole("University Admin"))
                                     {
                                         <li class="nav-item">
                                             <a asp-area="" asp-controller="University" asp-action="Details" class="nav-link mx-0">Profile</a>
                                         </li>
+                                <li>
+                                    <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                        <button id="logout" type="submit">Logout</button>
+                                    </form>
+                                </li>
                                     }
 
 
@@ -154,6 +164,11 @@
                                  <li class="nav-item">
                                      <a class="nav-link"  asp-area="Identity" asp-page="/Account/Login">Login</a>
                                     </li>
+                            <li>
+                                <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                    <button id="logout" type="submit">Logout</button>
+                                </form>
+                            </li>
                                 }
                         <!-- id="login"   <li class="nav-item">
                                     <a asp-area="" asp-controller="AppRoles" asp-action="Index" class="nav-link mx-0">Roles</a>
@@ -165,6 +180,7 @@
                             <a asp-area="" asp-controller="Home" asp-action="aboutUs" class="nav-link mx-0">About Us</a>
                         </li>
                             </ul>
+
                     </div>
 
                 </div>
