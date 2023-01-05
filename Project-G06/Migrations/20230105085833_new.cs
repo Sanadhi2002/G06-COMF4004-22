@@ -30,6 +30,7 @@ namespace ProjectG06.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -205,6 +206,26 @@ namespace ProjectG06.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "UniFacultyModel",
+                columns: table => new
+                {
+                    UniFacultyID = table.Column<int>(name: "Uni_Faculty_ID", type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FacultyName = table.Column<string>(name: "Faculty_Name", type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UniFacultyModel", x => x.UniFacultyID);
+                    table.ForeignKey(
+                        name: "FK_UniFacultyModel_UniProfileModel_UserId",
+                        column: x => x.UserId,
+                        principalTable: "UniProfileModel",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -248,6 +269,12 @@ namespace ProjectG06.Migrations
                 name: "IX_DegreeModel_UserId",
                 table: "DegreeModel",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UniFacultyModel_UserId",
+                table: "UniFacultyModel",
+                column: "UserId",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -270,6 +297,9 @@ namespace ProjectG06.Migrations
 
             migrationBuilder.DropTable(
                 name: "DegreeModel");
+
+            migrationBuilder.DropTable(
+                name: "UniFacultyModel");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -10,7 +10,7 @@ using Project_G06.Models;
 namespace Project_G06.Controllers
 {
 
-    [Authorize(Roles = "Administrator")]
+    ////[Authorize(Roles = "Administrator")]
     public class SuperAdminController : Controller
     {
 

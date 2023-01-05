@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using ProjectG06.Migrations;
+
 using System.ComponentModel.DataAnnotations;
 
 namespace Project_G06.Models
