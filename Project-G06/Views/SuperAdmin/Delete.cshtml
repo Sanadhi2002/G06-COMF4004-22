@@ -1,9 +1,7 @@
 ﻿@model UniProfileModel
 <div class="col-11 mx-auto pt-0">
     <div class="card">
-        <div class="card-header bg-primary text-uppercase text-white text-center">
-            <h5>Create profile</h5>
-        </div>
+        
         <div class="card-body">
             <form method="post" asp-action="Delete" >
                 <input asp-for="UserId" hidden />
@@ -15,7 +13,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="UniShortname" class="controll-lable"></label>
-                                <input asp-for="UniShortname" class="form-control" / readonly>
+                                <input asp-for="UniShortname" class="form-control"  readonly />
                                 <span asp-validation-for="UniShortname" class="text-danger"></span>
                             </div>
                         </div>
