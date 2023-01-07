@@ -23,7 +23,15 @@
                 <input asp-for="UniFullname" class="form-control" />
                 <span asp-validation-for="UniFullname" class="text-danger"></span>
             </div>
+          @*  <div class=" col-8">
 
+                <div class="form-group">
+                    <label asp-for="UniFacultyModel.Faculty_Name" class="controll-lable"></label>
+                    <input asp-for="UniFacultyModel.Faculty_Name" class="form-control" />
+                    <span asp-validation-for="UniFacultyModel.Faculty_Name" class="text-danger"></span>
+                </div>
+
+            </div>*@
 
             <div class="col-4 row">
                 <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" />
@@ -56,9 +64,22 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-}
+}*@
+@section Scripts{
+    <script>
+        $(".custom-file-input").on("change", function () {
+
+            var fileName = $(this).val().split("\\").pop();
+
+            document.getElementById('PreviewPhoto').src = window.URL.createObjectURL(this.files[0]);
+
+            document.getElementById('PhotoUrl').value = fileName;
+
+        });
+    </script>
+        }
 
