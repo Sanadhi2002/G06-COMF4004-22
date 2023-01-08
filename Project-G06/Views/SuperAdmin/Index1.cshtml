@@ -1,0 +1,29 @@
+﻿@model IEnumerable<UniProfileModel>
+
+
+    <h1> university index</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Uni ID</th>
+            <th>Uni shortName</th>
+            <th>Uni long name</th>
+            <th>University Details</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.UserId</td>
+                <td>@obj.UniShortname </td>
+                <td>@obj.UniFullname </td>
+                <td>@obj.UniDetails </td>
+                <td><a asp-action="Delete" asp-controller="SuperAdmin" asp-route-id="@obj.UserId" >Delete</a> </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -26,12 +26,18 @@ namespace Project_G06.Controllers
             _signInManager = signInManager;
             webHostEnvironment = webHost;
         }
+
+
+        /*
         public IActionResult Index()
         {
             List<UniProfileModel> UniProfileModel;//create a list of type uniprofilemodel and set that list to _context.Uniprofiles.Tolist
             UniProfileModel = _webApplication2DbContext.UniProfileModel.ToList();
             return View(UniProfileModel);//then pass the list to the view to display on the screen 
         }
+
+
+        */
         public IActionResult Degree(string Id)
         {
             IEnumerable<DegreeModel> DegreeList = _webApplication2DbContext.DegreeModel.Where(c => c.UserId == Id).ToList();
@@ -39,70 +45,51 @@ namespace Project_G06.Controllers
         }
 
        
-        //get 
-        public IActionResult Edit(string Userid)
+        public IActionResult Index1()
         {
-            if (Userid == null )
-            {
-                return NotFound();
-            }
-            var item = _webApplication2DbContext.UniProfileModel.Find(Userid);
-            if(item == null)
-            {
-                return NotFound();
-            }
-
-            return View(item);
+            IEnumerable<UniProfileModel> objuniversitylist = _webApplication2DbContext.UniProfileModel;
+            return View(objuniversitylist);
         }
 
-        [HttpPost]
-        public IActionResult Edit(  UniProfileModel item)
+        public IActionResult Delete(string? id)
         {
-            if (ModelState.IsValid)
+            if(id == null)
             {
-                _webApplication2DbContext.UniProfileModel.Update(item);
-                _webApplication2DbContext.SaveChanges();
-                return RedirectToAction("Index");
-
-                
+                return NotFound();         
             }
 
-            return View(item);
+            var universityFromDb = _webApplication2DbContext.UniProfileModel.Find(id);
+            if (universityFromDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(universityFromDb);
         }
 
 
-        public IActionResult Delete(string Userid)
-        {
-            if (Userid == null)
-            {
-                return NotFound();
-            }
-
-            var item = _webApplication2DbContext.UniProfileModel.Find(Userid);
-
-            if (item == null)
-            {
-                return NotFound();
-            }
-            return View(item);
-
-        }
 
         [HttpPost , ActionName("Delete")]
-
-        public IActionResult DeletePOST (string Userid)
+        public IActionResult DeletePOST (string? id)
         {
-            var item = _webApplication2DbContext.UniProfileModel.Find(Userid);
-
-            if (item == null)
+            var universityFromDb = _webApplication2DbContext.UniProfileModel.Find(id);
+            if (universityFromDb != null) 
             {
+             
                 return NotFound();
             }
 
-            _webApplication2DbContext.UniProfileModel.Remove(item);
-            _webApplication2DbContext.SaveChanges();
+            _webApplication2DbContext.UniProfileModel.Remove(universityFromDb);
+            _webApplication2DbContext.SaveChanges();    
             return RedirectToAction("Index");
+        
         }
+
+     
+      
+
+ 
+      
 
         
 

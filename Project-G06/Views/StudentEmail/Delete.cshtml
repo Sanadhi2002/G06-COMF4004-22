@@ -1,0 +1,20 @@
+﻿@model StudentEmail
+
+
+<form method="post" asp-action="Delete">
+
+    <label asp-for="S_Id"></label>
+    <input asp-for="S_Id" disabled  hidden />
+
+    
+    <label asp-for="S_Name"></label>
+    <input asp-for="S_Name" disabled />
+
+
+
+    <label asp-for="S_Email"></label>
+    <input asp-for="S_Email" disabled />
+
+    <button type="submit">Delete</button>
+
+</form>

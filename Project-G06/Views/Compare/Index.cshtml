@@ -1,4 +1,7 @@
-﻿@model IEnumerable<StudentEmail> //category is the name of the model
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<StudentEmail> //category is the name of the model
 <div>
 
     <header class="Compare-header"> dfhdfhf </header>
@@ -19,6 +22,9 @@
     }
 
 </p>
+
+
+
 
 <p class="search"> Easily select the best degree  from a range of universities on one single platform !!</p>
 
@@ -51,6 +57,20 @@ else
 
                       
 }
+
+
+
+
+
+
+
+
         </div>
     
+
+
+   
 }
+
+
+

@@ -1,0 +1,25 @@
+﻿@model StudentEmail
+
+
+<form method="post" asp-action="Edit">
+    <h1>edit </h1>
+
+    <label asp-for="S_Id"></label>
+    <input asp-for="S_Id"  readonly/>
+
+
+    <label asp-for="S_Name"></label>
+    <input asp-for="S_Name" />
+    <span asp-validation-for="S_Name"></span>
+
+
+
+    <label asp-for="S_Email"></label>
+    <input asp-for="S_Email" />
+    <span asp-validation-for="S_Name"></span>
+
+    <a asp-action ="Index" asp-controller="StudentEmail">Go to list</a>
+    <button type="submit">Update</button>
+
+
+</form>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DegreeModel> //category is the name of the model
+<div>
+
+    <header class="Compare-header"> dfhdfhf </header>
+    
+</div>
+<p>
+    @using (Html.BeginForm("Index", "CorrectCompare", FormMethod.Get))
+    {
+        <h2> Welcome</h2>
+
+        @Html.RadioButton("SearchBy" , "Degre_Name" , true) <text>Name</text>
+
+        @Html.RadioButton("SearchBy" , "Degree_Type") <text>Email </text>
+        <br />
+        @Html.TextBox("search")
+
+        <input type="submit" value="Search" />
+    }
+
+</p>
+
+<p class="search"> Easily select the best degree  from a range of universities on one single platform !!</p>
+
+
+
+@if (Model.Count() == 0)
+{
+
+    <p> No items matching search</p>
+
+
+}
+else
+{
+
+    <div class="row">
+        @foreach (var obj in Model)
+        {
+            <div class="column">
+                <h2>@obj.Degre_Name</h2>
+                <p>Duration : @obj.Degree_duration</p>
+                <p>
+                    Course Fee
+                    : @obj.CourseFee
+                </p>
+                <p>Affiliated University : @obj.Affiliated_uni</p>
+                <p>Description : @obj.Degree_description</p>
+                <p>Admission requirements : @obj.Admission_Requirments</p>
+                <p>Admission requirements : @obj.Academic_proggression</p>
+            </div>
+
+
+
+
+
+        }
+    </div>
+
+}
