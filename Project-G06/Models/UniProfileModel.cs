@@ -7,10 +7,12 @@ namespace Project_G06.Models
     {
         [Key, ForeignKey("WebApplication2User")]
         public string UserId { get; set; }
+        
         public string? UniShortname { get; set; }
         public string? UniFullname { get; set; }
         public string? UniDetails { get; set; }
         public string? ProfilPic_URL { get; set; }
+        public string? ImgExtension { get; set; }
         [NotMapped]
         public IFormFile UploadedProfilePic { get; set; }
         //public string UserId { get; set; }

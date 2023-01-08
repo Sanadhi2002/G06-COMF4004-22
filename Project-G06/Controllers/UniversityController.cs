@@ -33,7 +33,8 @@ namespace Project_G06.Controllers
             if (UniProfileModel == null)
             {
                 //return NotFound();
-                return View();
+                //return View();
+                return RedirectToAction("Create");
             }
             return View(UniProfileModel);
         }
