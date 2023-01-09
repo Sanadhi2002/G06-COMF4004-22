@@ -80,6 +80,7 @@
                                        @*onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])" />*@
 
                                 <label class="custom-file-label" for="UploadedProfilePic" id=" UploadedProfilePicCaption">Browse</label> @*for disply picture*@
+                                <span asp-validation-for="UploadedProfilePic" class="text-danger"></span>
                             </div>
                         </div>
 
@@ -148,4 +149,5 @@
         }
 
     </script>
+    <partial name="_ValidationScriptsPartial.cshtml" />
         }
