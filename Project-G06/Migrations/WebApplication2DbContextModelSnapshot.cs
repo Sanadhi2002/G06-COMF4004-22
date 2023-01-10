@@ -264,6 +264,10 @@ namespace ProjectG06.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DegreeContents")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Degree_Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -292,6 +296,9 @@ namespace ProjectG06.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("ImgExtension")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ProfilPic_URL")
                         .HasColumnType("nvarchar(max)");
 
@@ -299,9 +306,11 @@ namespace ProjectG06.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UniFullname")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UniShortname")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");

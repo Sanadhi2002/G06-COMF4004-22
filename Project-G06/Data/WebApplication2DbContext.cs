@@ -37,6 +37,6 @@ namespace Project_G06.Data
 
         public DbSet<UniProfileModel> UniProfileModel { get; set; }
         public DbSet<DegreeModel> DegreeModel { get; set; }
-        public DbSet<Uni_FacultyModel> UniFacultyModel { get; set; }
+        
     }
 }

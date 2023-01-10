@@ -33,10 +33,12 @@ namespace Project_G06.Controllers
             if (UniProfileModel == null)
             {
                 //return NotFound();
-                return View();
+                //return View();
+                return RedirectToAction("Create");
             }
             return View(UniProfileModel);
         }
+        [HttpGet]
         public IActionResult Edit()
         {
             var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -51,16 +53,17 @@ namespace Project_G06.Controllers
             }
             return View(UniProfileModelFromDb);
         }
-        [HttpPost]
         [ValidateAntiForgeryToken]
+        [HttpPost]
+        
         public IActionResult Edit(UniProfileModel obj)
         {
             if (obj.UploadedProfilePic != null)
             {
                 string uniqueFileName = UploadedFile(obj);
                 obj.ProfilPic_URL = uniqueFileName;
-            }
-            _webApplication2DbContext.Attach(obj);
+        }
+        _webApplication2DbContext.Attach(obj);
             _webApplication2DbContext.Entry(obj).State = EntityState.Modified;
             _webApplication2DbContext.SaveChanges();
             return RedirectToAction("Details");

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project_G06.Models
@@ -7,14 +8,22 @@ namespace Project_G06.Models
     {
         [Key, ForeignKey("WebApplication2User")]
         public string UserId { get; set; }
-        public string? UniShortname { get; set; }
-        public string? UniFullname { get; set; }
-        public string? UniDetails { get; set; }
-        public string? ProfilPic_URL { get; set; }
+        [DisplayName("University short Name")]
+        [Required]
+        public string UniShortname { get; set; }
+        
+        [DisplayName("University Full Name")]
+        public string UniFullname { get; set; }
+        [DisplayName("University Details")]
+        public string UniDetails { get; set; }
+       
+        public string ProfilPic_URL { get; set; }
+        public string? ImgExtension { get; set; }
+        //[Required(ErrorMessage ="Please submit profile Picture")]
         [NotMapped]
         public IFormFile UploadedProfilePic { get; set; }
         //public string UserId { get; set; }
         public virtual WebApplication2User WebApplication2User { get; set; }
-        public virtual Uni_FacultyModel UniFacultyModel { get; set; }
+        
     }
 }
