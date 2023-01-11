@@ -1,6 +1,80 @@
 ﻿@model Project_G06.Models.UniProfileModel
+<div class="col-11 mx-auto pt-0">
+    <div class="card">
+        <div class="card-header bg-primary text-uppercase text-white text-center">
+            <h5> Profile Details</h5>
+        </div>
+        <div class="card-body">
 
-@{
+            <input type="hidden" asp-for="UserId" />
+            <div class="btn-group">
+
+                <div class=" col-8 row">
+
+                    <div class="col-8">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="UniFullname" class="controll-lable"></label>
+                            <input asp-for="UniFullname" class="form-control form-control-plaintext" readonly />
+
+                        </div>
+                    </div>
+
+                    <div class=" col-8">
+                        @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                        <div class="form-group">
+                            <label asp-for="UniShortname" class="controll-lable"></label>
+                            <input asp-for="UniShortname" class="form-control form-control-plaintext" readonly />
+
+                        </div>
+
+                    </div>
+                    <div class=" col-8">
+                        @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                        <div class="form-group">
+                            <label asp-for="UniDetails" class="controll-lable"></label>
+                            <input asp-for="UniDetails" class="form-control form-control-plaintext" readonly />
+
+                        </div>
+
+                    </div>
+                   
+                   
+
+                </div>
+
+                <div class="col-4 row">
+                    <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" />
+                    <div class="form-group col-12 justify-content-around align-middle mb-0 pb-0">
+                        <img id="PreviewPhoto" src="~/profilepics/@Model.ProfilPic_URL" alt="Logo Image" width=" 200" height="200"
+                             style="border:1px;margin-top:10px;" />
+                    </div>
+                    <div class="form-group col-2 pt-0 mt-0">
+                    </div>
+                    <div class="form-group col-10 pt-0 mt-0">
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-12 btn-group">
+              @*  <div class="col-5 form-group text-right p-2">
+                    <a asp-action="Index" class="btn btn-secondary btn-black">Back</a>
+
+                </div>*@
+                <div class="col-5 form-group text-left p-2">
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.UserId">Edit</a> 
+                </div>
+                <div class="col-5 form-group text-left p-2">
+                    <a class="btn btn-primary" asp-action="degree" asp-route-id="@Model?.UserId">Degree</a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+@*@{
     ViewData["Title"] = "Details";
 }
 
@@ -30,11 +104,11 @@
         </dd>
         <dt class="col-sm-2" hidden>
             @Html.DisplayNameFor(model => model.ProfilPic_URL)
-        </dt>
+        </dt>*@
         @*<dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ProfilPic_URL)
         </dd>*@
-        <dt class = "col-sm-2"hidden>
+     @*   <dt class = "col-sm-2"hidden>
             @Html.DisplayNameFor(model => model.WebApplication2User)
         </dt>
         <dd class="col-sm-10" hidden>
@@ -56,8 +130,9 @@
     </div>
 </div>
 
-    <a asp-action="Edit" asp-route-id="@Model?.UserId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.UserId">Edit</a> 
     <a asp-action="Index">Back to List</a>
     <div class="col-5 form-group text-left p-2">
         <a class="btn btn-primary" asp-action="degree" asp-route-id="@Model?.UserId">Degree</a>
 </div>
+*@
