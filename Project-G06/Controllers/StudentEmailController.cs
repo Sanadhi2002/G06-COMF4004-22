@@ -9,6 +9,8 @@ namespace Project_G06.Controllers
 {
     public class StudentEmailController : Controller
     {
+       
+       
         private readonly StudentEmailDbContext studentEmailDbContext;
         public StudentEmailController(StudentEmailDbContext studentEmailDbContext)
         {
@@ -25,8 +27,10 @@ namespace Project_G06.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Add(StudentEmail studentEmail)
+        public async Task<IActionResult> Add(StudentEmail studentEmail,string email)
         {
+            
+
             var student = new StudentEmail()
             {
                 S_Email = studentEmail.S_Email,
@@ -36,46 +40,17 @@ namespace Project_G06.Controllers
 
 
             };
+           await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
+           await studentEmailDbContext.SaveChangesAsync();
+           return RedirectToAction("Add");
 
-            /* var result = studentEmailDbContext.StudentEmails.FirstOrDefault(result => result.S_Email == student.S_Email);
-               {
-                   if(result== null)
-                   {
-                       await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
-                       await studentEmailDbContext.SaveChangesAsync();
-                       return RedirectToAction("Add");
-                   }
-                   else
-                   {
-                       if (student.S_Email != null && student.S_Name != null)
-                       {
-                           await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
-                           await studentEmailDbContext.SaveChangesAsync();
-                           return RedirectToAction("Add");
+           
 
-                       }
-                       else
-                       {
-                           return RedirectToAction("Add");
-                       }
-                   }
-               }*/
-            if (student.S_Email != null && student.S_Name != null)
-            {
-                await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
-                await studentEmailDbContext.SaveChangesAsync();
-                return RedirectToAction("Add");
-
-            }
-            else
-            {
-                return RedirectToAction("Add");
-            }
 
         }
 
 
-
+        //dulangi
         public IActionResult Index()
         {
 

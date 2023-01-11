@@ -74,3 +74,28 @@ function myFunction() {
 
 }
 
+
+
+ let SignBtn = document.getElementById("SignBtn");
+ let name = document.getElementById("name");
+
+ let emailError = document.getElementById("emailError");
+
+SignBtn.addEventListener("click", validateEmail);
+function Pop() {
+    let pop = document.getElementById("pop");
+    pop.style.display = "block";
+
+
+}
+
+function validateEmail() {
+            let email = document.getElementById("email").nodeValue;
+        if (email.length == 0) {
+            emailError.innerHTML = "Enter your email address";
+            }
+
+        }
+
+
+
