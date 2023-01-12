@@ -55,7 +55,7 @@ body {
     border-radius: 15px;
     color:#ddd;
 }
-#buttons {
+.buttons {
     background-color: #8b0000; /* Green */
     border: none;
     color: white;
@@ -101,10 +101,10 @@ body {
     color: white;
     margin-top: 80px;
     margin-left: 30%;
-    
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 .ab {
-    background-image:url(../images/background3.jpg);
+    background-image:url(../images/background4.jpg);
     background-size:cover;
     background-repeat:no-repeat;
     
@@ -382,6 +382,7 @@ input[type=text] {
         text-align: center;
         font-size: 24px;
         font-family: 'Oswald', sans-serif;
+        color:black;
        
     }
 
@@ -405,7 +406,8 @@ input[type=text] {
     padding: 30px;
     height: auto;
     flex-basis: 2px;
-    box-shadow: 0 6px 6px rgba(0,0,0,0.2);
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
 }
 
  .con-item p {
@@ -466,4 +468,15 @@ input[type=text] {
    padding:0;
    margin:auto;
 
+}
+.home-image {
+    width: 120px;
+    height: 126px;
+    overflow: hidden;
+    margin-top: -25px;
+    margin-left: 15px;
+}
+
+#pop{
+    display:none;
 }

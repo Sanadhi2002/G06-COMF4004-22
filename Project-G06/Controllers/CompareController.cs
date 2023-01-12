@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project_G06.Data;
+using PagedList;
+
 
 namespace Project_G06.Controllers
 {
@@ -13,7 +15,7 @@ namespace Project_G06.Controllers
             _context = context;
         }
 
-        public IActionResult Index(string searchBy, string search)
+        public IActionResult Index(string searchBy, string search , int? page)
         {
             if (searchBy == "S_Name")
             {

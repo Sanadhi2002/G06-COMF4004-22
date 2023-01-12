@@ -9,6 +9,8 @@ namespace Project_G06.Controllers
 {
     public class StudentEmailController : Controller
     {
+       
+       
         private readonly StudentEmailDbContext studentEmailDbContext;
         public StudentEmailController(StudentEmailDbContext studentEmailDbContext)
         {
@@ -21,61 +23,117 @@ namespace Project_G06.Controllers
             return View();
         }
 
-       
+
 
 
         [HttpPost]
-        public async Task<IActionResult>  Add(StudentEmail studentEmail)
+        public async Task<IActionResult> Add(StudentEmail studentEmail,string email)
         {
+            
+
             var student = new StudentEmail()
             {
                 S_Email = studentEmail.S_Email,
                 S_Id = studentEmail.S_Id,
                 S_Name = studentEmail.S_Name,
 
-            
 
-        };
 
-            /* var result = studentEmailDbContext.StudentEmails.FirstOrDefault(result => result.S_Email == student.S_Email);
-               {
-                   if(result== null)
-                   {
-                       await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
-                       await studentEmailDbContext.SaveChangesAsync();
-                       return RedirectToAction("Add");
-                   }
-                   else
-                   {
-                       if (student.S_Email != null && student.S_Name != null)
-                       {
-                           await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
-                           await studentEmailDbContext.SaveChangesAsync();
-                           return RedirectToAction("Add");
+            };
+           await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
+           await studentEmailDbContext.SaveChangesAsync();
+           return RedirectToAction("Add");
 
-                       }
-                       else
-                       {
-                           return RedirectToAction("Add");
-                       }
-                   }
-               }*/
-            if (student.S_Email != null && student.S_Name != null)
-            {
-                await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
-                await studentEmailDbContext.SaveChangesAsync();
-                return RedirectToAction("Add");
+           
 
-            }
-            else
-            {
-                return RedirectToAction("Add");
-            }
 
         }
-    
 
-        
+
+        //dulangi
+        public IActionResult Index()
+        {
+
+            IEnumerable<StudentEmail> objStudentList = studentEmailDbContext.StudentEmails;
+            return View(objStudentList);
+        }
+
+
+
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var studentFromDb = studentEmailDbContext.StudentEmails.Find(id);
+            if (studentFromDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(studentFromDb);
+
+
+        }
+
+
+
+        [HttpPost]
+        public IActionResult Edit(StudentEmail student)
+        {
+            if (ModelState.IsValid)
+            {
+                studentEmailDbContext.StudentEmails.Update(student);
+                studentEmailDbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(student);
+        }
+
+
+
+
+
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var studentFromDb = studentEmailDbContext.StudentEmails.Find(id);
+            if (studentFromDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(studentFromDb);
+
+        }
+
+
+
+        [HttpPost , ActionName("Delete")]
+        public IActionResult DeletePOST (int? id)
+        {
+
+            var student = studentEmailDbContext.StudentEmails.Find(id);
+            if (student == null)
+            {
+                return NotFound();  
+            }
+
+            studentEmailDbContext.StudentEmails.Remove(student);
+            studentEmailDbContext.SaveChanges();
+            return RedirectToAction("Index");
+                
+        }
+
 
     }
 

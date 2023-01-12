@@ -90,7 +90,10 @@
 
 
                         <li class="nav-item">
-                            <a asp-area="" asp-controller="Compare" asp-action="Index" class="nav-link mx-0">Compare </a>
+                            <a asp-area="" asp-controller="Compare" asp-action="Index" class="nav-link mx-0"> Compare ! </a>
+                          <!-- <a asp-area="" asp-controller="CorrectCompare" asp-action="Index" class="nav-link mx-0">Correct Compare page </a>
+                              <a asp-area="" asp-controller="StudentEmail" asp-action="Index" class="nav-link mx-0">CRUD test</a>-->
+
                         </li>
                         <li class="nav-item">
                             <a asp-area="" asp-controller="UniProfile" asp-action="UniProfile" class="nav-link mx-0">University Profile</a>
@@ -130,7 +133,7 @@
                                         </li>-->
                                
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index">Administrator DashBoard</a>
+                                    <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index1">Administrator DashBoard</a>
                                 </li>
                                 <li>
                                     <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

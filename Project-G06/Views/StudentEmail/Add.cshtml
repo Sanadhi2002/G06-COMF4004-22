@@ -7,24 +7,42 @@
 
 <body class="ab" >
 <div class="forms">
-<form method="post" action="Add"  >
+        <form method="post" action="Add" enctype="multipart/form-data" onsubmit="return ValidateForm()" >
    
      
        
      
                 <h3>Sign Up</h3><br />
             <label for="S_Name">Name:</label>
-            <input type="text" class="form-control" asp-for="S_Name" placeholder="Enter your name" />
+            <input type="text" class="form-control" asp-for="S_Name" placeholder="Enter your name" id="name"/>
+            <!-- <span asp-validation-for="S_Name" class="text-danger"></span>-->
+          <div>@Html.ValidationMessageFor(m => m.S_Name)</div>
+
          
             <label for="S_Email">Email:</label>
-            <input type="email" class="form-control" asp-for="S_Email" placeholder="Email Address" />
-     
+            <input type="email" class="form-control" asp-for="S_Email" placeholder="Email Address" id="email"/>
+            <!--<span asp-validation-for="S_Email" class="text-danger"></span>-->
+              <div>@Html.ValidationMessageFor(m =>m.S_Email)</div>
+    
       <br />
-      <button type="submit" id="buttons" >Sign Up</button>
+   
+                <!--the pop up message to be displayed-->
+                <span id="pop" >Thank you for registering</span>
+                
+      <button type="submit" class="buttons" id="SignBtn">Sign Up</button>
    
      
     </form>
 
 
 </div>
+<br />
+<br />
+   
+
 </body>
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial.cshtml" />
+        }  }
