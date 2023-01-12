@@ -17,5 +17,6 @@
             <h3>@obj.UniShortname</h3>
             <br>
             @obj.UniDetails
+        <a asp-controller="UniProfile" asp-action="Details" asp-route-id="@obj.UserId" class="btn btn-primary col-lg-12">visit @obj.UniShortname page</a>
         </div>
     }
