@@ -196,6 +196,13 @@ namespace Project_G06.Controllers
             {
                 return RedirectToAction("DegreeCreate");
             }
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var UniProfileModel = _webApplication2DbContext.UniProfileModel.FirstOrDefault(m => m.UserId == UserId);
+            if (UniProfileModel != null)
+            {
+                var UnishortName = UniProfileModel.UniShortname;
+                ViewBag.UnishortName = UnishortName;
+            }
             return View(DegreeModelFromDb);
         }
         [ValidateAntiForgeryToken]
