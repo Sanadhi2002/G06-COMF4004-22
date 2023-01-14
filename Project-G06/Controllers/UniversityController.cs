@@ -145,6 +145,12 @@ namespace Project_G06.Controllers
             var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             //ViewBag.userid = HttpContext.Session.GetString("Id");
             ViewBag.userid = UserId;
+
+            var UniProfileModel = _webApplication2DbContext.UniProfileModel.FirstOrDefault(m => m.UserId == UserId);
+            if (UniProfileModel != null)
+            {
+                var UnishortName = UniProfileModel.UniShortname;
+                ViewBag.UnishortName = UnishortName;            }
             return View();
 
 
@@ -155,6 +161,8 @@ namespace Project_G06.Controllers
         public IActionResult DegreeCreate(DegreeModel obj)
         {
             var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            
+          
             _webApplication2DbContext.DegreeModel.Add(obj);
             _webApplication2DbContext.SaveChanges();
 
