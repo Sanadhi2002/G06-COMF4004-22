@@ -51,11 +51,12 @@ namespace Project_G06.Controllers
 
 
         //dulangi
-        public IActionResult Index()
+        public async Task<   IActionResult > Index(int pageNumber =1)
         {
-
-            IEnumerable<StudentEmail> objStudentList = studentEmailDbContext.StudentEmails;
-            return View(objStudentList);
+            //@model IEnumerable<StudentEmail> put this in the index view//
+           // IEnumerable<StudentEmail> objStudentList = studentEmailDbContext.StudentEmails;
+            return View(await PaginatedList<StudentEmail>.CreateAsync(studentEmailDbContext.StudentEmails, pageNumber , 5 ));
+           // return View(objStudentList);
         }
 
 
