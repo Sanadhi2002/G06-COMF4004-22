@@ -186,6 +186,36 @@ namespace Project_G06.Controllers
             return View(DegreeModel);
 
         }
+
+        [HttpGet]
+        public IActionResult DegreeEdit(int Id)
+        {
+            
+            var DegreeModelFromDb = _webApplication2DbContext.DegreeModel.Find(Id);
+            if (DegreeModelFromDb == null)
+            {
+                return RedirectToAction("DegreeCreate");
+            }
+            return View(DegreeModelFromDb);
+        }
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+
+        public IActionResult DegreeEdit(DegreeModel obj)
+        {
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            _webApplication2DbContext.Attach(obj);
+            _webApplication2DbContext.Entry(obj).State = EntityState.Modified;
+            _webApplication2DbContext.SaveChanges();
+            return RedirectToAction("Degree", new { Id = UserId });
+            //if (ModelState.IsValid)
+            //{
+            //_webApplication2DbContext.Class.Update(obj);
+            //    _webApplication2DbContext.SaveChanges();
+            //    return RedirectToAction("Details");
+            //}
+            //return View(obj);
+        }
         public IActionResult Index()
         {
             return View();
