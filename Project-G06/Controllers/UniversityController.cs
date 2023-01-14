@@ -170,6 +170,22 @@ namespace Project_G06.Controllers
             return RedirectToAction("Degree", new {Id=UserId});
 
         }
+        public async Task<IActionResult> DetailsDegree(int? id)
+        {
+            if (id == null || _webApplication2DbContext.DegreeModel == null)
+            {
+                return NotFound();
+            }
+
+            var DegreeModel = _webApplication2DbContext.DegreeModel.FirstOrDefault(m => m.Degree_ID == id);
+            if (DegreeModel == null)
+            {
+                return NotFound();
+            }
+
+            return View(DegreeModel);
+
+        }
         public IActionResult Index()
         {
             return View();
