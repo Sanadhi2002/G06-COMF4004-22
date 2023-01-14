@@ -30,9 +30,16 @@ namespace Project_G06.Models
         public string Admission_Requirments { get; set; }
         [Required]
         public string DegreeContents { get; set; }
+        public string? UniShortname { get; set; }
+
+
 
         [ForeignKey("UniProfileModel")]
         public string UserId { get; set; }
         public UniProfileModel UniProfileModel { get; set; }
+
+       
+       
+        
     }
 }

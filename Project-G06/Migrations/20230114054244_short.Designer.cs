@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project_G06.Data;
 
 #nullable disable
 
-namespace ProjectG06.Migrations
+namespace ProjectG06.Migrations.WebApplication2Db
 {
     [DbContext(typeof(WebApplication2DbContext))]
-    partial class WebApplication2DbContextModelSnapshot : ModelSnapshot
+    [Migration("20230114054244_short")]
+    partial class @short
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

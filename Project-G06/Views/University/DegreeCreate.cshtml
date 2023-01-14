@@ -102,6 +102,17 @@
                         </div>
 
                     </div>
+                    <div class=" col-8">
+
+                        <div class="form-group" hidden>
+                            <label asp-for="UniShortname" class="controll-lable"></label>
+                            <input asp-for="UniShortname" value="@(ViewBag.UnishortName)" class="form-control" readonly />
+                            @*<input @Html.DisplayFor(model => model.Uni_ID) class="form-control" />*@
+
+                            <span asp-validation-for="UserId" class="text-danger"></span>
+                        </div>
+
+                    </div>
                     @*<div class=" col-8">
 
                     <div class="form-group">

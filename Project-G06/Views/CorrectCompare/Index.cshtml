@@ -11,7 +11,9 @@
 
         @Html.RadioButton("SearchBy" , "Degre_Name" , true) <text>Name</text>
 
-        @Html.RadioButton("SearchBy" , "Degree_Type") <text>Email </text>
+        @Html.RadioButton("SearchBy" , "Degree_Type") <text>Type of Degree</text>
+
+        @Html.RadioButton("SearchBy" ,"Affiliated_uni") <text>Affiliated University</text>
         <br />
         @Html.TextBox("search")
 
@@ -38,7 +40,7 @@ else
         @foreach (var obj in Model)
         {
             <div class="column">
-                <h2>@obj.Degre_Name</h2>
+                <h2>@obj.Degre_Name - @obj.UniShortname</h2>
                 <p>Duration : @obj.Degree_duration</p>
                 <p>
                     Course Fee
@@ -58,3 +60,4 @@ else
     </div>
 
 }
+

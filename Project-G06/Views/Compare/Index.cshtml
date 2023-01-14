@@ -1,6 +1,4 @@
-﻿
-
-@model IEnumerable<StudentEmail> //category is the name of the model
+﻿@*@model PaginatedList<Project_G06.Models.StudentEmail>
 
 <p>
     @using (Html.BeginForm("Index", "Compare", FormMethod.Get))
@@ -64,8 +62,21 @@ else
     
 
 
+   @{
+    var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.NextPage ? "disabled" : "";
+}
+
+
+<a asp-action="Index" asp-route-pageNumber = "@(Model.PageIndex - 1 )"
+class="btn btn-default @prevDisabled"> Previous</a>
+
+
+<a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex + 1 )"
+   class="btn btn-default @nextDisabled"> Next</a>
    
 }
 
 
 
+*@

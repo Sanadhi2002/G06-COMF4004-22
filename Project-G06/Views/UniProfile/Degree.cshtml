@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DegreeModel>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container btn-group">
+    <div class="col-10">
+        <h1>Degree</h1>
+    </div>
+
+</div>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+            </th>
+
+            <th>
+                Degree Name
+            </th>
+            <th>
+                Degree Type
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+
+                <td>
+                    @*<img src="@item.PhotoUrl" alt="" class="avatar">*@
+                </td>
+
+                <td>
+                    @obj.Degree_ID
+                </td>
+                <td>
+                    @obj.Degre_Name
+                </td>
+
+
+
+                <td>
+                    @*   <a asp-action="Edit" asp-route-id="@obj.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@obj.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@obj.ID">Delete</a>*@
+
+                    <div class="btn-group">
+
+                        <a asp-action="DegreeDetails" asp-route-id="@obj.Degree_ID" class="btn btn-sm btn-primary ml-1">Details</a>
+                        <a asp-action="#" asp-route-id="#" class="btn btn-sm btn-secondary  ml-1">Apply Now</a>
+                    </div>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
