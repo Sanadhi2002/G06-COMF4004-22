@@ -31,6 +31,8 @@ namespace Project_G06.Models
         [Required]
         public string DegreeContents { get; set; }
 
+
+
         [ForeignKey("UniProfileModel")]
         public string UserId { get; set; }
         public UniProfileModel UniProfileModel { get; set; }

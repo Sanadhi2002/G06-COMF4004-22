@@ -18,9 +18,15 @@ namespace Project_G06.Controllers
             {
                 return View(_context.DegreeModel.Where(x => x.Degre_Name.StartsWith(search) || search == null).ToList());
             }
-            else
+             else if(searchBy == "Degree_Type")
             {
                 return View(_context.DegreeModel.Where(x => x.Degree_Type.StartsWith(search) || search == null).ToList());
+            }
+
+            else
+            {
+                return View(_context.DegreeModel.Where(x => x.Affiliated_uni.StartsWith(search) || search == null).ToList());
+
             }
         }
     }
