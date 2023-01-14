@@ -56,7 +56,7 @@ body {
     color:#ddd;
 }
 .buttons {
-    background-color: #8b0000; /* Green */
+    background-color: #8b0000; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -69,7 +69,7 @@ body {
 
 
 #registerSubmit, #login-submit {
-    background-color: #8b0000; /* Green */
+    background-color: #8b0000; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -124,13 +124,16 @@ body {
     border-radius: 15px;
     margin-top: 80px;
     margin-left: 30%;
+    background-color: #CBDCCB;
 }
 
 .forms p{
   font-size:16px;
   
 }
-
+.forms h3{
+    font-size:15px;
+}
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -404,7 +407,7 @@ input[type=text] {
     /*  border:3px solid rgb(18, 17, 17) ;*/
     background-color: #FFFFFF;
     padding: 30px;
-    height: auto;
+    height: 210px;
     flex-basis: 2px;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 
@@ -413,7 +416,7 @@ input[type=text] {
  .con-item p {
         color: #710c04;
     }
-
+ 
 .column {
     float: left;
     width: 100%;
@@ -424,8 +427,6 @@ input[type=text] {
     border-radius: 5px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-
-
 
 
 .row {
@@ -456,9 +457,6 @@ input[type=text] {
 }
 
 
-.column:hover{
-    border: 1px solid black;
-}
 
 .Compare-header {
     padding:0;
@@ -480,3 +478,15 @@ input[type=text] {
 #pop{
     display:none;
 }
+a{
+    text-decoration:none;
+}
+.compareLink:hover {
+    text-decoration: underline;
+    color: #8b0000;
+}
+
+
+
+
+
