@@ -108,6 +108,7 @@ body {
     background-image:url(../images/background4.jpg);
     background-size:cover;
     background-repeat:no-repeat;
+    text-align:justify;
     
     
 
@@ -506,7 +507,4 @@ a{
 #form1 {
     padding: 21px;
 }
-
-
-
 
