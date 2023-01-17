@@ -508,3 +508,110 @@ a{
     padding: 21px;
 }
 
+/*detailspage*/
+
+.wrapper {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,+1%);
+    width: 90%;
+    display: flex;
+    box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+}
+
+    .wrapper .left {
+        /* width: 35%;*/
+        background: linear-gradient(to right,#000000,#9ca3a3);
+        padding: 30px 25px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        text-align: center;
+        color: #fff;
+    }
+
+        .wrapper .left img {
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .wrapper .left h4 {
+            margin-bottom: 10px;
+        }
+
+        .wrapper .left p {
+            font-size: 12px;
+        }
+
+    .wrapper .right {
+        width: 65%;
+        background: #fff;
+        padding: 30px 25px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+        .wrapper .right .UniInfo,
+        .wrapper .right .UDetails {
+            margin-bottom: 25px;
+        }
+
+            .wrapper .right .UniInfo h3,
+            .wrapper .right .UDetails h3 {
+                margin-bottom: 15px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #e0e0e0;
+                color: #353c4e;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+            }
+
+        .wrapper .right .UniInfo_data {
+            display: flex;
+            justify-content: space-between;
+        }
+
+            .wrapper .right .UniInfo_data .data,
+            .wrapper .right .UDetails_data .Udata {
+                width: 95%;
+            }
+
+                .wrapper .right .UniInfo_data .data h5,
+                .wrapper .right .UDetails_data U.data h5 {
+                    color: #353c4e;
+                    margin-bottom: 5px;
+                }
+
+                .wrapper .right .UniInfo_data .data p {
+                    font-size: 19px;
+                    margin-bottom: 10px;
+                    color: #000000;
+                }
+
+                .wrapper .right .UDetails_data .Udata p {
+                    font-size: 15px;
+                    margin-bottom: 10px;
+                    color: #000000;
+                }
+
+    .wrapper .ButClz {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .wrapper .ButClz .Bdata {
+            width: 65px;
+            height: 45px;
+            background: linear-gradient(to right,#3c3e3e,#b6bdbd);
+            margin-right: 10px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 45px;
+        }
+
+            .wrapper .ButClz .Bdata a {
+                color: #fff;
+                display: block;
+                font-size: 18px;
+            }
+/*end Detailspage*/
