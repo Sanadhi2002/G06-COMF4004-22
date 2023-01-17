@@ -108,6 +108,7 @@ body {
     background-image:url(../images/background4.jpg);
     background-size:cover;
     background-repeat:no-repeat;
+    text-align:justify;
     
     
 
@@ -487,7 +488,23 @@ a{
     color: #8b0000;
 }
 
+.Profilecontainer {
+    background-color: white;
+}
 
+.UniVisitBtn {
+    display: block;
+    background-color: #8b0000;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-
+#form1 {
+    padding: 21px;
+}
 
