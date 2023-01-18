@@ -1,4 +1,23 @@
 ﻿@model IEnumerable<DegreeModel> //category is the name of the model
+
+@{
+    ViewBag.Title = "Index";
+
+    PaginatedList pager = new PaginatedList();
+    int pageNo = 0;
+
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+
+
+
+
+
+}
+
 <div>
 
     <header class="Compare-header"> dfhdfhf </header>
@@ -57,6 +76,55 @@ else
 
 
         }
+    </div>
+
+
+
+    <div class="page-container">
+        @if (pager.TotalPages > 0)
+        {
+            <ul class="pagination justify-content-end">
+
+
+                @if (pager.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="1">First</a>
+                    </li>
+
+
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="@(pager.CurrentPage -1 )">Previous</a>
+                    </li>
+                }
+
+
+
+                @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+                {
+                    <li class="page-item @(pge == pager.CurrentPage ? "active":"")">
+                        <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="@pge">@pge</a>
+                    </li>
+                }
+
+
+                @if (pager.CurrentPage < pager.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="@(pager.CurrentPage + 1)">Next</a>
+                    </li>
+
+
+                }
+
+            </ul>
+
+        }
+
+
+
+
+
     </div>
 
 }

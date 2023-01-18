@@ -1,17 +1,69 @@
-﻿@*@model PaginatedList<Project_G06.Models.StudentEmail>
+﻿@model IEnumerable<StudentEmail>
+
+
+@{
+    ViewBag.Title = "Index";
+
+    PaginatedList pager = new PaginatedList();
+    int pageNo = 0;
+
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
 
 <p>
     @using (Html.BeginForm("Index", "Compare", FormMethod.Get))
     {
-        <h2> Welcome</h2>
+        <h2></h2>
 
-        @Html.RadioButton("SearchBy" , "S_Name" , true) <text>Name</text>
+        <div class="wrappers">
 
-        @Html.RadioButton("SearchBy" , "S_Email") <text>Email </text>
+            <h5>Filter by :</h5>
+
+
+            <div class="options">
+
+
+                <div class="option1">
+                    @Html.RadioButton("SearchBy" , "S_Name", true) <text>Name</text>
+
+                </div>
+
+
+                <div class="option2">
+
+                    @Html.RadioButton("SearchBy" , "S_Email") <text>Email </text>
+
+                </div>
+            </div>
+
             <br />
-        @Html.TextBox("search")
 
-            <input type="submit" value="Search"  />
+            @Html.TextBox("search")
+
+
+        </div>
+
+        <div class="button-container">
+
+            @*<input type="submit" value="Search" id="compare-button"  />*@
+            <button type="submit" value="Search" id="compare-button">Search</button>
+        </div>
+
     }
 
 </p>
@@ -19,64 +71,174 @@
 
 
 
-<p class="search"> Easily select the best degree  from a range of universities on one single platform !!</p>
+@*@<p class="search"> Easily select the best degree  from a range of universities on one single platform !!</p>*@
 
 
 
 @if (Model.Count() == 0)
 {
 
-    <p> No items matching search</p>
+    <div class="error">
 
 
+
+
+        <p id="error"> No items matching search</p>
+
+    </div>
 }
 else
 {
-   
-        <div class="row">
-            @foreach (var obj in Model){
-            <div class="column">
+
+    /*
+
+    <div class="row">
+        @foreach (var obj in Model){
+        <div class="column">
+           <h2>@obj.S_Name</h2>
+               <p>Duration : @obj.S_Id</p>
+        <p>Course Fee
+        : @obj.S_Id</p>
+        <p>Affiliated University : @obj.S_Id</p>
+    <p>Description : @obj.S_Id</p>
+                <p>Admission requirements : @obj.S_Id</p>
+    </div>*/
+
+    <div class="grid-container">
+        @foreach (var obj in Model)
+        {
+            <div class="grid-item">
                 <h2>@obj.S_Name</h2>
                 <p>Duration : @obj.S_Id</p>
-                   <p>Course Fee
-                       : @obj.S_Id</p>
+                <p>
+                    Course Fee
+                    : @obj.S_Id
+                </p>
                 <p>Affiliated University : @obj.S_Id</p>
                 <p>Description : @obj.S_Id</p>
                 <p>Admission requirements : @obj.S_Id</p>
+
+
+
+
             </div>
-           
+
+
+        }
 
 
 
-                      
-}
+        <div class="page-container">
+            @if (pager.TotalPages > 0)
+            {
+                <ul class="pagination justify-content-end">
+
+
+                    @if (pager.CurrentPage > 1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="1">First</a>
+                        </li>
+
+
+                        <li class="page-item">
+                            <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="@(pager.CurrentPage -1 )">Previous</a>
+                        </li>
+                    }
 
 
 
+                    @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+                    {
+                        <li class="page-item @(pge == pager.CurrentPage ? "active":"")">
+                            <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="@pge">@pge</a>
+                        </li>
+                    }
+
+
+                    @if (pager.CurrentPage < pager.TotalPages)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="@(pager.CurrentPage + 1) " onclientclick="return false;" autopostback="false" xmlns:asp="#unknown">Next</a>
+                        </li>
+
+
+                    }
+
+                </ul>
+
+            }
 
 
 
 
 
         </div>
-    
 
 
-   @{
-    var prevDisabled = !Model.PreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.NextPage ? "disabled" : "";
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <div class="page-container">
+        @if (pager.TotalPages > 0)
+        {
+            <ul class="pagination justify-content-end">
+
+
+                @if (pager.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="1">First</a>
+                    </li>
+
+
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="@(pager.CurrentPage -1 )">Previous</a>
+                    </li>
+                }
+
+
+
+                @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+                {
+                    <li class="page-item @(pge == pager.CurrentPage ? "active":"")">
+                        <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="@pge">@pge</a>
+                    </li>
+                }
+
+
+                @if (pager.CurrentPage < pager.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Compare" asp-action="Index" asp-route-pg="@(pager.CurrentPage + 1)">Next</a>
+                    </li>
+
+
+                }
+
+            </ul>
+
+        }
+
+
+
+
+
+    </div>
+
+
+
+
 }
 
 
-<a asp-action="Index" asp-route-pageNumber = "@(Model.PageIndex - 1 )"
-class="btn btn-default @prevDisabled"> Previous</a>
 
-
-<a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex + 1 )"
-   class="btn btn-default @nextDisabled"> Next</a>
-   
-}
-
-
-
-*@

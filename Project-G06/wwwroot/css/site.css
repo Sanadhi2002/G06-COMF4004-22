@@ -409,7 +409,7 @@ input[type=text] {
     /*  border:3px solid rgb(18, 17, 17) ;*/
     background-color: #FFFFFF;
     padding: 30px;
-    height: 210px;
+    height: 225px;
     flex-basis: 2px;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 
@@ -474,7 +474,7 @@ input[type=text] {
     height: 126px;
     overflow: hidden;
     margin-top: -25px;
-    margin-left: 15px;
+   
 }
 
 #pop{
@@ -615,3 +615,249 @@ a{
                 font-size: 18px;
             }
 /*end Detailspage*/
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #E5E4E2;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 10px;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    text-align: left;
+    border-radius: 5px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+
+
+    .grid-item h2 {
+        /*color: #880ED4;*/
+        color: #850000;
+        text-align: left;
+        font-size: 25px;
+        font-family: 'IBM Plex Sans', sans-serif;
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+
+
+
+#compare-button {
+    background-color: #6B6A69;
+    height: 40px;
+    width: 100px;
+    color: #000000;
+    border-radius: 5px;
+    border: white solid 2px;
+    font-size: 16px;
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+}
+
+
+    #compare-button:hover {
+        background-color: #000000;
+        border: black solid 2px;
+        color: white;
+    }
+
+.button-container {
+    text-align: center;
+    /*border: 7px solid red;*/
+    width: 100%;
+    height: 50px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.wrappers {
+    padding-top: 20px;
+}
+
+
+
+    .wrappers h5 {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+    }
+
+
+
+
+    .wrappers input {
+        font-size: 20px;
+    }
+
+    .wrappers text {
+        font-size: 15px;
+    }
+
+
+
+
+.options {
+    /* display:grid;
+    grid-template-columns:1fr;
+    width :200px;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 200px;
+    column-gap: 10px;
+}
+
+    .options text {
+        font-family: 'Fredoka One', cursive;
+        text-transform: uppercase;
+    }
+
+
+
+#error {
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    text-align: center;
+    /*border: 7px solid red;*/
+    width: 100%;
+    font-size: 30px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.error {
+    height: 100%;
+}
+
+
+
+
+.table-wrapper {
+    margin: 10px 70px 70px;
+    padding-top: 20px;
+}
+
+
+.I-table {
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+    .I-table td, .I-table th {
+        text-align: center;
+        padding: 8px;
+    }
+
+    .I-table td {
+        border: 1px solid #000000;
+        font-size: 12px;
+    }
+
+    .I-table thead th {
+        color: #000000;
+        background: #B50717;
+    }
+
+
+        .I-table thead th:nth-child(odd) {
+            color: #000000;
+        }
+
+    .I-table tr:nth-child(even) {
+        background: #F8F8F8;
+    }
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .I-table {
+        display: block;
+        width: 100%;
+    }
+
+    .table-wrapper:before {
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+
+    .I-table thead, .I-table tbody, .I-table thead th {
+        display: block;
+    }
+
+        .I-table thead th:last-child {
+            border-bottom: none;
+        }
+
+    .I-table thead {
+        float: left;
+        background-color: #B50717;
+    }
+
+    .I-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+
+    .I-table td, .I-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+
+    .I-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+
+    .I-table tbody tr {
+        display: table-cell;
+    }
+
+        .I-table tbody tr:nth-child(odd) {
+            background: none;
+        }
+
+    .I-table tr:nth-child(even) {
+        background: transparent;
+    }
+
+    .I-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        /*border-right: 1px solid #E6E4E4;*/
+    }
+
+    .I-table tr td:nth-child(even) {
+        /*border-right: 1px solid #E6E4E4;*/
+    }
+
+    .I-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}

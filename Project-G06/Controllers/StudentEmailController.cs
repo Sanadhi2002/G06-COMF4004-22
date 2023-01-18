@@ -51,12 +51,27 @@ namespace Project_G06.Controllers
 
 
         //dulangi
-        public async Task<   IActionResult > Index(int pageNumber =1)
+        public   IActionResult  Index(int pg =1)
         {
             //@model IEnumerable<StudentEmail> put this in the index view//
-           // IEnumerable<StudentEmail> objStudentList = studentEmailDbContext.StudentEmails;
-            return View(await PaginatedList<StudentEmail>.CreateAsync(studentEmailDbContext.StudentEmails, pageNumber , 5 ));
-           // return View(objStudentList);
+            // IEnumerable<StudentEmail> objStudentList = studentEmailDbContext.StudentEmails;
+            // return View(await PaginatedList<StudentEmail>.CreateAsync(studentEmailDbContext.StudentEmails, pageNumber , 5 ));
+            // return View(objStudentList);
+            IEnumerable<StudentEmail> objStudentList = studentEmailDbContext.StudentEmails;
+            const int pageSize = 5;
+            if (pg<1)
+            {
+                pg = 1;
+            }
+            int recsCount = objStudentList.Count();
+            var pager = new PaginatedList(recsCount, pg, pageSize);
+            int recSkip = (pg - 1) * pageSize;
+            var data = objStudentList.Skip(recSkip).Take(pager.PageSize).ToList();
+
+
+            this.ViewBag.Pager = pager;
+
+            return View(data);
         }
 
 
