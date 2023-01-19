@@ -17,9 +17,9 @@ namespace Project_G06.Controllers
         {
             if (searchBy == "Degre_Name")
             {
-                //return View(_context.DegreeModel.Where(x => x.Degre_Name.StartsWith(search) || search == null).ToList());
+                return View(_context.DegreeModel.Where(x => x.Degre_Name.StartsWith(search) || search == null).ToList());
 
-                IEnumerable<DegreeModel> list1 = _context.DegreeModel.Where(x => x.Degre_Name.StartsWith(search) || search == null).ToList();
+               /* IEnumerable<DegreeModel> list1 = _context.DegreeModel.Where(x => x.Degre_Name.StartsWith(search) || search == null).ToList();
                 const int pageSize = 6;
                 if (pg < 1)
                 {
@@ -34,12 +34,12 @@ namespace Project_G06.Controllers
 
                 this.ViewBag.Pager = pager;
 
-                return View(data);
+                return View(data);*/
             }
              else if(searchBy == "Degree_Type")
             {
-                // return View(_context.DegreeModel.Where(x => x.Degree_Type.StartsWith(search) || search == null).ToList());
-                IEnumerable<DegreeModel> list2 = _context.DegreeModel.Where(x => x.Degree_Type.StartsWith(search) || search == null).ToList();
+                 return View(_context.DegreeModel.Where(x => x.Degree_Type.StartsWith(search) || search == null).ToList());
+                /*IEnumerable<DegreeModel> list2 = _context.DegreeModel.Where(x => x.Degree_Type.StartsWith(search) || search == null).ToList();
                 const int pageSize = 6;
                 if (pg < 1)
                 {
@@ -54,13 +54,13 @@ namespace Project_G06.Controllers
 
                 this.ViewBag.Pager = pager;
 
-                return View(data);
+                return View(data);*/
             }
 
             else
             {
-                //  return View(_context.DegreeModel.Where(x => x.Affiliated_uni.StartsWith(search) || search == null).ToList());
-                IEnumerable<DegreeModel> list2 = _context.DegreeModel.Where(x => x.Affiliated_uni.StartsWith(search) || search == null).ToList();
+                return View(_context.DegreeModel.Where(x => x.Affiliated_uni.StartsWith(search) || search == null).ToList());
+               /*IEnumerable<DegreeModel> list2 = _context.DegreeModel.Where(x => x.Affiliated_uni.StartsWith(search) || search == null).ToList();
                 const int pageSize = 6;
                 if (pg < 1)
                 {
@@ -75,7 +75,7 @@ namespace Project_G06.Controllers
 
                 this.ViewBag.Pager = pager;
 
-                return View(data);
+                return View(data);*/
 
             }
         }

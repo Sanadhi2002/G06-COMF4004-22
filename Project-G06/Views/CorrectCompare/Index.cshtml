@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<DegreeModel> //category is the name of the model
-
+@*
 @{
     ViewBag.Title = "Index";
 
@@ -16,7 +16,7 @@
 
 
 
-}
+}*@
 
 <div>
 
@@ -26,22 +26,48 @@
 <p>
     @using (Html.BeginForm("Index", "CorrectCompare", FormMethod.Get))
     {
-        <h2> Welcome</h2>
+        <h2></h2>
+        <div class="wrappers">
+
+            <h5>Filter by:</h5>
+
+            <div class="options">
+
+            <div class="option1">
 
         @Html.RadioButton("SearchBy" , "Degre_Name" , true) <text>Name</text>
 
+            </div>
+
+
+            <div class="option2">
+
         @Html.RadioButton("SearchBy" , "Degree_Type") <text>Type of Degree</text>
 
+        </div>
+
+
+            <div class="option2">
+
         @Html.RadioButton("SearchBy" ,"Affiliated_uni") <text>Affiliated University</text>
+        </div>
+
+        </div>
         <br />
         @Html.TextBox("search")
 
-        <input type="submit" value="Search" />
+            </div>
+
+
+            <div class="button-container">
+       @*<input type="submit" value="Search" />*@
+       <button type="submit" value="Search" id="compare-button">Search</button> 
+        </div>
     }
 
 </p>
 
-<p class="search"> Easily select the best degree  from a range of universities on one single platform !!</p>
+
 
 
 
@@ -79,7 +105,7 @@ else
     </div>
 
 
-
+@*
     <div class="page-container">
         @if (pager.TotalPages > 0)
         {
@@ -126,6 +152,6 @@ else
 
 
     </div>
-
+    *@
 }
 

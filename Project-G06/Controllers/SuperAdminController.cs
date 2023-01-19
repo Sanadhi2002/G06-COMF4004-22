@@ -73,7 +73,7 @@ namespace Project_G06.Controllers
         public IActionResult DeletePOST (string? id)
         {
             var universityFromDb = _webApplication2DbContext.UniProfileModel.Find(id);
-            if (universityFromDb != null) 
+            if (universityFromDb == null) 
             {
              
                 return NotFound();
@@ -81,7 +81,7 @@ namespace Project_G06.Controllers
 
             _webApplication2DbContext.UniProfileModel.Remove(universityFromDb);
             _webApplication2DbContext.SaveChanges();    
-            return RedirectToAction("Index");
+            return RedirectToAction("Index1");
         
         }
 

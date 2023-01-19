@@ -93,8 +93,8 @@
 
 
                         <li class="nav-item">
-                           <a asp-area="" asp-controller="Compare" asp-action="Index" class="nav-link mx-0"> Compare ! </a>
-                            @*  <a asp-area="" asp-controller="CorrectCompare" asp-action="Index" class="nav-link mx-0">Compare page </a>*@
+                            @* <a asp-area="" asp-controller="Compare" asp-action="Index" class="nav-link mx-0"> Compare ! </a>*@
+                              <a asp-area="" asp-controller="CorrectCompare" asp-action="Index" class="nav-link mx-0">Compare page </a>
                             <a asp-area="" asp-controller="StudentEmail" asp-action="Index" class="nav-link mx-0">CRUD test</a>
 
                         </li>
@@ -126,14 +126,14 @@
                             <ul class="navbar-nav">
                                 @if (SignInManager.IsSignedIn(User))
                                 {
-                                    @if (User.IsInRole("Admin"))
+                                    @if (User.IsInRole("Administrator"))
                                     {
                                         <li class="nav-item">
                                             <a asp-area="" asp-controller="AppRoles" asp-action="Index" class="nav-link mx-0">Roles</a>
                                         </li>
-                                   <!--    <li class="nav-item">
+                                      <li class="nav-item">
                                             <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index">Super Admin DashBoard</a>
-                                        </li>-->
+                                        </li>
                                
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index1">Administrator DashBoard</a>

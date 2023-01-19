@@ -712,8 +712,8 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 200px;
-    column-gap: 10px;
+    width: 600px;
+    column-gap: 60px;
 }
 
     .options text {
@@ -870,13 +870,16 @@ a{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
+    width: 600px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: rgba(0,0,0,.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+    margin-top:300px;
+    margin-bottom:-100px;
+   
 }
 
     .login-boxs h2 {
@@ -892,6 +895,8 @@ a{
 
         .login-boxs .user-boxs input {
             width: 100%;
+           
+           
             padding: 10px 0;
             font-size: 16px;
             color: #fff;
@@ -902,16 +907,27 @@ a{
             background: transparent;
         }
 
-        .login-boxs .user-boxs label {
-            position: absolute;
-            top: -20px;
-            left: 0;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #red;
-            pointer-events: none;
            
-        }
+
+
+
+
+
+
+
+
+
+
+
+            .login-boxs .user-boxs label {
+                position: absolute;
+                top: -20px;
+                left: 0;
+                padding: 10px 0;
+                font-size: 16px;
+                color: #red;
+                pointer-events: none;
+            }
 
      
 
