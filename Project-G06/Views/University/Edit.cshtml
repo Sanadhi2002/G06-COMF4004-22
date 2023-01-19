@@ -1,90 +1,114 @@
 ﻿@model UniProfileModel
 
-@{
-    ViewData["Title"] = "Edit";
-}
+<body class="bgP">
+    <div class="col-10 mx-auto pt-0">
 
-<h1>Edit</h1>
-
-<h4>Class</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-secondary text-uppercase text-white text-center">
+                <h5>Edit profile</h5>
+            </div>
+            <div class="card-body">
         <form asp-action="Edit" enctype="multipart/form-data" onsubmit="return ValidateForm()">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="UserId" />
-            <div class="form-group">
-                <label asp-for="UniShortname" class="control-label"></label>
-                <input asp-for="UniShortname" class="form-control" />
-                <span asp-validation-for="UniShortname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UniFullname" class="control-label"></label>
-                <input asp-for="UniFullname" class="form-control" />
-                <span asp-validation-for="UniFullname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UniDetails" class="control-label"></label>
-                <input asp-for="UniDetails" class="form-control" />
-                <span asp-validation-for="UniDetails" class="text-danger"></span>
-            </div>
-
-          @*  <div class=" col-8">
-
-                <div class="form-group">
-                    <label asp-for="UniFacultyModel.Faculty_Name" class="controll-lable"></label>
-                    <input asp-for="UniFacultyModel.Faculty_Name" class="form-control" />
-                    <span asp-validation-for="UniFacultyModel.Faculty_Name" class="text-danger"></span>
-                </div>
-
-            </div>*@
-            <div class=" col-8" hidden>
-                @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
-                <div class="form-group">
-                    <label asp-for="ImgExtension" class="controll-lable"></label>
-                    <input asp-for="ImgExtension" class="form-control" id="ImgExtension" readonly />
-
-                </div>
-
-            </div>
-
-            <div class="col-4 row">
-                <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" />
-                <div class="form-group col-12 justify-content-around align-middle mb-0 pb-0">
-                    <img id="PreviewPhoto" src="~/profilepics/@Model.ProfilPic_URL" alt="Logo Image" width=" 200" height="200"
-                         style="border:1px;margin-top:10px;" />
-                </div>
-                <div class="form-group col-2 pt-0 mt-0">
-                </div>
-                <div class="form-group col-10 pt-0 mt-0">
+                    <input type="hidden" asp-for="UserId" />
+                    <div class="btn-group">
+                        <div class="col-3 row">
+                            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                            <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" value="Error" />
+                            <div class="form-group col-4 justify-content-around align-middle mb-0 pb-0">
+                                <img id="PreviewPhoto" src="~/profilepics/noimage.png" alt="Logo Image" width=" 200" height="200"
+                                     style="border:1px;margin-top:10px;" />
+                            </div>
+                            @*<div class="form-group col-2 pt-0 mt-0">
+                            </div>*@
+                            <div class="form-group col-8 pt-0 mt-0">
 
 
-                    <div class="custom-file">
-                        <input asp-for="UploadedProfilePic" class="custom-file-input" id="UploadedProfilePic" />
-                              @* onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])"*@ 
+                                <div class="custom-file">
+                                    <input asp-for="UploadedProfilePic" class="custom-file-input" id="UploadedProfilePic" />
+                                    @*onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])" />*@
 
-                        <label class="custom-file-label" for="UploadedProfilePic" id="UploadedProfilePicCaption">Browse</label> @*for disply picture*@
-                        <span asp-validation-for="UploadedProfilePic" class="text-danger"></span>
+                                    <label class="custom-file-label" for="UploadedProfilePic" id=" UploadedProfilePicCaption">Browse</label> @*for disply picture*@
+                                    @*  <span asp-validation-for="UploadedProfilePic" class="text-danger"></span>*@
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-4 row"></div>
+                        <div class=" col-10 row">
+                            <div class=" col-14 ">
+                                @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                                <div class="form-group">
+                                    <label asp-for="UniFullname" class="controll-lable"></label>
+
+                                    <input asp-for="UniFullname" class="form-control" />
+                                    @*                                <span asp-validation-for="UniFullname" class="text-danger"></span>*@
+                                </div>
+
+                            </div>
+                            <div class="col-13">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="UniShortname" class="controll-lable"></label>
+                                    <input asp-for="UniShortname" class="form-control" />
+                                    @* <span asp-validation-for="UniShortname" class="text-danger"></span>*@
+                                </div>
+                            </div>
+                            <div class=" col-13">
+                                @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                                <div class="form-group">
+                                    <label asp-for="UniDetails" class="controll-lable"></label>
+                                    <input asp-for="UniDetails" class="form-control" />
+                                    @*  <span asp-validation-for="UniDetails" class="text-danger"></span>*@
+                                </div>
+
+                            </div>
+                            @* <div class=" col-8">
+
+                            <div class="form-group">
+                            <label asp-for="UniFacultyModel.Faculty_Name" class="controll-lable"></label>
+                            <input asp-for="UniFacultyModel.Faculty_Name" class="form-control" />
+                            <span asp-validation-for="UniFacultyModel.Faculty_Name" class="text-danger"></span>
+                            </div>
+
+                            </div>*@
+                           
+                            <div class=" col-8" hidden>
+                                @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                                <div class="form-group">
+                                    <label asp-for="ImgExtension" class="controll-lable"></label>
+                                    <input asp-for="ImgExtension" class="form-control" id="ImgExtension" readonly />
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
-                </div>
+                    <div class="row-5">
+                        <span asp-validation-for="UploadedProfilePic" class="text-danger"></span>
+                        <br /><span asp-validation-for="UniFullname" class="text-danger"></span>
+                        <br /><span asp-validation-for="UniShortname" class="text-danger"></span>
+                        <br /><span asp-validation-for="UniDetails" class="text-danger"></span>
+                    </div>
 
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Edit" class="btn btn-primary" />
-            </div>
+                    <div class="col-12 btn-group">
+                        <div class="col-10 form-group text-right p-2">
+                            <a asp-action="Index" class="btn btn-lg btn-secondary btn-black">Back</a>
+
+                        </div>
+                        <div class="col-2 form-group text-left p-2">
+                            <input type="submit" value="Edit" class="btn btn-lg btn-primary btn-block" />
+                        </div>
+                    </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
-@*@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}*@
+</div>
+</body>
+
 @section Scripts{
     <script>
         $(".custom-file-input").on("change", function () {
@@ -104,15 +128,7 @@
 
             $(this).siblings(".custom-file-input").addClass("selected").html(fileName);
             document.getElementById('PreviewPhoto').src = window.URL.createObjectURL(this.files[0]);
-            //console.log(PreviewPhoto);
-            //document.getElementById('PhotoUrl').value = fileName;
-            //console.log(PhotoUrl);
-           
-           
-            //document.getElementById('ImgExtension') = ImgExt;
-            //console.log("ImgExt");
-                //document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0]);
-           
+         
             
 
         });
