@@ -1,37 +1,62 @@
 ﻿@model UniProfileModel
-<div class="col-11 mx-auto pt-0">
+<body class="bgP">
+<div class="col-10 mx-auto pt-0">
+    
     <div class="card">
-        <div class="card-header bg-primary text-uppercase text-white text-center">
+        <div class="card-header bg-secondary text-uppercase text-white text-center">
             <h5>Create profile</h5>
         </div>
         <div class="card-body">
             <form asp-action="Create" enctype="multipart/form-data" onsubmit="return ValidateForm()">
                 <div class="btn-group">
+                    <div class="col-3 row">
+                        @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                        <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" value="Error" />
+                        <div class="form-group col-4 justify-content-around align-middle mb-0 pb-0">
+                            <img id="PreviewPhoto" src="~/profilepics/noimage.png" alt="Logo Image" width=" 200" height="200"
+                                 style="border:1px;margin-top:10px;" />
+                        </div>
+                        @*<div class="form-group col-2 pt-0 mt-0">
+                        </div>*@
+                        <div class="form-group col-8 pt-0 mt-0">
 
-                    <div class=" col-8 row">
-                        <div class=" col-8">
+
+                            <div class="custom-file">
+                                <input asp-for="UploadedProfilePic" class="custom-file-input" id="UploadedProfilePic" />
+                                @*onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])" />*@
+
+                                <label class="custom-file-label" for="UploadedProfilePic" id=" UploadedProfilePicCaption">Browse</label> @*for disply picture*@
+                              @*  <span asp-validation-for="UploadedProfilePic" class="text-danger"></span>*@
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-4 row"></div>
+                    <div class=" col-10 row">
+                        <div class=" col-14 ">
                             @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
                             <div class="form-group">
                                 <label asp-for="UniFullname" class="controll-lable"></label>
+                              
                                 <input asp-for="UniFullname" class="form-control" />
-                                <span asp-validation-for="UniFullname" class="text-danger"></span>
+@*                                <span asp-validation-for="UniFullname" class="text-danger"></span>*@
                             </div>
 
                         </div>
-                        <div class="col-8">
+                        <div class="col-13">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="UniShortname" class="controll-lable"></label>
                                 <input asp-for="UniShortname" class="form-control" />
-                                <span asp-validation-for="UniShortname" class="text-danger"></span>
+                               @* <span asp-validation-for="UniShortname" class="text-danger"></span>*@
                             </div>
                         </div>
-                        <div class=" col-8">
+                        <div class=" col-13">
                             @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
                             <div class="form-group">
                                 <label asp-for="UniDetails" class="controll-lable"></label>
                                 <input asp-for="UniDetails" class="form-control" />
-                                <span asp-validation-for="UniDetails" class="text-danger"></span>
+                              @*  <span asp-validation-for="UniDetails" class="text-danger"></span>*@
                             </div>
 
                         </div>
@@ -64,35 +89,21 @@
                         </div>
 
                     </div>
-                    <div class="col-4 row">
-                        <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" value="Error" />
-                        <div class="form-group col-12 justify-content-around align-middle mb-0 pb-0">
-                            <img id="PreviewPhoto" src="~/profilepics/noimage.png" alt="Logo Image" width=" 200" height="200"
-                                 style="border:1px;margin-top:10px;" />
-                        </div>
-                        <div class="form-group col-2 pt-0 mt-0">
-                        </div>
-                        <div class="form-group col-10 pt-0 mt-0">
-
-
-                            <div class="custom-file">
-                                <input asp-for="UploadedProfilePic" class="custom-file-input" id="UploadedProfilePic"/>
-                                       @*onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])" />*@
-
-                                <label class="custom-file-label" for="UploadedProfilePic" id=" UploadedProfilePicCaption">Browse</label> @*for disply picture*@
-                                <span asp-validation-for="UploadedProfilePic" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                    </div>
+                  
                 </div>
+                <div class="row-5">
+                    <span asp-validation-for="UploadedProfilePic" class="text-danger"></span>
+                    <br /><span asp-validation-for="UniFullname" class="text-danger"></span>
+                    <br /><span asp-validation-for="UniShortname" class="text-danger"></span>
+                    <br /><span asp-validation-for="UniDetails" class="text-danger"></span>
+                                      </div>
 
                 <div class="col-12 btn-group">
-                    <div class="col-6 form-group text-right p-2">
+                    <div class="col-10 form-group text-right p-2">
                         <a asp-action="Index" class="btn btn-secondary btn-black">Back</a>
 
                     </div>
-                    <div class="col-6 form-group text-left p-2">
+                    <div class="col-2 form-group text-left p-2">
                         <input type="submit" @* value="Create"*@ class="btn btn-primary btn-block" />
                     </div>
                 </div>
@@ -102,7 +113,7 @@
 
     </div>
 </div>
-
+</body>
 @section Scripts{
     <script>
         //$(".custom-file-input").on("change", function () {
