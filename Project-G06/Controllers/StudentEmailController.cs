@@ -5,6 +5,8 @@ using Project_G06.Data;
 using Project_G06.Models;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Tracing;
+
+
 namespace Project_G06.Controllers
 {
     public class StudentEmailController : Controller

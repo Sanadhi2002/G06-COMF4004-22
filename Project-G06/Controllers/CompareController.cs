@@ -1,20 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project_G06.Data;
-using PagedList;
-using Project_G06.Models;
 
+using Project_G06.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace Project_G06.Controllers
 {
     public class CompareController : Controller
     {
 
-        private readonly StudentEmailDbContext  _context;
+        private readonly StudentEmailDbContext _context;
 
         public CompareController(StudentEmailDbContext context)
         {
             _context = context;
         }
+
+
+       
 
         public IActionResult Index(string searchBy, string search , int pg =1)
         {
@@ -60,5 +64,12 @@ namespace Project_G06.Controllers
                 return View(data);
             }
         }
+
+
+
+
+
+
+      
     }
 }
