@@ -1,20 +1,66 @@
 ﻿@model StudentEmail
 
 
+
+<!---
+
 <form method="post" asp-action="Delete">
 
-    <label asp-for="S_Id"></label>
-    <input asp-for="S_Id" disabled  hidden />
+     <div class="inputbox">
 
-    
-    <label asp-for="S_Name"></label>
+ 
+    <input asp-for="S_Id" disabled  hidden />
+       <label asp-for="S_Id"></label>
+
+    </div>
+
+     <div class="inputbox">
+
     <input asp-for="S_Name" disabled />
 
+        
+    <label asp-for="S_Name"></label>
+    </div>
 
-
-    <label asp-for="S_Email"></label>
+     <div class="inputbox">
     <input asp-for="S_Email" disabled />
+    
+    <label asp-for="S_Email"></label>
 
-    <button type="submit">Delete</button>
+    </div>
 
-</form>
+    <button type="submit" class="centerbutton">Delete</button>
+
+</form>-->
+
+
+<div class="login-boxs">
+  <h2>Login</h2>
+  <form method="post" asp-action="Delete">
+
+
+       <div class="user-boxs">
+      <input asp-for="S_Id" disabled  hidden />
+     
+    </div>
+
+
+
+    <div class="user-boxs">
+              <label asp-for="S_Name">Name</label>
+      <input asp-for="S_Name" disabled />
+ 
+    </div>
+
+
+    <div class="user-boxs">
+           <label asp-for="S_Email">Email</label>
+      <input asp-for="S_Email" disabled / >
+   
+    </div>
+
+
+     <button type="submit">Delete</button>
+   
+  </form>
+</div>
