@@ -21,10 +21,10 @@
             </th>
 
             <th>
-                Degree ID
+                Degree Name
             </th>
             <th>
-                Degree Name
+                Degree Type
             </th>
 
 
@@ -37,14 +37,14 @@
             <tr>
 
                 <td>
-                    @*<img src="@item.PhotoUrl" alt="" class="avatar">*@
+                   
                 </td>
 
                 <td>
-                    @obj.Degree_ID
+                    @obj.Degre_Name
                 </td>
                 <td>
-                    @obj.Degre_Name
+                    @obj.Degree_Type
                 </td>
 
 
@@ -54,7 +54,7 @@
                 <a asp-action="Details" asp-route-id="@obj.ID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@obj.ID">Delete</a>*@
 
-                     <div class="btn-group">
+                     <div class="btn-group col-12">
                 <a asp-action="DegreeEdit" asp-route-id="@obj.Degree_ID" class="btn btn-sm btn-info">Edit</a>
 
                         &nbsp;  &nbsp;  &nbsp;
