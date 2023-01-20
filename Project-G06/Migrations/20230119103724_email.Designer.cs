@@ -11,8 +11,8 @@ using Project_G06.Data;
 namespace ProjectG06.Migrations
 {
     [DbContext(typeof(StudentEmailDbContext))]
-    [Migration("20230107033926_addStudentEmailToDatabase")]
-    partial class addStudentEmailToDatabase
+    [Migration("20230119103724_email")]
+    partial class email
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,8 @@ namespace ProjectG06.Migrations
 
                     b.Property<string>("S_Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("S_Id");
 

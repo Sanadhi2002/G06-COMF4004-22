@@ -5,10 +5,12 @@
 
 <div class="container btn-group">
     <div class="col-10">
-        <h1>Degree</h1>
+        <br />
+
+        <h1>Degrees</h1>
     </div>
     <div class="col-2 btn-group justify-content-end p-3">
-        <a asp-action="DegreeCreate" class="btn btn-sm btn-success">Create New</a>
+        <a asp-action="DegreeCreate" class="buttons1">Add New Degree</a>
     </div>
 </div>
 <table class="table">
@@ -19,10 +21,10 @@
             </th>
 
             <th>
-                Degree Name
+                Degree ID
             </th>
             <th>
-                Degree Type
+                Degree Name
             </th>
 
 
@@ -54,7 +56,11 @@
 
                      <div class="btn-group">
                 <a asp-action="DegreeEdit" asp-route-id="@obj.Degree_ID" class="btn btn-sm btn-info">Edit</a>
+
+                        &nbsp;  &nbsp;  &nbsp;
                         <a asp-action="DetailsDegree" asp-route-id="@obj.Degree_ID" class="btn btn-sm btn-primary ml-1">Details</a>
+
+                        &nbsp;  &nbsp;  &nbsp;
                 <a asp-action="DegreeDelete" asp-route-id="@obj.Degree_ID" class="btn btn-sm btn-danger ml-1">Delete</a>
                 </div>
 

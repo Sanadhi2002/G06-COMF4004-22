@@ -9,11 +9,11 @@ using Project_G06.Data;
 
 #nullable disable
 
-namespace ProjectG06.Migrations.WebApplication2Db
+namespace ProjectG06.Migrations
 {
     [DbContext(typeof(WebApplication2DbContext))]
-    [Migration("20230114054244_short")]
-    partial class @short
+    [Migration("20230119103654_new1111")]
+    partial class new1111
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

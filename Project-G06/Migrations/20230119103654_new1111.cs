@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProjectG06.Migrations
 {
     /// <inheritdoc />
-    public partial class @new : Migration
+    public partial class new1111 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -162,10 +162,11 @@ namespace ProjectG06.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UniShortname = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UniFullname = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UniDetails = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProfilPicURL = table.Column<string>(name: "ProfilPic_URL", type: "nvarchar(max)", nullable: true)
+                    UniShortname = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UniFullname = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UniDetails = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProfilPicURL = table.Column<string>(name: "ProfilPic_URL", type: "nvarchar(max)", nullable: false),
+                    ImgExtension = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -193,6 +194,8 @@ namespace ProjectG06.Migrations
                     CareerOpurtunity = table.Column<string>(name: "Career_Opurtunity", type: "nvarchar(max)", nullable: false),
                     Academicproggression = table.Column<string>(name: "Academic_proggression", type: "nvarchar(max)", nullable: false),
                     AdmissionRequirments = table.Column<string>(name: "Admission_Requirments", type: "nvarchar(max)", nullable: false),
+                    DegreeContents = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UniShortname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -200,26 +203,6 @@ namespace ProjectG06.Migrations
                     table.PrimaryKey("PK_DegreeModel", x => x.DegreeID);
                     table.ForeignKey(
                         name: "FK_DegreeModel_UniProfileModel_UserId",
-                        column: x => x.UserId,
-                        principalTable: "UniProfileModel",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UniFacultyModel",
-                columns: table => new
-                {
-                    UniFacultyID = table.Column<int>(name: "Uni_Faculty_ID", type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FacultyName = table.Column<string>(name: "Faculty_Name", type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UniFacultyModel", x => x.UniFacultyID);
-                    table.ForeignKey(
-                        name: "FK_UniFacultyModel_UniProfileModel_UserId",
                         column: x => x.UserId,
                         principalTable: "UniProfileModel",
                         principalColumn: "UserId",
@@ -269,12 +252,6 @@ namespace ProjectG06.Migrations
                 name: "IX_DegreeModel_UserId",
                 table: "DegreeModel",
                 column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UniFacultyModel_UserId",
-                table: "UniFacultyModel",
-                column: "UserId",
-                unique: true);
         }
 
         /// <inheritdoc />
@@ -297,9 +274,6 @@ namespace ProjectG06.Migrations
 
             migrationBuilder.DropTable(
                 name: "DegreeModel");
-
-            migrationBuilder.DropTable(
-                name: "UniFacultyModel");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

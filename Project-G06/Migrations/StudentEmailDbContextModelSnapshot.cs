@@ -35,7 +35,8 @@ namespace ProjectG06.Migrations
 
                     b.Property<string>("S_Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("S_Id");
 

@@ -1,12 +1,15 @@
 ﻿@model Project_G06.Models.UniProfileModel
 <body class="bgP">
+    <br />
+    <br />
+    <br />
 <div class="wrapper">
     <div class="left">
         <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" />
 
         <img id="PreviewPhoto" src="~/profilepics/@Model.ProfilPic_URL" alt="Logo Image" width=" 200" height="200"
              style="border:1px;margin-top:10px;" />
-        <h4>Hello!</h4>
+            @* <h4>Hello!</h4>*@
         <h3>@Html.DisplayFor(model => model.UniFullname)</h3>
     </div>
 
@@ -18,12 +21,15 @@
                     <h5>@Html.DisplayNameFor(model => model.UniFullname) : </h5>
                     <p>@Html.DisplayFor(model => model.UniFullname)</p>
                 </div>
-                <div class="data">
-                    <h5> @Html.DisplayNameFor(model => model.UniShortname) : </h5>
-                    <p>@Html.DisplayFor(model => model.UniShortname)</p>
+            </div>
+            <div class="UniInfo_data">
+
+                <div  class="data">
+                        <h5> @Html.DisplayNameFor(model => model.UniShortname) : </h5>
+                        <p>@Html.DisplayFor(model => model.UniShortname)</p>
                 </div>
 
-            </div>
+                    </div>
         </div>
         <div class="UDetails">
             <h3>@Html.DisplayNameFor(model => model.UniDetails)</h3>

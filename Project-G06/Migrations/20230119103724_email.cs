@@ -5,7 +5,7 @@
 namespace ProjectG06.Migrations
 {
     /// <inheritdoc />
-    public partial class addStudentEmailToDatabase : Migration
+    public partial class email : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,7 @@ namespace ProjectG06.Migrations
                 {
                     SId = table.Column<int>(name: "S_Id", type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SName = table.Column<string>(name: "S_Name", type: "nvarchar(max)", nullable: false),
+                    SName = table.Column<string>(name: "S_Name", type: "nvarchar(50)", maxLength: 50, nullable: false),
                     SEmail = table.Column<string>(name: "S_Email", type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
