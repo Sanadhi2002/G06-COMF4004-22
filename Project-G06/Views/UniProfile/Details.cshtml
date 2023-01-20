@@ -5,27 +5,32 @@
 @{
     ViewData["Title"] = "Details";
 }
-<h1>Details</h1>
-
-<div>
-    <h4>UniProfileModel</h4>
-    <hr />
+<br>
+<div class=" Profiles1">
+    <div class="Profilecontainer1">
+   <div class="col-4 row">
+        <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" />
+        <div >
+            <img id="PreviewPhoto" src="~/profilepics/@Model?.ProfilPic_URL" alt="Logo Image"  />
+        </div>
+ 
+    </div>
     <dl class="row">
-        <dt class="col-sm-2">
+        @*<dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.UniShortname)
-        </dt>
+        </dt>*@
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UniShortname)
+         Study at  @Html.DisplayFor(model => model.UniShortname)
         </dd>
-        <dt class="col-sm-2">
+        @* <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.UniFullname)
-        </dt>
+        </dt>*@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.UniFullname)
         </dd>
-        <dt class="col-sm-2">
+        @*  <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.UniDetails)
-        </dt>
+        </dt>*@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.UniDetails)
         </dd>
@@ -42,23 +47,12 @@
             @Html.DisplayFor(model => model.WebApplication2User.Id)
         </dd>
     </dl>
-
-    <div class="col-4 row">
-        <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" />
-        <div class="form-group col-12 justify-content-around align-middle mb-0 pb-0">
-            <img id="PreviewPhoto" src="~/profilepics/@Model?.ProfilPic_URL" alt="Logo Image" width=" 200" height="200"
-                 style="border:1px;margin-top:10px;" />
+        
+        <div >
+            <a class="buttons1" asp-action="Degree" asp-route-id="@Model?.UserId">Degrees offered by @Html.DisplayFor(model => model.UniShortname) </a>
         </div>
-        <div class="form-group col-2 pt-0 mt-0">
-        </div>
-        <div class="form-group col-10 pt-0 mt-0">
-        </div>
-
-    </div>
+        <a asp-action="UniProfile" id="listlink">Back to University List</a>
+ 
 </div>
 
-
-<a asp-action="UniProfile">Back to University List</a>
-<div class="col-5 form-group text-left p-2">
-    <a class="buttons1" asp-action="Degree" asp-route-id="@Model?.UserId">Degree</a>
-</div>
+</div><br /><br />

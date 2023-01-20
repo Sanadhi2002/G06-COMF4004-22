@@ -71,7 +71,7 @@ body {
     background-color: #8b0000;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding:10px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -436,16 +436,6 @@ input[type=text] {
         color: #710c04;
     }
  
-.column {
-    float: left;
-    width: 100%;
-    padding: 15px;
-    box-sizing: border-box;
-    background-color: white;
-    height: 300px;
-    border-radius: 5px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
 
 
 .row {
@@ -454,6 +444,7 @@ input[type=text] {
     row-gap: 20px;
     column-gap:2px;
     justify-content:space-around;
+    font-size:18px;
    
 
   
@@ -507,19 +498,56 @@ a{
 
 .Profilecontainer {
     background-color: white;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    padding: 10px;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    width: 30%;
+    display: grid;
+}
+.Profiles {
+    display: flex;
+    justify-content: space-around;
+    margin-top:23px;
+    flex-direction: row; 
+   
 }
 
-.UniVisitBtn {
-    display: block;
-    background-color: #8b0000;
-    margin: 10px;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
+#PreviewPhoto {
+    width: 200px;
+    height: 200px;
+    border: 1px;
+    margin-top: 10px;
 }
+.Profilecontainer1{
+    background-color: white;
+
+    padding: 10px;
+    justify-content:center;
+    width: 30%;
+    display: grid;
+}
+ .Profilecontainer1 .row{
+     font-size:18px;
+ }
+    .Profilecontainer1 #listlink {
+        color: #8b0000;
+    }
+    .Profilecontainer1 #listlink:hover {
+        text-decoration: underline;
+    }
+
+ .Profiles1 {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 23px;
+        flex-direction: row;
+    }
+ .Profiles1 .row {
+        font-size: 16px;
+    }
 
 #form1 {
     padding: 21px;
@@ -538,7 +566,7 @@ a{
 }
 
     .wrapper .left {
-        /* width: 35%;*/
+         width: 35%;
        background-color:black;
         padding: 30px 25px;
         border-top-left-radius: 5px;
@@ -615,32 +643,17 @@ a{
         display: flex;
         justify-content: space-between;
     }
-
-        .wrapper .ButClz .Bdata {
-            width: 65px;
-            height: 45px;
-            /* background: linear-gradient(to right,#3c3e3e,#b6bdbd);*/
-            background-color: #8b0000;
-            margin-right: 10px;
-            border-radius: 5px;
-            text-align: center;
-            line-height: 45px;
+   .wrapper .ButClz .buttons1{
+       color:white;
+   }
+   /*end Detailspage*/
+        /*create page*/
+  .bgP {
+            background-image: url(../images/background4.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: justify;
         }
-
-            .wrapper .ButClz .Bdata a {
-                color: #fff;
-                display: block;
-                font-size: 18px;
-            }
-/*end Detailspage*/
-/*create page*/
-
-.bgP {
-    background-image: url(../images/background4.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-align: justify;
-}
 /*end crate page*/
 .grid-container {
     display: grid;
@@ -767,7 +780,7 @@ a{
 
 
 .table-wrapper {
-    margin: 10px 70px 70px;
+ 
     padding-top: 20px;
 }
 

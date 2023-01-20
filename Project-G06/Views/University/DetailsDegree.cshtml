@@ -6,7 +6,7 @@
     ViewData["Title"] = "DegreeDetails";
 }
 
-<br />
+<br /><br />
 <h1>Details</h1>
 
 <div>
@@ -14,61 +14,80 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Degre_Name)
+
+            @*@Html.DisplayNameFor(model => model.Degre_Name)*@
+            Degree Name
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Degre_Name)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Degree_Type)
+            Type of the Degree
+            @*
+            @Html.DisplayNameFor(model => model.Degree_Type)*@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Degree_Type)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Affiliated_uni)
+            Affliated Universities
+            @*@Html.DisplayNameFor(model => model.Affiliated_uni)*@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Affiliated_uni)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Degree_duration)
+            Duration of the Degree
+
+            @* @Html.DisplayNameFor(model => model.Degree_duration)*@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Degree_duration)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Degree_description)
+            Description
+            @*
+            @Html.DisplayNameFor(model => model.Degree_description)*@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Degree_description)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CourseFee)
+            Course Fee
+            @*
+            @Html.DisplayNameFor(model => model.CourseFee)*@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CourseFee)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Career_Opurtunity)
+            Career Oppurtunities
+            @*
+            @Html.DisplayNameFor(model => model.Career_Opurtunity)*@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Career_Opurtunity)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Academic_proggression)
+            Academic Progression
+            @*
+            @Html.DisplayNameFor(model => model.Academic_proggression)*@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Academic_proggression)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Admission_Requirments)
+            Academic Requirements
+            @*
+            @Html.DisplayNameFor(model => model.Admission_Requirments)*@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Admission_Requirments)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DegreeContents)
+                Degree Content
+
+            @*   @Html.DisplayNameFor(model => model.DegreeContents)*@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DegreeContents)

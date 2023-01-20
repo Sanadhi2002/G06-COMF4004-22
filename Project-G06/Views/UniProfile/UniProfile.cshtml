@@ -1,23 +1,29 @@
 ﻿@model IEnumerable<UniProfileModel>
 
-    <form id="form1">
+  @* <form id="form1">
         <input type="search" id="search" name=""placeholder="Search..." />
         <button>Search</button>
-    </form>
+    </form>*@
+<div class="Profiles">
     <br />
     @foreach(var obj in Model){
 
-    <div class="Profilecontainer" style="border:1px solid black;boarder-collapse;collapse ;">
-            <div class="col-4 row">
-                <div class="form-group col-12 justify-content-around align-middle mb-0 pb-0">
-                    <img id="PreviewPhoto" src="~/profilepics/@obj.ProfilPic_URL" alt="Logo Image" width="200px" height="200" style="border:1px;margin-top:10px;"/>
+    <div class="Profilecontainer">
+            
+                <div>
+                    <img id="PreviewPhoto" src="~/profilepics/@obj.ProfilPic_URL" alt="Logo Image" />
                 </div>
 
-            </div>
-            <h3>@obj.UniShortname</h3>
             <br>
+            <h3>@obj.UniShortname</h3>
+          @*  <br>
+           
             @obj.UniDetails
-        <a asp-controller="UniProfile" asp-action="Details" asp-route-id="@obj.UserId" class="UniVisitBtn">visit @obj.UniShortname page</a>
+
+        <br>*@
+            <br>
+        <a asp-controller="UniProfile" asp-action="Details" asp-route-id="@obj.UserId" class="buttons1">Visit </a>
         </div>
         <br>
-    }
+        
+    }        </div>
