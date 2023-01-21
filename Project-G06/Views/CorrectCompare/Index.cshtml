@@ -18,11 +18,6 @@
 
 }*@
 
-<div>
-
-    <header class="Compare-header"> dfhdfhf </header>
-    
-</div>
 <p>
     @using (Html.BeginForm("Index", "CorrectCompare", FormMethod.Get))
     {
@@ -35,7 +30,7 @@
 
             <div class="option1">
 
-        @Html.RadioButton("SearchBy" , "Degre_Name" , true) <text>Name</text>
+        @Html.RadioButton("SearchBy" , "Degre_Name" , true) <text>Name of degree</text>
 
             </div>
 
@@ -74,7 +69,11 @@
 @if (Model.Count() == 0)
 {
 
+    <div class="error">
+
     <p> No items matching search</p>
+
+    </div>
 
 
 }
@@ -87,13 +86,17 @@ else
             <div class="column">
                 <h2>@obj.Degre_Name - @obj.UniShortname</h2>
                 <p>Duration : @obj.Degree_duration</p>
+                <p>Type : @obj.Degree_Type</p>
                 <p>
                     Course Fee
                     : @obj.CourseFee
                 </p>
                 <p>Affiliated University : @obj.Affiliated_uni</p>
                 <p>Description : @obj.Degree_description</p>
+                <p>Degree Content : @obj.DegreeContents</p>
                 <p>Admission requirements : @obj.Admission_Requirments</p>
+
+                <p>Career Oppurtunities : @obj.Career_Opurtunity</p>
                 <p>Admission requirements : @obj.Academic_proggression</p>
             </div>
 

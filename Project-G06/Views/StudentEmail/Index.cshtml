@@ -15,7 +15,10 @@
     }
 
 
-<h1> Index student email</h1>
+
+    <div class="index-H">
+<h1> SignUps </h1>
+</div>
 
 <div class="table-wrapper">
 
@@ -25,8 +28,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
-            <th></th>
-            <th></th>
+            
         </tr>
     </thead>
     <tbody>
@@ -36,8 +38,8 @@
                 <td>@obj.S_Id</td>
                 <td>@obj.S_Name</td>
                 <td>@obj.S_Email</td>
-                <td><a asp-action="Edit" asp-controller="StudentEmail" asp-route-id="@obj.S_Id">Edit details</a></td>
-                <td><a asp-action="Delete" asp-controller="StudentEmail" asp-route-id="@obj.S_Id">Delete row</a></td>
+               @*<td><a asp-action="Edit" asp-controller="StudentEmail" asp-route-id="@obj.S_Id">Edit details</a></td>*@
+                <td><a asp-action="Delete" asp-controller="StudentEmail" asp-route-id="@obj.S_Id"  id="listlink">Delete </a></td>
 
             </tr>
         }

@@ -18,7 +18,11 @@ a.navbar-brand {
     margin-top: -45px;
     margin-left:-40px;
 }
-
+@media only screen and (max-width: 985px) {
+    .logo-image {
+        visibility:hidden;
+    }
+}
 
 .navbar {
     background-color: #43464B;
