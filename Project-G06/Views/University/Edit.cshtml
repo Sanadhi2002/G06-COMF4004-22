@@ -1,10 +1,12 @@
 ﻿@model UniProfileModel
 
 <body class="bgP">
+    <br />
+    <br />
     <div class="col-10 mx-auto pt-0">
 
         <div class="card">
-            <div class="card-header bg-secondary text-uppercase text-white text-center">
+            <div class="card-header text-uppercase text-white text-center">
                 <h5>Edit profile</h5>
             </div>
             <div class="card-body">
@@ -94,11 +96,11 @@
 
                     <div class="col-12 btn-group">
                         <div class="col-10 form-group text-right p-2">
-                            <a asp-action="Index" class="btn btn-lg btn-secondary btn-black">Back</a>
+                            <a  asp-controller="University" asp-action="Details" class="buttons1">Back</a>
 
                         </div>
                         <div class="col-2 form-group text-left p-2">
-                            <input type="submit" value="Edit" class="btn btn-lg btn-primary btn-block" />
+                            <input type="submit" value="Edit" class="buttons1" />
                         </div>
                     </div>
         </form>
@@ -107,6 +109,8 @@
 
 
 </div>
+<br />
+<br />
 </body>
 
 @section Scripts{

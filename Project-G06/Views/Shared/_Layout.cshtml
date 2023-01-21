@@ -46,7 +46,7 @@
                             <img src="~/images/LOGO.jpeg" class="img-fluid">
                         </div>
                     </a>
-                    
+                    <br />
                   
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -62,14 +62,14 @@
                         <li class="nav-item">
                             @* <a asp-area="" asp-controller="Compare" asp-action="Index" class="nav-link mx-0"> Compare ! </a>*@
                               <a asp-area="" asp-controller="CorrectCompare" asp-action="Index" class="nav-link mx-0">Compare </a>
-                            @*<a asp-area="" asp-controller="StudentEmail" asp-action="Index" class="nav-link mx-0">CRUD test</a>*@
+                           @* <a asp-area="" asp-controller="StudentEmail" asp-action="Index" class="nav-link mx-0">CRUD test</a>*@
 
                         </li>
                         <li class="nav-item">
                             <a asp-area="" asp-controller="UniProfile" asp-action="UniProfile" class="nav-link mx-0">University Profiles</a>
                         </li>
                       
-                        <ul class="navbar-nav ms-auto">
+                       
                                 @if (SignInManager.IsSignedIn(User))
                                 {
                                     @if (User.IsInRole("Administrator"))
@@ -130,7 +130,7 @@
                                 </li>-->
                               
                       
-                            </ul>
+                           
 
                     </div>
 

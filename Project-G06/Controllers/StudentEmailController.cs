@@ -27,7 +27,7 @@ namespace Project_G06.Controllers
 
 
 
-
+        
         [HttpPost]
         public async Task<IActionResult> Add(StudentEmail studentEmail,string email)
         {
@@ -50,6 +50,54 @@ namespace Project_G06.Controllers
 
 
         }
+
+
+        /*
+        [HttpPost]
+        public async Task<IActionResult> Add(StudentEmail studentEmail, string email)
+        {
+            bool bolret = false;
+            string errorMessage = "";
+          
+
+            var student = new StudentEmail()
+            {
+                S_Email = studentEmail.S_Email,
+                S_Id = studentEmail.S_Id,
+                S_Name = studentEmail.S_Name,
+
+
+
+            };
+
+            int ct = studentEmailDbContext.StudentEmails.Where(n => n.S_Email.ToLower() == email.ToLower()).Count();
+            if (ct > 0)
+            {
+                errorMessage = "user exists";
+              
+            }
+            else
+            {
+                await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
+                await studentEmailDbContext.SaveChangesAsync();
+                return RedirectToAction("Add");
+
+            }
+
+
+
+
+        }*/
+
+
+       
+
+
+
+
+
+
+
 
 
         //dulangi
