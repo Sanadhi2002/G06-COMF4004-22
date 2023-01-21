@@ -68,7 +68,7 @@
                         <li class="nav-item">
                             <a asp-area="" asp-controller="UniProfile" asp-action="UniProfile" class="nav-link mx-0">University Profiles</a>
                         </li>
-                      
+                       
                        
                                 @if (SignInManager.IsSignedIn(User))
                                 {
@@ -81,14 +81,16 @@
                                      @* <li class="nav-item">
                                             <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index">Super Admin DashBoard</a>
                             </li>*@
-                               
+                                <li class="nav-item">
+                            <a asp-area="" asp-controller="StudentEmail" asp-action="Index" class="nav-link mx-0">SignUps</a>
+                        </li>
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="" asp-controller="SuperAdmin" asp-action="Index1"> DashBoard</a>
                                 </li>
-                                <br />
+                               
                                 <li>
                                     <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                                      &nbsp; &nbsp; &nbsp; <button id="logout-btn" type="submit">Logout</button>
+                                       <button id="logout-btn" type="submit">Logout</button>
                                     </form>
                                 </li>
                                     }

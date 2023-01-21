@@ -8,25 +8,27 @@
 @*<h1>@ViewData["Title"]</h1>*@
 @*<div class="row">*@
     <body class="ab">
-    <div class="forms">
+    <div class="login-boxs">
         <section>
             <form id="account" method="post">
                 <h2>Use a local account to log in.</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-floating">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                <div class="user-boxs">
+                    <br />
+                    <input asp-for="Input.Email"  autocomplete="username" aria-required="true" />
+                   
                     <label asp-for="Input.Email" class="form-label"></label>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
-                <div class="form-floating">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                <div class="user-boxs">
+                    <input asp-for="Input.Password"  autocomplete="current-password" aria-required="true" />
                     <label asp-for="Input.Password" class="form-label"></label>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div>
                     <div class="checkbox">
-                        <label asp-for="Input.RememberMe" class="form-label">
+                        <label asp-for="Input.RememberMe" class="form-label" style="color:white">
                             <input class="form-check-input" asp-for="Input.RememberMe" />
                             @Html.DisplayNameFor(m => m.Input.RememberMe)
                         </label>
@@ -34,7 +36,7 @@
                 </div>
                 <div>
                     
-                    <button id="login-submit" type="submit" class="w-20 btn btn-lg btn-primary">Log in</button>
+                    <button id="login-submit" type="submit" class="buttons">Log in</button>
                 </div>
                @* <div>
                     <p>
