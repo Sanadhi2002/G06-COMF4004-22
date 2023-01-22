@@ -1,18 +1,21 @@
 ﻿@model IEnumerable<DegreeModel>
 
 
-
-
-<div class="container btn-group">
-    <div class="col-10">
-        <br />
-
-        <h1>Degree list</h1>
+    <br />
+<div class="card">
+@*<div class="container btn-group">*@
+    <div class="col-12">
+       
+        <div class="card-header bg-secondary text-uppercase text-white text-center">
+            <h5>Degree list</h5>
+        </div>
+      @*  <h1>Degree list</h1>*@
     </div>
-    <div class="col-2 btn-group justify-content-end p-3">
-        <a asp-action="DegreeCreate" class="buttons1">Add New Degree</a>
-    </div>
-</div>
+   @* <div class="col-2 btn-group justify-content-end ">
+        <a asp-action="DegreeCreate" class="btn  btn-outline-danger">Add New Degree</a>
+    </div>*@
+@*</div>*@
+    <div class="card-body">
 <table class="table">
     <thead>
         <tr>
@@ -69,3 +72,10 @@
         }
     </tbody>
 </table>
+
+        <div class="col-12 btn-group justify-content-center ">
+            <a asp-action="DegreeCreate" class="btn  btn btn-success">Add New Degree + </a>
+        </div>
+</div>
+</div>
+
