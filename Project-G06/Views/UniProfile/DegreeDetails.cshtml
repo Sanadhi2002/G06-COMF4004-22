@@ -51,7 +51,7 @@
 
                         <div class="form-group">
                             <label asp-for="Degree_description" class="controll-lable">please provide a description about the degree</label>
-                            <textarea asp-for="Degree_description" class="form-control" disabled></textarea>
+                            <textarea asp-for="Degree_description" class="form-control" rows="5" disabled></textarea>
 
                         </div>
                     </div>
@@ -94,7 +94,7 @@
 
                         <div class="form-group">
                             <label asp-for="DegreeContents" class="controll-lable">Content of the Degree</label>
-                            <textarea asp-for="DegreeContents" class="form-control" disabled></textarea>
+                            <textarea asp-for="DegreeContents"  class="form-control" rows="5" disabled></textarea>
 
                         </div>
                     </div>
@@ -129,7 +129,7 @@
 
             <div class="col-12 btn-group">
                 <div class="col-6 form-group text-right p-2">
-                    <a asp-action="Degree" asp-route-id="@Model?.UserId" class="btn btn-secondary btn-black">Back</a>
+                    <a asp-action="Degree" asp-route-id="@Model?.UserId" class="btn btn-secondary btn-black btn-lg">Back</a>
 
                 </div>
 

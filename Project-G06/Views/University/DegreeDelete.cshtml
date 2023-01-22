@@ -126,13 +126,19 @@
             </div>
 
 
-
+           
+                 
             <form asp-action="DegreeDelete">
         <input type="hidden" asp-for="Degree_ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> 
-                <a asp-action="Degree" asp-route-id="@Model?.UserId" class="btn btn-secondary btn-black">Back</a>
+                <div class="col-12 btn-group">
+                        <div class="col-6 form-group text-right p-2">
+        <input type="submit" value="Delete" class="btn btn-danger btn-lg" /> </div>
+                        <div >
+                <a asp-action="Degree" asp-route-id="@Model?.UserId" class="btn btn-secondary btn-black btn-lg">Back</a></div>
+                </div>
     </form>
-</div>
+    </div>
+
 <br />
     </div>
 </div>
