@@ -15,8 +15,13 @@ namespace Project_G06.Data
                 
         }
         public DbSet<StudentEmail> StudentEmails { get; set; }
+
+        internal object Find(object s_Email)
+        {
+            throw new NotImplementedException();
+        }
         //public DbSet<Category>categories { get; set; }
-       
+
 
     }
 }

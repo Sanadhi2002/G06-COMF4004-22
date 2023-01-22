@@ -1,6 +1,6 @@
 ﻿@model DegreeModel
 <br />
-<div class="col-11 mx-auto pt-0">
+<div class="col-9 mx-auto pt-0">
     <div class="card">
       
         <div class="card-header bg-secondary text-uppercase text-white text-center">
@@ -51,7 +51,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Degree_description" class="controll-lable">please provide a description about the degree</label>
-                                <input asp-for="Degree_description" class="form-control" placeholder="This a 4 year degree with the 3rd year consisting of internship for students"/>
+                                <textarea  asp-for="Degree_description" class="form-control" rows="3" placeholder="This a 4 year degree with the 3rd year consisting of internship for students"></textarea>
                                 <span asp-validation-for="Degree_description" class="text-danger"></span>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="DegreeContents" class="controll-lable">Content of the Degree</label>
-                                <input asp-for="DegreeContents" class="form-control" placeholder="Object-Oriented Programing,Database Management systems,ets"/>
+                                <textarea class="form-control" asp-for="DegreeContents" rows="3" cols="12" placeholder="Object-Oriented Programing,Database Management systems,etc"></textarea>
                                 <span asp-validation-for="DegreeContents" class="text-danger"></span>
                             </div>
                         </div>

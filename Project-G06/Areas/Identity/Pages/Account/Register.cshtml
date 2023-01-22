@@ -32,17 +32,17 @@
             <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
         </div>
 
-            @* <div class="form-floating">
+        @*  <div class="form-floating">
             <select asp-for="Input.Role" class="form-control" asp-items="@Model.Input.RoleList" aria-required="true">
-                <option disabled selected>
+                <option >
                     select Role
                 </option>
             </select>
             <span asp-validation-for="Input.Role" class="text-danger"></span>
 
             </div>*@
-            <div class="user-boxs" hidden>
-                <input asp-for="Input.Role" class="form-control" value="University Admin" aria-required="true">
+             <div class="user-boxs" hidden>
+              <input asp-for="Input.Role" class="form-control" value="University Admin" aria-required="true">
                   <label asp-for="Input.Role"></label>
 
                 <span asp-validation-for="Input.Role" class="text-danger"></span>
