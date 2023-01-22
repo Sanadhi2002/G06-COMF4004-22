@@ -1,7 +1,7 @@
 ﻿@model DegreeModel
 <br />
 <div class="col-9 mx-auto pt-0">
-    <div class="card">
+    <div class="card-create" id="card-create">
       
         <div class="card-header bg-secondary text-uppercase text-white text-center">
             <h5>Create Degree</h5>
@@ -35,7 +35,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Affiliated_uni" class="controll-lable">Affliated Universities</label>
-                                <input asp-for="Affiliated_uni" class="form-control" />
+                                <input asp-for="Affiliated_uni" class="form-control" placeholder="Staffordshire University UK"/>
                                 <span asp-validation-for="Affiliated_uni" class="text-danger"></span>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Degree_duration" class="controll-lable">Duration of the degree</label>
-                                <input asp-for="Degree_duration" class="form-control"/>
+                                <input asp-for="Degree_duration" class="form-control" placeholder="4 Years"/>
                                 <span asp-validation-for="Degree_duration" class="text-danger"></span>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Degree_description" class="controll-lable">please provide a description about the degree</label>
-                                <textarea  asp-for="Degree_description" class="form-control" rows="3"></textarea>
+                                <textarea  asp-for="Degree_description" class="form-control" rows="3" placeholder="This a 4 year degree with the 3rd year consisting of internship for students"></textarea>
                                 <span asp-validation-for="Degree_description" class="text-danger"></span>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="CourseFee" class="controll-lable">Course Fee</label>
-                                <input asp-for="CourseFee" class="form-control"/>
+                                <input asp-for="CourseFee" class="form-control" placeholder="2,400,000"/>
                                 <span asp-validation-for="CourseFee" class="text-danger"></span>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Career_Opurtunity" class="controll-lable"> Career Oppurtunities</label>
-                                <input asp-for="Career_Opurtunity" class="form-control" />
+                                <input asp-for="Career_Opurtunity" class="form-control" placeholder="Software Engineer,Code Developer, etc"/>
                                 <span asp-validation-for="Career_Opurtunity" class="text-danger"></span>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Admission_Requirments" class="controll-lable">Admission Requirements</label>
-                                <input asp-for="Admission_Requirments" class="form-control" />
+                                <input asp-for="Admission_Requirments" class="form-control" placeholder="GCE Als 3s or Foundation"/>
                                 <span asp-validation-for="Admission_Requirments" class="text-danger"></span>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="DegreeContents" class="controll-lable">Content of the Degree</label>
-                                <textarea class="form-control" asp-for="DegreeContents" rows="3" cols="12" ></textarea>
+                                <textarea class="form-control" asp-for="DegreeContents" rows="3" cols="12" placeholder="Object-Oriented Programing,Database Management systems,etc"></textarea>
                                 <span asp-validation-for="DegreeContents" class="text-danger"></span>
                             </div>
                         </div>
@@ -121,23 +121,60 @@
                         </div>
 
                     </div>
-                    
+                    @*<div class=" col-8">
+
+                    <div class="form-group">
+                    <label asp-for="Uni_FacultyID" class="controll-lable"></label>
+                    <input asp-for="Uni_FacultyID" class="form-control" />
+                    <span asp-validation-for="Uni_FacultyID" class="text-danger"></span>
+                    </div>
+                    </div>
+                    <div class=" col-8">
+
+                    <div class="form-group">
+                    <label asp-for="ImageExtension" class="controll-lable"></label>
+                    <input asp-for="ImageExtension" class="form-control" id="ImageExtension" />
+
+                    </div>
+                    </div>*@
 
                 </div>
-                
+                @*                    <div class="col-4 row">
+                <input type="hidden" asp-for="ProfilPic_URL" id="ProfilPic_URL" value="Error" />
+                <div class="form-group col-12 justify-content-around align-middle mb-0 pb-0">
+                <img id="PreviewPhoto" src="~/profilepics/@Model.ProfilPic_URL" alt="Logo Image" width=" 200" height="200"
+                style="border:1px;margin-top:10px;" />
+                </div>
+                <div class="form-group col-2 pt-0 mt-0">
+                </div>
+                <div class="form-group col-10 pt-0 mt-0">
+
+
+                <div class="custom-file">
+                <input asp-for="UploadedProfilePic" class="custom-file-input" id="UploadedProfilePic"
+                onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])" />
+
+                <label class="custom-file-label" for="UploadedProfilePic" id=" UploadedProfilePicCaption">Browse</label>
+                </div>
+                </div>
+
+                </div>*@
 
 
                 <div class="col-12 btn-group">
                     <div class="col-6 form-group text-right p-2">
                        @* <a asp-action="Degree" asp-route-id="@Model?.UserId" class="btn btn-secondary btn-black">Back</a>*@
-                        <a class="buttons1" asp-action="degree" asp-route-id="@(ViewBag.userid)">Back</a>
+                        <a  asp-action="degree" asp-route-id="@(ViewBag.userid)">Back</a>
                     </div>
+                    <br />
                     <div >
-                        <input type="submit" value="Add Degree"  />
+                        <input type="submit" value="Add Degree" class="buttons1"  id="add-degree"/>
                     </div>
                 </div>
 
             </form>
+
+
         </div>
     </div>
 
