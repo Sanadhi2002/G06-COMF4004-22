@@ -1271,5 +1271,11 @@ a{
     height: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 25px;
+    font-size: 30px;
+}
+
+#back a{
+    text-decoration:underline;
+    color:darkred;
+
 }
