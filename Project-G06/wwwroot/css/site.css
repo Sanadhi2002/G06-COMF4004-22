@@ -586,12 +586,14 @@ a{
     }
 }
 
-.Profilecontainer1{
+.Profilecontainer1 {
     background-color: white;
-
-    padding: 10px;
-    justify-content:center;
-    width: 70%;
+    box-sizing: border-box;
+    border: solid #710c04 3px;
+    border-radius:10px;
+    padding: 5px;
+    justify-content: center;
+    width: 40%;
     display: grid;
 }
  .Profilecontainer1 .row{
@@ -599,9 +601,11 @@ a{
  }
     .Profilecontainer1 #listlink {
         color: #8b0000;
+        font-size:25;
     }
     .Profilecontainer1 #listlink:hover {
         text-decoration: underline;
+   
     }
 
  .Profiles1 {
