@@ -7,139 +7,136 @@
             <h5>Degree Details</h5>
         </div>
         <div class="card-body">
-            
-                <div class="btn-group">
 
-                    <div class="col-5 row">
+            <div class="btn-group">
 
-                        <div class=" col-12 ">
-                           
-                            <div class="form-group " >
-                                
-                                <label asp-for="Degre_Name" >  Degree Name  </label>
-                          
+                <div class="col-5 row">
+
+                    <div class=" col-12 ">
+
+                        <div class="form-group ">
+                            <label asp-for="Degre_Name" class="controll-lable">Degree Name</label>
                             <input asp-for="Degre_Name" class="form-control" disabled />
-                                
-                           
+
                         </div>
+                    </div>
 
 
-                        <div class=" col-12 ">
-                           
-                            <div class="form-group">
-                                <label asp-for="Degree_Type" class="controll-lable">Type of the Degree</label>
+                    <div class=" col-12 ">
+
+                        <div class="form-group">
+                            <label asp-for="Degree_Type" class="controll-lable">Type of the Degree</label>
                             <input asp-for="Degree_Type" class="form-control" disabled />
-                              
-                            </div>
-                        </div>
 
-                        <div class=" col-12 ">
-                           
-                            <div class="form-group">
-                                <label asp-for="Affiliated_uni" class="controll-lable">Affliated Universities</label>
+                        </div>
+                    </div>
+
+                    <div class=" col-12 ">
+
+                        <div class="form-group">
+                            <label asp-for="Affiliated_uni" class="controll-lable">Affliated Universities</label>
                             <input asp-for="Affiliated_uni" class="form-control" disabled />
-                              
-                            </div>
+
                         </div>
-                        <div class=" col-12 ">
-                            
-                            <div class="form-group">
-                                <label asp-for="Degree_duration" class="controll-lable">Duration of the degree</label>
+                    </div>
+                    <div class=" col-12 ">
+
+                        <div class="form-group">
+                            <label asp-for="Degree_duration" class="controll-lable">Duration of the degree</label>
                             <input asp-for="Degree_duration" class="form-control" disabled />
-                               
-                            </div>
-                        </div>
-                        <div class=" col-12 ">
-                           
-                            <div class="form-group">
-                                <label asp-for="Degree_description" class="controll-lable">please provide a description about the degree</label>
-                            <textarea asp-for="Degree_description" class="form-control" disabled ></textarea>
-                                
-                            </div>
+
                         </div>
                     </div>
-                    <div class="col-2 row"></div>
-                    <div class="col-5 row">
-                        <div class=" col-12 ">
-                            
-                            <div class="form-group">
-                                <label asp-for="CourseFee" class="controll-lable">Course Fee</label>
+                    <div class=" col-12 ">
+
+                        <div class="form-group">
+                            <label asp-for="Degree_description" class="controll-lable">please provide a description about the degree</label>
+                            <textarea asp-for="Degree_description" class="form-control" disabled></textarea>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 row"></div>
+                <div class="col-5 row">
+                    <div class=" col-12 ">
+
+                        <div class="form-group">
+                            <label asp-for="CourseFee" class="controll-lable">Course Fee</label>
                             <input asp-for="CourseFee" class="form-control" disabled />
-                               
-                            </div>
+
                         </div>
-                        <div class=" col-12 ">
-                            
-                            <div class="form-group">
-                                <label asp-for="Career_Opurtunity" class="controll-lable"> Career Oppurtunities</label>
+                    </div>
+                    <div class=" col-12 ">
+
+                        <div class="form-group">
+                            <label asp-for="Career_Opurtunity" class="controll-lable"> Career Oppurtunities</label>
                             <input asp-for="Career_Opurtunity" class="form-control" disabled />
-                               
-                            </div>
+
                         </div>
-                        <div class=" col-12 ">
-                         
-                            <div class="form-group">
-                                <label asp-for="Academic_proggression" class="controll-lable">Academic Progression</label>
+                    </div>
+                    <div class=" col-12 ">
+
+                        <div class="form-group">
+                            <label asp-for="Academic_proggression" class="controll-lable">Academic Progression</label>
                             <input asp-for="Academic_proggression" class="form-control" disabled />
-                              
-                            </div>
+
                         </div>
-                        <div class=" col-12 ">
-                           
-                            <div class="form-group">
-                                <label asp-for="Admission_Requirments" class="controll-lable">Admission Requirements</label>
+                    </div>
+                    <div class=" col-12 ">
+
+                        <div class="form-group">
+                            <label asp-for="Admission_Requirments" class="controll-lable">Admission Requirements</label>
                             <input asp-for="Admission_Requirments" class="form-control" disabled />
-                                
-                            </div>
-                        </div>
-                        <div class=" col-12 ">
-                           
-                            <div class="form-group">
-                                <label asp-for="DegreeContents" class="controll-lable">Content of the Degree</label>
-                            <textarea asp-for="DegreeContents" class="form-control" disabled ></textarea>
-                               
-                            </div>
+
                         </div>
                     </div>
-                    <div>
+                    <div class=" col-12 ">
 
-                        <div class="form-group" hidden>
-                            <label asp-for="UserId" class="controll-lable"></label>
-                            <input asp-for="UserId" value="@(ViewBag.userid)" class="form-control" readonly />
-                            
+                        <div class="form-group">
+                            <label asp-for="DegreeContents" class="controll-lable">Content of the Degree</label>
+                            <textarea asp-for="DegreeContents" class="form-control" disabled></textarea>
 
-                            
                         </div>
+                    </div>
+                </div>
+                <div>
+
+                    <div class="form-group" hidden>
+                        <label asp-for="UserId" class="controll-lable"></label>
+                        <input asp-for="UserId" value="@(ViewBag.userid)" class="form-control" readonly />
+
+
 
                     </div>
-                    <div>
-
-                        <div class="form-group" hidden>
-                            <label asp-for="UniShortname" class="controll-lable"></label>
-                            <input asp-for="UniShortname" value="@(ViewBag.UnishortName)" class="form-control" readonly />
-                           
-
-                            <span asp-validation-for="UserId" class="text-danger"></span>
-                        </div>
-
-                    </div>
-                   
 
                 </div>
-               
+                <div>
+
+                    <div class="form-group" hidden>
+                        <label asp-for="UniShortname" class="controll-lable"></label>
+                        <input asp-for="UniShortname" value="@(ViewBag.UnishortName)" class="form-control" readonly />
 
 
-                <div class="col-12 btn-group">
-                    <div class="col-6 form-group text-right p-2">
-                         <a asp-action="Degree" asp-route-id="@Model?.UserId" class="btn btn-secondary btn-black">Back</a>
-                       
+                        <span asp-validation-for="UserId" class="text-danger"></span>
                     </div>
-                    
+
                 </div>
 
-           
+
+            </div>
+
+
+
+            <div class="col-12 btn-group">
+                <div class="col-6 form-group text-right p-2">
+                    <a asp-action="Degree" asp-route-id="@Model?.UserId" class="btn btn-secondary btn-black">Back</a>
+
+                </div>
+
+            </div>
+
+
         </div>
     </div>
 
 </div>
-
