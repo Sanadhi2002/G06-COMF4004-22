@@ -565,8 +565,8 @@ a{
 }
 
 .UniProfiles {
-    /*background-image: url(../images/background4.jpg);*/
-    background-color: #E5E4E2;
+    background-image: url(../images/background4.jpg);
+    /*background-color: #e5e4e2;*/
     background-size: cover;
     background-repeat: no-repeat;
     text-align: justify;
@@ -631,8 +631,7 @@ a{
 }
 
 /*detailspage*/
-
-.wrapper {
+    .wrapper {
     position: relative;
     top: 50%;
     left: 50%;
