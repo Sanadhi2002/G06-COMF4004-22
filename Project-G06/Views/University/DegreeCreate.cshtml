@@ -3,16 +3,16 @@
 <div class="col-11 mx-auto pt-0">
     <div class="card">
       
-        <div class="card-header">
-            <h5>Degree Details</h5>
+        <div class="card-header bg-secondary text-uppercase text-white text-center">
+            <h5>Create Degree</h5>
         </div>
         <div class="card-body">
             <form asp-action="DegreeCreate" enctype="multipart/form-data" onsubmit="return ValidateForm()">
                 <div class="btn-group">
 
-                    <div >
-
-                        <div>
+                    <div class="col-5 row">
+                       
+                        <div class=" col-12 ">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Degre_Name" class="controll-lable">Degree Name</label>
@@ -20,7 +20,9 @@
                                 <span asp-validation-for="Degre_Name" class="text-danger"></span>
                             </div>
                         </div>
-                        <div >
+                        
+                    
+                        <div class=" col-12 ">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Degree_Type" class="controll-lable">Type of the Degree</label>
@@ -28,7 +30,8 @@
                                 <span asp-validation-for="Degree_Type" class="text-danger"></span>
                             </div>
                         </div>
-                        <div >
+                       
+                        <div class=" col-12 ">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Affiliated_uni" class="controll-lable">Affliated Universities</label>
@@ -36,7 +39,7 @@
                                 <span asp-validation-for="Affiliated_uni" class="text-danger"></span>
                             </div>
                         </div>
-                        <div >
+                        <div class=" col-12 ">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Degree_duration" class="controll-lable">Duration of the degree</label>
@@ -44,15 +47,18 @@
                                 <span asp-validation-for="Degree_duration" class="text-danger"></span>
                             </div>
                         </div>
-                        <div >
+                        <div class=" col-12 ">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Degree_description" class="controll-lable">please provide a description about the degree</label>
                                 <input asp-for="Degree_description" class="form-control" />
                                 <span asp-validation-for="Degree_description" class="text-danger"></span>
                             </div>
-                        </div> 
-                        <div >
+                        </div>
+                    </div>
+                     <div class="col-2 row"></div>
+                    <div class="col-5 row">
+                        <div class=" col-12 ">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="CourseFee" class="controll-lable">Course Fee</label>
@@ -60,7 +66,7 @@
                                 <span asp-validation-for="CourseFee" class="text-danger"></span>
                             </div>
                         </div>
-                        <div >
+                        <div class=" col-12 ">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Career_Opurtunity" class="controll-lable"> Career Oppurtunities</label>
@@ -68,7 +74,7 @@
                                 <span asp-validation-for="Career_Opurtunity" class="text-danger"></span>
                             </div>
                         </div>
-                         <div>
+                        <div class=" col-12 ">
                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Academic_proggression" class="controll-lable">Academic Progression</label>
@@ -76,7 +82,7 @@
                                 <span asp-validation-for="Academic_proggression" class="text-danger"></span>
                             </div>
                         </div>
-                        <div >
+                        <div class=" col-12 ">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Admission_Requirments" class="controll-lable">Admission Requirements</label>
@@ -84,7 +90,7 @@
                                 <span asp-validation-for="Admission_Requirments" class="text-danger"></span>
                             </div>
                         </div>
-                        <div >
+                        <div class=" col-12 ">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="DegreeContents" class="controll-lable">Content of the Degree</label>
