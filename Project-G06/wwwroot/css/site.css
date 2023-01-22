@@ -138,19 +138,22 @@ body {
 
 
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 500px) {
     .about {
         height: 500px;
         width: 500px;
         overflow-x: scroll;
         overflow-y: scroll;
         
+        
+        
     }
+
 
     .about::-webkit-scrollbar {
         display: none;
     }
-
+   
 }
 
 
@@ -159,6 +162,12 @@ body {
 
 
 @media only screen and (max-width: 800px) {
+    .ab {
+        background-color: black;
+    }
+}
+
+@media only screen and (max-width: 500px) {
     .ab {
         background-color: black;
     }
@@ -435,8 +444,17 @@ input[type=text] {
        flex-wrap: wrap;
       
        align-items:center;
-       margin-left:185px;
-
+       margin-left:180px;
+      
+    }
+}
+@media only screen and (max-width: 500px) {
+    .container1 {
+        width: 100px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-left: 180px;
     }
 }
 
