@@ -26,6 +26,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
 
 
 
@@ -89,7 +92,7 @@
                             <li class="nav-item">
                                 <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link mx-0 ">Home</a>
                             </li>
-
+                     
 
                         <li class="nav-item">
                             @* <a asp-area="" asp-controller="Compare" asp-action="Index" class="nav-link mx-0"> Compare ! </a>*@
@@ -100,11 +103,11 @@
                         <li class="nav-item">
                             <a asp-area="" asp-controller="UniProfile" asp-action="UniProfile" class="nav-link mx-0">University Profiles</a>
                         </li>
-                       
+                      
                        
                                 @if (SignInManager.IsSignedIn(User))
                                 {
-                                    @if (User.IsInRole("Administrator"))
+                                    @if (User.IsInRole("Admin"))
                             {
                                
                                         <li class="nav-item">

@@ -126,9 +126,9 @@ body {
 }
 
 
-.intro p{
-    color:  #ECECEC;
-
+.intro text {
+    font-family: 'Archivo Narrow', sans-serif;
+    color: #FAF9F6;
 }
 
 
