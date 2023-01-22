@@ -1,6 +1,6 @@
 ﻿@model Project_G06.Models.DegreeModel
 <br />
-<div class="col-11 mx-auto pt-0">
+<div class="col-9 mx-auto pt-0">
     <div class="card">
 
         <div class="card-header bg-secondary text-uppercase text-white text-center">
@@ -51,7 +51,7 @@
 
                         <div class="form-group">
                             <label asp-for="Degree_description" class="controll-lable">please provide a description about the degree</label>
-                            <input asp-for="Degree_description" class="form-control" disabled />
+                            <textarea asp-for="Degree_description" class="form-control" disabled></textarea>
 
                         </div>
                     </div>
@@ -94,7 +94,7 @@
 
                         <div class="form-group">
                             <label asp-for="DegreeContents" class="controll-lable">Content of the Degree</label>
-                            <input asp-for="DegreeContents" class="form-control" disabled />
+                            <textarea asp-for="DegreeContents" class="form-control" disabled></textarea>
 
                         </div>
                     </div>
