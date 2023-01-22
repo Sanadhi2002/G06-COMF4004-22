@@ -15,18 +15,16 @@
     <thead>
         <tr>
 
-            <th>
-            </th>
 
          @*   <th>
                  ID
             </th>*@
-            <th>
-                Degree Name
+            <th style="font-size:20px; text-align:center">
+                Degree Programmes
             </th>
-
-
-            <th></th>
+            
+            
+           
         </tr>
     </thead>
     <tbody>
@@ -41,9 +39,12 @@
                @* <td>
                     @obj.Degree_ID
             </td>*@
+                
                 <td>
-                      <a asp-action="DegreeDetails" asp-route-id="@obj.Degree_ID">
-                    @obj.Degre_Name
+                    <br />
+                    <br />
+                      <a asp-action="DegreeDetails" asp-route-id="@obj.Degree_ID" style="font:bold; font-size:17px">
+                    @obj.Degre_Name &nbsp; &nbsp; <img src="/images/arrow.png" class="arrow">
                     </a>
                 </td>
 
