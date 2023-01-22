@@ -125,6 +125,19 @@ body {
     font-family: 'Pragati Narrow', sans-serif;
 }
 
+
+.intro p{
+    color:  #ECECEC;
+
+}
+
+
+
+
+
+
+
+
 @media only screen and (min-width: 400px) {
     .about {
         height: 500px;
