@@ -30,7 +30,10 @@ body {
 
 
 
-
+.table {
+    border: solid 5px;
+    border-color: black;
+}
 .UniProfiles{
     background-color:black;
 }
@@ -437,11 +440,12 @@ input[type=text] {
 @media only screen and (max-width: 800px) {
     .container1 {
         width: 100px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        margin-left:180px;
-
+        flex-direction: row; 
+       flex-wrap: wrap;
+      
+       align-items:center;
+       margin-left:180px;
+      
     }
 }
 @media only screen and (max-width: 500px) {
@@ -450,13 +454,7 @@ input[type=text] {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        margin-left: 0px;
-        text-align: center;
-        /*border: 7px solid red;*/
-        width: 100%;
-        height: 50px;
-        padding-top: 0px;
-        padding-bottom: 10px;
+        margin-left: 180px;
     }
 }
 
@@ -567,9 +565,8 @@ a{
 }
 
 .UniProfiles {
-    /* background-image: url(../images/background4.jpg);*/
-    background-color: #59788E;
-   ;
+    /*background-image: url(../images/background4.jpg);*/
+    background-color: #E5E4E2;
     background-size: cover;
     background-repeat: no-repeat;
     text-align: justify;
@@ -583,15 +580,6 @@ a{
     flex-wrap: wrap;
     row-gap: 15px;
 }
-
-
-
-
-
-
-
-
-
 
 #PreviewPhoto {
     width: 200px;
@@ -643,7 +631,8 @@ a{
 }
 
 /*detailspage*/
-    .wrapper {
+
+.wrapper {
     position: relative;
     top: 50%;
     left: 50%;
@@ -877,59 +866,6 @@ a{
 
 
 
-
-
-@media only screen and (max-width: 800px) {
-
-    .options {
-        /* display:grid;
-    grid-template-columns:1fr;
-    width :200px;*/
-
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100px;
-        column-gap:4px;
-        flex-wrap:wrap;
-        row-gap:20px;
-    }
-    
-}
-
-
-
-
-
-@media only screen and (max-width: 400px) {
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        background-color: #E5E4E2;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-        padding: 10px;
-        column-gap: 30px;
-        row-gap: 20px;
-    }
-}
-
-
-
-
-@media only screen and (max-width: 400px) {
-
-    .container1 {
-        
-    }
-}
-
-
-
-
-
-
-
 #error {
     font-family: 'Fredoka One', cursive;
     text-transform: uppercase;
@@ -1101,18 +1037,12 @@ a{
         color: white;
     }
 
-.card .card-header {
+.card-header .card{
     background-color: #8b0000;
     color: white;
-    text-align: center;
-}
-.col-9 .card .card-header {
-    background-color: #8b0000;
+    text-align:center;
 }
 
-.card .col-12.card-header {
-    background-color: #8b0000;
-}
 
 .Stable-wrapper {
     box-sizing: border-box;
@@ -1201,7 +1131,145 @@ a{
     color: #FAF9F6;
 
 }
-.details{
-    border:4px solid black;
-    padding:12px;
+
+#card-header {
+    background: #f9f9f9;
+
+}
+
+
+.h h5 {
+    font-family: 'Vazirmatn', sans-serif;
+  
+    text-align: center;
+    /*border: 7px solid red;*/
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    
+}
+
+
+
+
+
+
+#success-button {
+   
+    border-radius: 2px;
+   
+    background-color: black;
+    color: aliceblue;
+}
+
+
+    #success-button:hover {
+        background-color: #AFE1AF;
+        color: black;
+    }
+
+
+.card-header bg-secondary text-uppercase text-white text-center {
+    background: #fafafa;
+}
+
+
+
+
+
+
+
+
+.btn btn btn-success button:hover {
+    background-color: black;
+}
+
+
+
+#pro-button-del {
+    background-color: #D2042D;
+    height: 40px;
+    color: whitesmoke;
+    border-radius: 5px;
+    border: white solid 2px;
+    font-size: 16px;
+    font-family: 'Vazirmatn', sans-serif;
+    text-transform: uppercase;
+}
+
+#pro-button {
+    background-color: #6B6A69;
+    height: 40px;
+    color: whitesmoke;
+    border-radius: 5px;
+    border: white solid 2px;
+    font-size: 16px;
+    font-family: 'Vazirmatn', sans-serif;
+    text-transform: uppercase;
+}
+
+
+
+.card {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: #f9f9f9;
+}
+
+.card-body table{
+    border:none;
+}
+
+.card-body {
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.table td{
+    padding-bottom:10px;
+}
+
+.table th{
+    padding-bottom:15px;
+}
+
+.table th {
+    font-size:14px;
+}
+
+.card-body h5 {
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+
+.card-create label {
+    color: black;
+    font-family: 'Vazirmatn', sans-serif;
+    font-size:12px;
+
+}
+
+.card-create input {
+   
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: black;
+    padding-bottom:3px;
+    padding-top:5px;
+}
+
+.card-create button {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+
+#add-degree {
+    text-align: center;
+    /*border: 7px solid red;*/
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
 }
