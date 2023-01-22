@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Project_G06.Controllers
 {
-    // [Authorize(Roles = "Admin")]
+     [Authorize(Roles = "Admin")]
 
     ////[Authorize(Roles = "Administrator")]
     public class AppRolesController : Controller

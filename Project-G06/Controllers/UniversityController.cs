@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_G06.Data;
@@ -7,6 +8,7 @@ using System.Security.Claims;
 
 namespace Project_G06.Controllers
 {
+    [Authorize(Roles = "University Admin")]
     public class UniversityController : Controller
     {
         private readonly WebApplication2DbContext _webApplication2DbContext;

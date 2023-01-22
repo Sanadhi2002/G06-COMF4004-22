@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Project_G06.Data;
 using Project_G06.Models;
+using System.Data;
 
 namespace Project_G06.Controllers
 {
+   
     public class UniProfileController : Controller
     {
         private readonly WebApplication2DbContext _webApplication2DbContext;
