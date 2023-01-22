@@ -1,104 +1,143 @@
 ﻿@model DegreeModel
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    ViewData["Title"] = "DegreeDetails";
-}
+<br />
+<div class="col-11 mx-auto pt-0">
+    <div class="card">
 
-<br /><br />
-<h1>Details</h1>
+        <div class="card-header bg-secondary text-uppercase text-white text-center">
+            <h5>Edit Degree</h5>
+        </div>
+        <div class="card-body">
+            
+                <div class="btn-group">
 
-<div>
-   
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
+                    <div class="col-5 row">
 
-            @*@Html.DisplayNameFor(model => model.Degre_Name)*@
-            Degree Name
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Degre_Name)
-        </dd>
-        <dt class="col-sm-2">
-            Type of the Degree
-            @*
-            @Html.DisplayNameFor(model => model.Degree_Type)*@
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Degree_Type)
-        </dd>
-        <dt class="col-sm-2">
-            Affliated Universities
-            @*@Html.DisplayNameFor(model => model.Affiliated_uni)*@
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Affiliated_uni)
-        </dd>
-        <dt class="col-sm-2">
-            Duration of the Degree
+                        <div class=" col-12 ">
+                           
+                            <div class="form-group " >
+                                <label asp-for="Degre_Name" class="controll-lable">Degree Name</label>
+                            <input asp-for="Degre_Name" class="form-control" disabled />
+                                
+                            </div>
+                        </div>
 
-            @* @Html.DisplayNameFor(model => model.Degree_duration)*@
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Degree_duration)
-        </dd>
-        <dt class="col-sm-2">
-            Description
-            @*
-            @Html.DisplayNameFor(model => model.Degree_description)*@
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Degree_description)
-        </dd>
-        <dt class="col-sm-2">
-            Course Fee
-            @*
-            @Html.DisplayNameFor(model => model.CourseFee)*@
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CourseFee)
-        </dd>
-        <dt class="col-sm-2">
-            Career Oppurtunities
-            @*
-            @Html.DisplayNameFor(model => model.Career_Opurtunity)*@
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Career_Opurtunity)
-        </dd>
-        <dt class="col-sm-2">
-            Academic Progression
-            @*
-            @Html.DisplayNameFor(model => model.Academic_proggression)*@
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Academic_proggression)
-        </dd>
-        <dt class="col-sm-2">
-            Academic Requirements
-            @*
-            @Html.DisplayNameFor(model => model.Admission_Requirments)*@
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Admission_Requirments)
-        </dd>
-        <dt class="col-sm-2">
-                Degree Content
 
-            @*   @Html.DisplayNameFor(model => model.DegreeContents)*@
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DegreeContents)
-        </dd>
-        <dt class="col-sm-2" hidden>
-            @Html.DisplayNameFor(model => model.UniProfileModel)
-        </dt>
-        <dd class="col-sm-10" hidden>
-            @Html.DisplayFor(model => model.UniProfileModel.UserId)
-        </dd>
-    </dl>
+                        <div class=" col-12 ">
+                           
+                            <div class="form-group">
+                                <label asp-for="Degree_Type" class="controll-lable">Type of the Degree</label>
+                            <input asp-for="Degree_Type" class="form-control" disabled />
+                              
+                            </div>
+                        </div>
+
+                        <div class=" col-12 ">
+                           
+                            <div class="form-group">
+                                <label asp-for="Affiliated_uni" class="controll-lable">Affliated Universities</label>
+                            <input asp-for="Affiliated_uni" class="form-control" disabled />
+                              
+                            </div>
+                        </div>
+                        <div class=" col-12 ">
+                            
+                            <div class="form-group">
+                                <label asp-for="Degree_duration" class="controll-lable">Duration of the degree</label>
+                            <input asp-for="Degree_duration" class="form-control" disabled />
+                               
+                            </div>
+                        </div>
+                        <div class=" col-12 ">
+                           
+                            <div class="form-group">
+                                <label asp-for="Degree_description" class="controll-lable">please provide a description about the degree</label>
+                            <input asp-for="Degree_description" class="form-control" disabled />
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 row"></div>
+                    <div class="col-5 row">
+                        <div class=" col-12 ">
+                            
+                            <div class="form-group">
+                                <label asp-for="CourseFee" class="controll-lable">Course Fee</label>
+                            <input asp-for="CourseFee" class="form-control" disabled />
+                               
+                            </div>
+                        </div>
+                        <div class=" col-12 ">
+                            
+                            <div class="form-group">
+                                <label asp-for="Career_Opurtunity" class="controll-lable"> Career Oppurtunities</label>
+                            <input asp-for="Career_Opurtunity" class="form-control" disabled />
+                               
+                            </div>
+                        </div>
+                        <div class=" col-12 ">
+                         
+                            <div class="form-group">
+                                <label asp-for="Academic_proggression" class="controll-lable">Academic Progression</label>
+                            <input asp-for="Academic_proggression" class="form-control" disabled />
+                              
+                            </div>
+                        </div>
+                        <div class=" col-12 ">
+                           
+                            <div class="form-group">
+                                <label asp-for="Admission_Requirments" class="controll-lable">Admission Requirements</label>
+                            <input asp-for="Admission_Requirments" class="form-control" disabled />
+                                
+                            </div>
+                        </div>
+                        <div class=" col-12 ">
+                           
+                            <div class="form-group">
+                                <label asp-for="DegreeContents" class="controll-lable">Content of the Degree</label>
+                            <input asp-for="DegreeContents" class="form-control" disabled />
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+
+                        <div class="form-group" hidden>
+                            <label asp-for="UserId" class="controll-lable"></label>
+                            <input asp-for="UserId" value="@(ViewBag.userid)" class="form-control" readonly />
+                            
+
+                            
+                        </div>
+
+                    </div>
+                    <div>
+
+                        <div class="form-group" hidden>
+                            <label asp-for="UniShortname" class="controll-lable"></label>
+                            <input asp-for="UniShortname" value="@(ViewBag.UnishortName)" class="form-control" readonly />
+                           
+
+                            <span asp-validation-for="UserId" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                   
+
+                </div>
+               
+
+
+                <div class="col-12 btn-group">
+                    <div class="col-6 form-group text-right p-2">
+                         <a asp-action="Degree" asp-route-id="@Model?.UserId" class="btn btn-secondary btn-black">Back</a>
+                       
+                    </div>
+                    
+                </div>
+
+           
+        </div>
+    </div>
+
 </div>
-<div>
-</div>
+
