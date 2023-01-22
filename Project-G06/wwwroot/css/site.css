@@ -1264,18 +1264,11 @@ a{
 }
 
 
-#add-degree {
-    text-align: center;
-    /*border: 7px solid red;*/
-    width: 100%;
-    height: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 30px;
-}
 
-#back a{
+
+#back {
     text-decoration:underline;
     color:darkred;
 
 }
+
