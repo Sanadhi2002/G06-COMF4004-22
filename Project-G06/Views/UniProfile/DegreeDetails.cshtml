@@ -6,80 +6,97 @@
     ViewData["Title"] = "DegreeDetails";
 }
 <br />
-<h1>Details of the degree</h1>
-<hr />
-<div>
+
+<div class="details">
  
     <dl class="row">
+        <br />
         <dt class="col-sm-2">
-          Degree Name
+            <span > Degree Name </span>
             @*  @Html.DisplayNameFor(model => model.Degre_Name)*@
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Degre_Name)
+        <dd class="col-sm-10" style="font-size:15px">
+            <input asp-for="Degre_Name" class="form-control" readonly="readonly" />
+            @*  @Html.DisplayFor(model => model.Degre_Name)*@
         </dd>
         <dt class="col-sm-2">
-            Type of the Degree
+            <span class="highlight">
+                Type of the Degree</span>
+            
             @*  @Html.DisplayNameFor(model => model.Degree_Type)*@
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Degree_Type)
+        <dd class="col-sm-10" style="font-size:15px">
+            <input asp-for="Degree_Type" class="form-control" readonly="readonly" />
+            @*   @Html.DisplayFor(model => model.Degree_Type)*@
         </dd>
         <dt class="col-sm-2">
-            Affliated   Universities
+          <span class="highlight">   Affliated   Universities</span>
             @*    @Html.DisplayNameFor(model => model.Affiliated_uni)*@
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Affiliated_uni)
+        <dd class="col-sm-10" style="font-size:15px">
+            <input asp-for="Affiliated_uni" class="form-control" readonly="readonly" />
+            @* @Html.DisplayFor(model => model.Affiliated_uni)*@
         </dd>
         <dt class="col-sm-2">
-            Duration of the Degree
+         <span class="highlight">    Duration of the Degree</span>
             @* @Html.DisplayNameFor(model => model.Degree_duration)*@
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Degree_duration)
+        <dd class="col-sm-10" style="font-size:15px">
+            <input asp-for="Degree_duration" class="form-control" readonly="readonly" />
+            @*@Html.DisplayFor(model => model.Degree_duration)*@
         </dd>
         <dt class="col-sm-2">
-            Description
+            <span class="highlight">
+                Description</span>
             @*    @Html.DisplayNameFor(model => model.Degree_description)*@
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Degree_description)
+        <dd class="col-sm-10" style="font-size:15px">
+            <textarea asp-for="Degree_description" class="form-control" rows="3" readonly="readonly"></textarea>
+            @*  @Html.DisplayFor(model => model.Degree_description)*@
         </dd>
         <dt class="col-sm-2">
-            Coursee Fee
+         <span class="highlight">    Coursee Fee </span>
             @*   @Html.DisplayNameFor(model => model.CourseFee)*@
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CourseFee)
+        <dd class="col-sm-10" style="font-size:15px">
+            <input asp-for="CourseFee" class="form-control" readonly="readonly" />
+            @*  @Html.DisplayFor(model => model.CourseFee)*@
         </dd>
         <dt class="col-sm-2">
-            Career Oppurtunities
+            <span class="highlight">
+                Career Oppurtunities</span>
             @*      @Html.DisplayNameFor(model => model.Career_Opurtunity)*@
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Career_Opurtunity)
+        <dd class="col-sm-10" style="font-size:15px">
+            <input asp-for="Career_Opurtunity" class="form-control" readonly="readonly" />
+            @* @Html.DisplayFor(model => model.Career_Opurtunity)*@
         </dd>
         <dt class="col-sm-2">
-            Academic Progression
+            <span class="highlight">
+                Academic Progression</span>
             @*   @Html.DisplayNameFor(model => model.Academic_proggression)*@
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Academic_proggression)
+        <dd class="col-sm-10" style="font-size:15px">
+            <input asp-for="Academic_proggression" class="form-control" readonly="readonly" />
+            @*  @Html.DisplayFor(model => model.Academic_proggression)*@
         </dd>
         <dt class="col-sm-2">
-            Admission Requirements
+            <span class="highlight">
+                Admission Requirements</span>
             @*   @Html.DisplayNameFor(model => model.Admission_Requirments)*@
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Admission_Requirments)
+        <dd class="col-sm-10 " style="font-size:15px">
+            <input asp-for="Admission_Requirments" class="form-control" readonly="readonly" />
+            @* @Html.DisplayFor(model => model.Admission_Requirments)*@
         </dd>
         <dt class="col-sm-2">
-            Degree Content
+            <span class="highlight">
+                Degree Content</span>
             @*    @Html.DisplayNameFor(model => model.DegreeContents)*@
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DegreeContents)
+        <dd class="col-sm-10" style="font-size:15px">
+            <textarea class="form-control" asp-for="DegreeContents" rows="3" cols="12" readonly="readonly"></textarea>
+            @*   @Html.DisplayFor(model => model.DegreeContents)*@
         </dd>
         <dt class="col-sm-2" hidden>
                @Html.DisplayNameFor(model => model.UniProfileModel)
@@ -91,3 +108,4 @@
 </div>
 <div>
 </div>
+<br />

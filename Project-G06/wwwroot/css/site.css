@@ -570,8 +570,9 @@ a{
 }
 
 .UniProfiles {
-    background-image: url(../images/background4.jpg);
-    /*background-color: #e5e4e2;*/
+    /* background-image: url(../images/background4.jpg);*/
+    background-color: #59788E;
+   ;
     background-size: cover;
     background-repeat: no-repeat;
     text-align: justify;
@@ -1108,7 +1109,13 @@ a{
     color: white;
     text-align: center;
 }
+.col-9 .card .card-header {
+    background-color: #8b0000;
+}
 
+.card .col-12.card-header {
+    background-color: #8b0000;
+}
 
 .Stable-wrapper {
     box-sizing: border-box;
@@ -1196,4 +1203,8 @@ a{
 #intro {
     color: #FAF9F6;
 
+}
+.details{
+    border:4px solid black;
+    padding:12px;
 }
