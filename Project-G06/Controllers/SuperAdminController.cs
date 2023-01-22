@@ -80,7 +80,8 @@ namespace Project_G06.Controllers
             }
 
             _webApplication2DbContext.UniProfileModel.Remove(universityFromDb);
-            _webApplication2DbContext.SaveChanges();    
+            _webApplication2DbContext.SaveChanges();
+            TempData["Success"] = "Deleted successfully";
             return RedirectToAction("Index1");
         
         }

@@ -95,6 +95,11 @@ body {
         margin-left: 200px;
         border-radius: 10px;
     }
+@media only screen and (max-width: 800px) {
+    #registerSubmit, #login-submit, #SignBtn {
+        margin-left: 50px;
+    }
+}
 
 #logout-btn {
     background-color: #8b0000;
@@ -110,15 +115,40 @@ body {
     align-items: center;
     justify-content: center;
     width: 40%;
-    display: flex;
-    overflow: hidden;
-    padding: 80px;
-    border-radius: 15px;
-    background-color: #CBDCCB;
-    color: black;
-    margin-top: 80px;
-    margin-left: 30%;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    text-align: center;
+    /*border: 7px solid red;*/
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    color: #ECECEC;
+    font-family: 'Pragati Narrow', sans-serif;
+}
+
+@media only screen and (min-width: 400px) {
+    .about {
+        height: 500px;
+        width: 500px;
+        overflow-x: scroll;
+        overflow-y: scroll;
+        
+    }
+
+    .about::-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+    .ab {
+        background-color: black;
+    }
 }
 .ab {
     background-image:url(../images/background4.jpg);
@@ -239,18 +269,22 @@ input[type=text] {
 }
 
 
+
 .login-box {
-    position: absolute;
     top: 100%;
-    left: 50%;
-    width: 600px;
-   
+    /* width: 600px;*/
     padding: 40px;
     transform: translate(-50%, -50%);
     background: #000000;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+  display:flex;
+    margin-top: 80px;
+    margin-left: 30%;
 }
 
     .login-box h2 {
@@ -260,9 +294,7 @@ input[type=text] {
         text-align: center;
     }
 
-    .login-box .user-box {
-        position: relative;
-    }
+ 
 
         
         .login-box .user-box label {
@@ -385,7 +417,13 @@ input[type=text] {
 }
 @media only screen and (max-width: 800px) {
     .container1 {
-        width: auto;
+        width: 100px;
+        flex-direction: row; 
+       flex-wrap: wrap;
+      
+       align-items:center;
+       margin-left:185px;
+
     }
 }
 
@@ -396,13 +434,13 @@ input[type=text] {
     justify-content: center;
     align-content: center;
     /*  border:3px solid rgb(18, 17, 17) ;*/
-    background-color: #FFFFFF;
-    padding: 30px;
-    height: 225px;
-    flex-basis: 2px;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        background-color: #FFFFFF;
+        padding: 30px;
+        height: 225px;
+        flex-basis: 2px;
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    }
 
-}
 
  .con-item p {
         color: #710c04;
@@ -522,7 +560,7 @@ a{
 
     padding: 10px;
     justify-content:center;
-    width: 30%;
+    width: 70%;
     display: grid;
 }
  .Profilecontainer1 .row{
@@ -810,6 +848,7 @@ a{
     border: 1px black solid;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius:5px;
+
 }
 
 
@@ -883,8 +922,16 @@ a{
     border-radius: 10px;
    margin-top:250px;
 }
+@media only screen and (max-width: 800px) {
+    .login-boxs {
+        width: 300px;
+       
+        padding: 40px;
+    }
+}
 
-    .login-boxs h2 {
+
+.login-boxs h2 {
         margin: 0 0 30px;
         padding: 0;
         color: #fff;
@@ -922,7 +969,11 @@ a{
 
 
 
-
+.page-container {
+    float:left;
+    padding-top:30px;
+    font-size:12px;
+}
 
 
 .page-container a {
@@ -948,3 +999,75 @@ a{
     color: white;
     text-align:center;
 }
+
+
+.Stable-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    /*border: 7px solid red;*/
+    width: 100%;
+    height: 50px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.S-table {
+    border: 1px black solid;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border-radius: 5px;
+    width: 700px;
+    max-width: 100%;
+    padding-top: 20px;
+    text-align: center;
+    text-align: center;
+    /*border: 7px solid red;*/
+    width: 100%;
+    height: 50px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+
+.index-H{
+    padding-bottom:30px;
+}
+
+
+
+    .S-table tbody td {
+        border-left: 1px black solid;
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
+        border-right: 1px black solid;
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+
+    .S-table thead th {
+        font-family: 'IBM Plex Sans', sans-serif;
+        border-left: 1px black solid;
+        color: black;
+        background: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+    }
+
+    
+
+    .S-table a {
+        color: darkred;
+        text-decoration: underline;
+    }
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+    .S-table td {
+        overflow-y: hidden;
+    }
+}
+
+
+

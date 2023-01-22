@@ -26,7 +26,7 @@ namespace Project_G06.Controllers
         }
 
 
-
+       
         
         [HttpPost]
         public async Task<IActionResult> Add(StudentEmail studentEmail,string email)
@@ -42,61 +42,30 @@ namespace Project_G06.Controllers
 
 
             };
-           await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
-           await studentEmailDbContext.SaveChangesAsync();
-           return RedirectToAction("Add");
+            var checkforuser = studentEmailDbContext.StudentEmails.Where(x => x.S_Email == email).SingleOrDefault();
+            if (checkforuser != null)
+            {
+
+                RedirectToAction("Add");
+                TempData["Error"] = "Already registered";
+
+            }
+            
+            
+                await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
+                await studentEmailDbContext.SaveChangesAsync();
+                TempData["Success"] = "registered successfully";
+
+                return RedirectToAction("Index");
+            
 
            
 
 
         }
-
-
-        /*
-        [HttpPost]
-        public async Task<IActionResult> Add(StudentEmail studentEmail, string email)
-        {
-            bool bolret = false;
-            string errorMessage = "";
-          
-
-            var student = new StudentEmail()
-            {
-                S_Email = studentEmail.S_Email,
-                S_Id = studentEmail.S_Id,
-                S_Name = studentEmail.S_Name,
-
-
-
-            };
-
-            int ct = studentEmailDbContext.StudentEmails.Where(n => n.S_Email.ToLower() == email.ToLower()).Count();
-            if (ct > 0)
-            {
-                errorMessage = "user exists";
-              
-            }
-            else
-            {
-                await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
-                await studentEmailDbContext.SaveChangesAsync();
-                return RedirectToAction("Add");
-
-            }
-
-
-
-
-        }*/
-
-
-       
-
-
-
-
-
-
+        
+        
+      
 
 
 
@@ -154,6 +123,7 @@ namespace Project_G06.Controllers
             {
                 studentEmailDbContext.StudentEmails.Update(student);
                 studentEmailDbContext.SaveChanges();
+                TempData["Success"] = "record edited successfully";
                 return RedirectToAction("Index");
             }
 
@@ -196,6 +166,7 @@ namespace Project_G06.Controllers
 
             studentEmailDbContext.StudentEmails.Remove(student);
             studentEmailDbContext.SaveChanges();
+            TempData["Success"] = "User deleted successfully";
             return RedirectToAction("Index");
                 
         }

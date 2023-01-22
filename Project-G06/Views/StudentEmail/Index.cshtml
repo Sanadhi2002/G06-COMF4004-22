@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<StudentEmail>
 
+
+
+<partial name="_notifications" />
+
 @{
     ViewBag.Title="Index";
 
@@ -20,9 +24,9 @@
 <h1> SignUps </h1>
 </div>
 
-<div class="table-wrapper">
+<div class="Stable-wrapper">
 
-<table class="I-table"> 
+<table class="S-table" id="student-table"> 
     <thead>
         <tr>
             <th>ID</th>
@@ -96,5 +100,6 @@
 
 
 
+    
 </div>
-                
+   
