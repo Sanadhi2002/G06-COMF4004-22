@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.VisualBasic;
 using Project_G06.Data;
 using Project_G06.Models;
+using ProjectG06.Migrations;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Tracing;
 
@@ -27,45 +28,87 @@ namespace Project_G06.Controllers
 
 
        
-        
-        [HttpPost]
-        public async Task<IActionResult> Add(StudentEmail studentEmail,string email)
-        {
+
+         [HttpPost]
+         public async Task<IActionResult> Add(StudentEmail studentEmail,string email)
+         {
+
+
+             var student = new StudentEmail()
+             {
+                 S_Email = studentEmail.S_Email,
+                 S_Id = studentEmail.S_Id,
+                 S_Name = studentEmail.S_Name,
+
+
+
+             };
+             if (ModelState.IsValid)
+             {
+                 var user= studentEmailDbContext.StudentEmails.Where(x => x.S_Email == email).SingleOrDefault();
             
-
-            var student = new StudentEmail()
-            {
-                S_Email = studentEmail.S_Email,
-                S_Id = studentEmail.S_Id,
-                S_Name = studentEmail.S_Name,
+                 if (user != null)
+                 {
 
 
 
-            };
-            var checkforuser = studentEmailDbContext.StudentEmails.Where(x => x.S_Email == email).SingleOrDefault();
-            if (checkforuser != null)
-            {
-
-                RedirectToAction("Add");
-                TempData["Error"] = "Already registered";
-
-            }
-            
-            
-                await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
-                await studentEmailDbContext.SaveChangesAsync();
-                TempData["Success"] = "registered successfully";
-
-                return RedirectToAction("Index");
-            
-
-           
+                     RedirectToAction("Add");
+                     TempData["Error"] = "Already registered";
+                 }
+                 else
+                 {
 
 
-        }
-        
-        
-      
+                     await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
+                     await studentEmailDbContext.SaveChangesAsync();
+                     TempData["Success"] = "registered successfully";
+
+                     return RedirectToAction("Add");
+                 }
+             }
+
+
+                 await studentEmailDbContext.StudentEmails.AddAsync(studentEmail);
+                 await studentEmailDbContext.SaveChangesAsync();
+                 TempData["Success"] = "registered successfully";
+
+                 return RedirectToAction("Add");
+
+
+
+
+
+         }
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
