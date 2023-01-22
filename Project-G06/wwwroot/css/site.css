@@ -1264,6 +1264,19 @@ a{
 }
 
 
+.card-create{
+    max-width:100%;
+    margin-bottom:20px;
+}
+
+    .card-create textarea {
+        padding-top: 10px;
+        padding-top: 10px;
+        
+    }
+
+
+
 
 
 #back {
